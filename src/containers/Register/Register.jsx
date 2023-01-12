@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { errorValidate } from "../services/validate"
+import { errorValidate } from "../../services/validate"
 import "./Register.css"
 
 const Register = () => {

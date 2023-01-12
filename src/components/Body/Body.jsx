@@ -1,10 +1,10 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
-import Home from "../containers/Home"
-import Login from "../containers/Login"
-import Profile from "../containers/Profile"
-import Register from "../containers/Register"
-import Search from "../components/Search"
+import Home from "../containers/Home/Home"
+import Login from "../containers/Login/Login"
+import Profile from "../containers/Profile/Profile"
+import Register from "../containers/Register/Register"
+import Search from "../containers/Search/Search"
 
 const Body = () => {
   return (

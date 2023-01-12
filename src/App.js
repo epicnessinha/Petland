@@ -1,20 +1,22 @@
 import logo from "./logo.svg"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
-import Body from "./components/Body"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import PetCard from "./components/PetCard"
-import Search from "./components/Search"
-import { Pagination } from "react-bootstrap"
-import { Carousel } from "react-bootstrap"
+import Footer from "./components/Footer/Footer"
+import Home from "./containers/Home/Home"
+import Search from "./containers/Search/Search"
+import Searchbox from "./components/Searchbox/Searchbox"
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Body />
-      <Footer />
+      <BrowserRouter>
+        <Searchbox />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   )
 }

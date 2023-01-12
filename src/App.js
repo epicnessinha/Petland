@@ -1,24 +1,20 @@
 import logo from "./logo.svg"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
+import Body from "./components/Body"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import PetCard from "./components/PetCard"
+import Search from "./components/Search"
+import { Pagination } from "react-bootstrap"
+import { Carousel } from "react-bootstrap"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Body />
+      <Footer />
     </div>
   )
 }

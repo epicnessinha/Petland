@@ -1,0 +1,15 @@
+.footerDesign {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: row;
+    display: flex;
+    width: 100vw;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    border-top: 0.5em;
+    
+    }

@@ -1,31 +1,43 @@
-export const errorCheck = (name, value) => {
+export const errorValidate = (name, value) => {
+  switch (name) {
+    case "name":
+      if ("") {
+        return "Invalid name format"
+      } else {
+        return ""
+      }
 
-    switch(name) {
-        case "username":
-            return "";
+    case "email":
+      if (
+        !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(
+          value
+        )
+      ) {
+        return "Invalid e-mail format"
+      } else {
+        return ""
+      }
 
-            case "email":
+    case "phone":
+      if (!/(?=.*?[0-9])/.test(value)) {
+        return "Phone number incorrect"
+      } else {
+        return ""
+      }
 
-            if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value)) {
-                return "Invalid email";
-            }else{
-                return "";
-            }
+    case "password":
+    case "password2":
+      if (value.length < 6) {
+        return "Write at least 6 characters"
+      } else {
+        if (!/[\d()+-]/g.test(value)) {
+          return "Invalid password format"
+        } else {
+          return ""
+        }
+      }
 
-            case "password":
-                case "password2":
-
-                if(value.length < 8){
-                    return "Password needs at least 8 characters";
-                } else {
-                    //verificar o formato da password
-
-                    if (! /[\d()+-]/g.test(value)) {
-                        return "Invalid password format";
-                    } else {
-                        return "";
-                    }
-                }
-                default:
-            }
-    };
+    default:
+      console.log("Check that all the answers are correct")
+  }
+}

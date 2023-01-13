@@ -17,7 +17,7 @@ function App() {
           <h5>AMA Shelter</h5>
         </a>
         <p>
-          <h3>Somente testes</h3>
+          <h3>Still a Draft</h3>
         </p>
       </div>
     </div>

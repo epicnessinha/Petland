@@ -1,6 +1,19 @@
 import React from "react"
+import { Pagination } from "antd"
+import { useState } from "react"
 
-export const Pagination = ({ productsPerPage, totalProducts, paginate }) => {
+const PaginationDesign = () => {
+  const [current, setCurrent] = useState(3)
+  const onChange = (page) => {
+    console.log(page)
+    setCurrent(page)
+  }
+  return <Pagination current={current} onChange={onChange} total={50} />
+}
+
+export default PaginationDesign
+
+/*export const Pagination = ({ productsPerPage, totalProducts, paginate }) => {
   const pageNumbers = []
 
   for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
@@ -19,8 +32,4 @@ export const Pagination = ({ productsPerPage, totalProducts, paginate }) => {
       </ul>
     </nav>
   )
-}
-
-export default Pagination
-
-//verificar com bootstrap
+}*/

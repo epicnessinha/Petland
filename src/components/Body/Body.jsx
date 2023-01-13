@@ -8,7 +8,7 @@ import Search from "../containers/Search/Search"
 
 const Body = () => {
   return (
-    /* <Routes>
+    <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
@@ -16,7 +16,7 @@ const Body = () => {
       <Route path="/admin" element={<Admin />} />
       <Route path="/details" element={<Details />} />
       <Route path="/search" element={<Search />} />
-    </Routes> */
+    </Routes>
   )
 }
 

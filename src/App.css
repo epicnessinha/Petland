@@ -3,9 +3,11 @@
 }
 
 .content {
-  color:magenta;
+  color:rgb(244, 108, 244);
   font-weight: bold;
   font-size: xx-large;
+  background-color: rgb(247, 210, 248);
+  
 }
 
 
@@ -24,3 +26,4 @@
   color: #61dafb;
 }
 
+/* vai afetar todos os componentes que estejam a ser renderizados no momento */

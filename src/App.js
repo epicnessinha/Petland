@@ -1,17 +1,21 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
-import NavbarTest from "./components/Navbar/NavbarTest"
-
+import NavbarHeader from "./components/Navbar/NavbarHeader"
+//fazer alterações no content, separar tudo e colocar no css?, somente testes.
 function App() {
   const title = "Petland"
   const intro = "Where our furry friends can find their forever home"
   return (
     <div className="App">
-      <NavbarTest />
+      <NavbarHeader />
       <div className="content">
         <h1>{title}</h1>
-        <p>{intro}</p>
-        <a href="https://petify.io/profiles/view/ama">AMA Shelter</a>
+        <p>
+          <h4>{intro}</h4>
+        </p>
+        <a href="https://petify.io/profiles/view/ama">
+          <h5>AMA Shelter</h5>
+        </a>
         <p>
           <h3>Somente testes</h3>
         </p>

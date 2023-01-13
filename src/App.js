@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
 import NavbarHeader from "./components/Navbar/NavbarHeader"
+import AdoptionForm from "./containers/Form/AdoptionForm"
 //fazer alterações no content, separar tudo e colocar no css?, somente testes.
 function App() {
   const title = "Petland"
@@ -18,6 +19,7 @@ function App() {
         </a>
         <p>
           <h3>Still a Draft</h3>
+          <AdoptionForm />
         </p>
       </div>
     </div>

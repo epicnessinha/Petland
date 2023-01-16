@@ -1,24 +1,22 @@
 import React from "react"
 import Button from "react-bootstrap/Button"
-import Card from "react-bootstrap/Card"
 
-function PetCard() {
+import "./PetCard.css"
+
+const PetCard = ({ movie }) => {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="imagem da base de dados" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the bulk of
-          the card's content.
-        </Card.Text>
-        <Button variant="primary">Adopt me!</Button>
-      </Card.Body>
-    </Card>
+    <div className="PetInfoDesign">
+      <h3>{movie.name}</h3>
+      <div className="PetPhoto">
+        <img
+          src={`https://image.tmdb.org/t/p/original${pet.poster_path}`}
+          alt={pet.name}
+          width="375"
+          height="560"
+        />
+      </div>
+    </div>
   )
 }
 
 export default PetCard
-
-// eslint-disable-next-line prettier/prettier
-/* no card.text tem de ficar a descrição que está na base de dados, na card.img também */

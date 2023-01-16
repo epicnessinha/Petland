@@ -1,27 +1,55 @@
 {
   "users": [
     {
-      "name": "User1",
-      "email": "user1@email.com",
-      "password": "Asd123",
-      "isAdmni": "false",
+      "name": "Vanessa Ferreira",
+      "email": "vanessa@mail.com",
+      "password": "43752nessa",
+      "isAdmni": "true",
       "id": 1
     },
     {
-      "name": "user2",
-      "email": "user2@emai.com",
-      "password": "123456",
+      "name": "Priscilla Silva",
+      "email": "pri@mail.com",
+      "password": "12345pri",
       "isAdmni": "false",
       "id": 2
-    }
+    },
+    {
+    "name": "Mirela Mas",
+    "email": "mirela@mail.com",
+    "password": "mirela123",
+    "isAdmni": "false",
+    "id": 3
+  },
+  {
+    "name": "Galileu Dantas",
+    "email": "dantas@mail.com",
+    "password": "galileu1235",
+    "isAdmni": "false",
+    "id": 4
+  },
+  {
+    "name": "Américo Ribeiro",
+    "email": "aribeiro@mail.com",
+    "password": "123americo",
+    "isAdmni": "false",
+    "id": 5
+  },
+  {
+    "name": "Raquel Martins",
+    "email": "raquel@mail.com",
+    "password": "raquelmartins1",
+    "isAdmni": "false",
+    "id": 6
+  }
   ],
   "pets": [
     {
-      "name": "pet1",
-      "breed": "siames",
-      "age": "3",
-      "url": "https://animais.online/wp-content/uploads/2018/11/gato-siames.jpg",
-      "description": "Cat with 3 years, castrated, sweet, full vacinated",
+      "name": "Pandinha",
+      "breed": "European shorthair",
+      "age": "2 years",
+      "url": "https://www.animaisderua.org/uploads/adoption/Pandinha2_1672836731.jpeg",
+      "description": "Sterilized, dewormed, vaccinated and has a microchip. She is very affectionate, both with people and with other cats, looking for the company of both to make the most of her day. After all, what fun is life if we don't surround ourselves with what brings us happiness?",
       "id": 1
     },
     {

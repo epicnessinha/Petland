@@ -38,7 +38,7 @@ h3 {
     background-image: url("../../assets/img/pets.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(5.5px) contrast(1.35) brightness(0.65);
+    filter: blur(2px) contrast(1.35) brightness(0.65);
    
 }
 

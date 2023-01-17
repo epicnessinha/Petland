@@ -56,13 +56,13 @@
 
 .searchrightside{
   width: 35vw;
-  background-color:hotpink;
+  background-color:rgb(228, 157, 251);
   overflow-y: scroll; 
   padding-bottom: 1em; 
   border-radius: 10%;
-  margin-bottom: 90px;
-  margin-top: 27px;
-  margin-right: 20px;
+  margin-bottom: 300px;
+  margin-top: 40px;
+  margin-right: 40px;
 }
 
 .searchBar {
@@ -106,7 +106,8 @@
   border: 0px;
   outline:none;
   background:none;
-  font-family:fantasy;
+  font-family: ;
+  font-size: large;
 }
 
   .movieCard{

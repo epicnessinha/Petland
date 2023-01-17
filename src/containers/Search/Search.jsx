@@ -36,7 +36,7 @@ const Search = () => {
             name="input"
             id="input"
             title="input"
-            placeholder="Search for an awesome movie here!"
+            placeholder="Search for your new best friend!"
             onChange={(e) => {
               searchInputHandler(e)
             }}

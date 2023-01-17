@@ -1,10 +1,9 @@
 import "./Home.css"
-import BackgroundImage from "../../assets/img/pets.jpg"
 
 const Home = () => {
   return (
     <div className="welcomeDesign">
-      <div className="background-image">{BackgroundImage}</div>
+      <div className="background-image"></div>
       <div className="Text-Wrapper">
         <div className="left-text">
           <h1 className="welcome-title">Petland</h1>

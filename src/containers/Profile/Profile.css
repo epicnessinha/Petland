@@ -1,4 +1,4 @@
-.back {
+.background {
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -6,16 +6,16 @@
     overflow: hidden;
     scroll-snap-type: none;
     z-index: 1;
-    background-image: url("../../assets/img/login.jpg");
+    background-image: url("../../assets/img/profile.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   
 }
 
-.user{
+.profile{
     color: white
 }
 
-.description1 {
+.description {
     color: aliceblue;
 }

@@ -1,9 +1,26 @@
-import React, { useEffect, useState } from "react"
-import { getAllPets } from "../../services/apicalls"
 import "./Home.css"
+import BackgroundImage from "../../assets/img/pets.jpg"
 
 const Home = () => {
-  const [pets, setPets] = useState([])
+  return (
+    <div className="welcomeDesign">
+      <div className="background-image">{BackgroundImage}</div>
+      <div className="Text-Wrapper">
+        <div className="left-text">
+          <h1 className="welcome-title">Petland</h1>
+          <h4>Where our furry friends can find their forever home</h4>
+        </div>
+        <div className="right-text">
+          <h3></h3>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Home
+
+/* const [pets, setPets] = useState([])
 
   useEffect(() => {
     async function fecthData() {
@@ -12,39 +29,4 @@ const Home = () => {
       setPets(response.data)
     }
     fecthData()
-  }, [])
-
-  /* const selectPet = (pet) => {
-    setSelected(pet)
-  }
-
-  if (pets.length > 0) {
-    return (
-      <div className="homePage">
-        <div className="leftSide">
-          {pets.map((pet) => {
-            return (
-              <div className="petCard" key={pet.id}>
-                <div onClick={() => selectMovie(pet)}>
-                  <img
-                    className="petImage"
-                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                    alt={pet.title}
-                  />
-                </div>
-                <div>{pet.title}</div>
-              </div>
-            )
-          })}
-        </div>
-        <div className="rightSide">
-          {selected?.id !== undefined && <PetCard pet={selected} />}
-        </div>
-      </div>
-    )
-  } else {
-    return <div className="homeLoadingDesign">Loading...</div>
-  }*/
-}
-
-export default Home
+  }, []) */

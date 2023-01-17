@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./Header.css"
 import { useNavigate } from "react-router"
 
@@ -63,3 +63,9 @@ const Header = () => {
 }
 
 export default Header
+
+/* style={{ padding: 0, background: colorBgContainer }}>
+            {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+              className: "trigger",
+              onClick: () => setCollapsed(!collapsed),
+            })} */

@@ -1,50 +1,79 @@
-.homePage {
+* {
+    box-sizing: border-box;
+}
+
+h1,h2,h3 {
+    color:white;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+h1 {
+    font-size: 92px;
+    margin-bottom: 0;
+}
+h2 {
+    font-size: 64px;
+    margin-right: 0.9em;
+    margin-top: 1;
+}
+
+h3 {
+    width: 40%;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+
+
+.background-image {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.9;
+    overflow: hidden;
+    scroll-snap-type: none;
+    z-index: 1;
+    background-image: url("../../assets/img/pets.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5.5px) contrast(1.35) brightness(0.65);
+   
+}
+
+.welcomeDesign {
     display: flex;
     flex-direction: row;
-    height: 85vh;
-    background-color:rgb(255, 187, 236);
-}
-
-.movieSmallImage{
-    width: 10.5em; 
-}
-
-.movieCard{
-    width: 12.05em;
-    margin-top: 0.5em;
-}
-
-.movieCard:hover{
-    transition: 0.4s;
-    margin:auto 1px;
-    box-shadow: rgba(245, 35, 217, 0.663) 0px 1px 2px, rgb(51, 51, 51) 0px 5px 5px 5px;
-}
-
-.leftSide{
-    margin-top: 1em;
-    margin-bottom: 1em;
-    width: 65vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    background-color: rgb(255, 187, 236); 
-    overflow-y: scroll;  
-    cursor:pointer;
 }
 
-.rightSide{
-    width: 35vw;
-    background-color:hotpink;
-    overflow-y: scroll; 
-    padding-bottom: 1em; 
-    border-radius: 10%;
-    margin-bottom: 90px;
-    margin-top: 27px;
-    margin-right: 20px;
+.Text-Wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.movieSmallImage{
-    border-radius: 15%;
-
+.left-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8em;
+    z-index: 2;
+    text-shadow: 0 0 50px black;
 }
+
+.right-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 8em;
+    z-index: 2;
+    text-align:justify;
+    text-shadow: 0 0 50px black;
+}
+

@@ -1,12 +1,26 @@
-import React, { useContext, useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
-
-import { loginUser } from "../../services/apiCalls"
-
 import "./Login.css"
+const Home = () => {
+  return (
+    <div className="welcomeDesign">
+      <div className="back"></div>
+      <div className="Text-Wrapper">
+        <div className="left-text">
+          <h1 className="user">User Login</h1>
+          <h4 className="description1">Logic not done yet</h4>
+        </div>
+        <div className="right-text">
+          <h3></h3>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Home
+
 // fazer alterações
 
-const Login = () => {
+/*const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -79,4 +93,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login*/

@@ -1,15 +1,13 @@
 .footerDesign {
-    position: relative;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    flex-direction: row;
-    display: flex;
-    width: 100vw;
     height: 5vh;
-    align-items: center;
+    width: 100vw;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    background-color: green;
-    border-top: 0.5em;
-    
-    }
+    align-items: center;
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+}

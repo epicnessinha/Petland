@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+h1,h2,h3 {
+    color:white;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+h1 {
+    font-size: 92px;
+    margin-bottom: 0;
+}
+h2 {
+    font-size: 64px;
+    margin-right: 0.9em;
+    margin-top: 1;
+}
+
+h3 {
+    width: 40%;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+
+
+.background-image {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.9;
+    overflow: hidden;
+    scroll-snap-type: none;
+    z-index: 1;
+    background-image: url("../../assets/img/pets.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5.5px) contrast(1.35) brightness(0.65);
+   
+}
+
+.welcomeDesign {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Text-Wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8em;
+    z-index: 2;
+    text-shadow: 0 0 50px black;
+}
+
+.right-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 8em;
+    z-index: 2;
+    text-align:justify;
+    text-shadow: 0 0 50px black;
+}
+

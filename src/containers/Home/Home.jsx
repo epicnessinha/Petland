@@ -4,12 +4,12 @@ import "./Home.css"
 
 const Home = () => {
   const [pets, setPets] = useState([])
-  const [selected, setSelected] = useState("")
 
   useEffect(() => {
     async function fecthData() {
       let response = await getAllPets()
-      setPets(response.data.results)
+      console.log("responde", response)
+      setPets(response.data)
     }
     fecthData()
   }, [])

@@ -1,7 +1,5 @@
 import "./Search.css"
 import React, { useEffect, useState } from "react"
-import Moviedetails from "../../Components/Moviedetails/Moviedetails"
-import { getSearchedMovies } from "../../services/apicalls"
 
 const Search = () => {
   const [movies, setMovies] = useState([])

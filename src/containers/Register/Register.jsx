@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 import "./Register.css"
-import { registerNewUser } from "../../services/apiCalls"
-import { validateForm } from "../../services/validate"
 import { checkEmail } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
 

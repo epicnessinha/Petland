@@ -2,7 +2,7 @@ import "./Search.css"
 import React, { useEffect, useState } from "react"
 
 const Search = () => {
-  const [movies, setMovies] = useState([])
+  const [movies, setPets] = useState([])
   const [searchInput, setSearchInput] = useState("")
   const [selected, setSelected] = useState("")
 
@@ -15,15 +15,15 @@ const Search = () => {
 
   useEffect(() => {
     const fecthData = async () => {
-      let response = await getSearchedMovies(searchInput)
+      let response = await getSearchedPets(searchInput)
       let results = response.data.results
-      setMovies(results)
+      setPets(results)
     }
     fecthData()
   }, [searchInput])
 
-  const selectMovie = (movie) => {
-    setSelected(movie)
+  const selectPet = (pet) => {
+    setSelected(pet)
   }
 
   return (
@@ -43,24 +43,20 @@ const Search = () => {
           ></input>
         </div>
         <div className="searchResults">
-          {movies.map((movie) => {
+          {pets.map((pet) => {
             return (
-              <div className="movieCard" key={movie.id}>
-                <div onClick={() => selectMovie(movie)}>
-                  <img
-                    className="movieSmallImage"
-                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                    alt={movie.title}
-                  />
+              <div className="petCard" key={pet.id}>
+                <div onClick={() => selectPet(pet)}>
+                  <img className="petImage" src={``} alt={pet.title} />
                 </div>
-                <div>{movie.title}</div>
+                <div>{pet.title}</div>
               </div>
             )
           })}
         </div>
       </div>
       <div className="searchrightside">
-        {selected?.id !== undefined && <Moviedetails movie={selected} />}
+        {selected?.id !== undefined && <Details pet={selected} />}
       </div>
     </div>
   )

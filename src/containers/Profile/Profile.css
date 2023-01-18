@@ -1,21 +1,3 @@
-.background {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    opacity: 0.9;
-    overflow: hidden;
-    scroll-snap-type: none;
-    z-index: 1;
-    background-image: url("../../assets/img/profile.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  
-}
-
 .profile{
-    color: white
-}
-
-.description {
-    color: aliceblue;
+    
 }

@@ -1,9 +1,8 @@
 import { createContext, useState } from "react"
-//Modificar, somente draft!!!
 
-export const LoginContext = createContext()
+export const AuthContext = createContext()
 
-export function LoginProvider(props) {
+export const AuthProvider = (props) => {
   const [user, setUser] = useState(null)
   const [admin, setAdmin] = useState(null)
 
@@ -28,7 +27,7 @@ export function LoginProvider(props) {
   }
 
   return (
-    <LoginContext.Provider
+    <AuthContext.Provider
       value={{
         user,
         addUserToContext,
@@ -39,6 +38,6 @@ export function LoginProvider(props) {
       }}
     >
       {props.children}
-    </LoginContext.Provider>
+    </AuthContext.Provider>
   )
 }

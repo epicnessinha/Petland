@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getAllForms, getAllUsers, getAllPets } from "../../services/apiCalls"
 import "./Admin.css"
-import { AuthContext } from "../../providers/LoginContext" //modificar nos providers e alterar aqui
+import { AuthContext } from "../../providers/AuthProvider" //modificar nos providers e alterar aqui
 //Fazer alterações nos formulários de adopção e pensar como vou gerir isso
 
 const Admin = () => {
@@ -47,7 +47,7 @@ const Admin = () => {
         )
       })}
       <div>LIST OF PETS:</div>
-      {products.map((pet) => {
+      {pets.map((pet) => {
         return (
           <div>
             <div>{pet.name}</div>

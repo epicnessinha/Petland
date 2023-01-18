@@ -1,50 +1,52 @@
 import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import axios from "axios"
 
 function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const navigate = useNavigate()
+  const [error, setError] = useState("")
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleSubmit = async (event) => {
+    event.preventDefault()
     try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+      const response = await axios.get("http://localhost:5000/users", {
+        params: {
+          email,
+          password,
+        },
       })
-      const data = await response.json()
-      if (data.token) {
-        localStorage.setItem("token", data.token)
-        navigate.push("/dashboard")
+      const user = response.data.users.find(
+        (user) => user.email === email && user.password === password
+      )
+      if (user) {
+        // set user as logged in and redirect to profile
+        console.log("user logged in")
       } else {
-        console.error(data.message)
+        setError("Invalid email or password")
       }
     } catch (err) {
-      console.error(err)
+      setError("An error occurred")
     }
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        autoComplete="current-email"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        autoComplete="current-password"
+      />
       <button type="submit">Login</button>
+      {error && <p>{error}</p>}
     </form>
   )
 }

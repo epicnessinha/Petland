@@ -43,13 +43,13 @@ const Search = () => {
           ></input>
         </div>
         <div className="searchResults">
-          {pets.map((pet) => {
+          {pets.map((item) => {
             return (
-              <div className="petCard" key={pet.id}>
-                <div onClick={() => selectPet(pet)}>
-                  <img className="petImage" src={``} alt={pet.title} />
+              <div className="petCard" key={item.id}>
+                <div onClick={() => selectPet(item)}>
+                  <img className="petImage" src={``} alt={item.title} />
                 </div>
-                <div>{pet.title}</div>
+                <div>{item.title}</div>
               </div>
             )
           })}

@@ -46,6 +46,7 @@
   "pets": [
     {
       "name": "Pandinha",
+      "title": "dog",
       "breed": "European shorthair",
       "age": "2 years",
       "url": "https://www.animaisderua.org/uploads/adoption/Pandinha2_1672836731.jpeg",
@@ -54,11 +55,21 @@
     },
     {
       "name": "pet2",
+      "tile": "dog",
       "breed": "bulldog",
       "age": "1",
       "url": "https://i.pinimg.com/originals/a2/d1/77/a2d177ba12e69f518532945c6dc966cd.jpg",
-      "description": "dog with 1 years, playful, sweet, full vacinated, but not castrated yet",
+      "description": "male dog with 1 years, playful, sweet, full vacinated, but not castrated yet",
       "id": 2
+    },
+    {
+      "name": "pet3",
+      "tile": "cat",
+      "breed": "siames",
+      "age": "2",
+      "url": "https://www.petz.com.br/blog/wp-content/uploads/2021/02/nomes-para-gatos-siames-felino.jpg",
+      "description": "female cat with 2 years, playful, sweet, full vacinated, already castrated",
+      "id": 3
     }
   ],
   "forms": [

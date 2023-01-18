@@ -11,7 +11,7 @@ const Body = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/" element={<PetDetails />} />
+      <Route path="/petdetails" element={<PetDetails />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/register" element={<Register />} />

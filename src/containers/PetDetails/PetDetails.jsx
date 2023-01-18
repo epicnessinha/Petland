@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from "react"
 import "./PetDetails.css"
+import { getAllPets } from "../../services/apiCalls"
 
 function PetDetails() {
-  const [data, setData] = useState([])
+  const [pets, setPets] = useState([])
 
   useEffect(() => {
-    fetch("your json api url")
-      .then((response) => response.json())
-      .then((jsonData) => setData(jsonData))
+    async function fecthData() {
+      let response = await getAllPets()
+      console.log("response", response)
+      setPets(response.data)
+    }
+    fecthData()
   }, [])
 
   return (
     <div className="image-container">
-      {data.map((item) => (
+      {pets.map((item) => (
         <img
-          src={item.imageUrl}
-          style={{ width: "100%", height: "auto" }}
+          src={item.url}
+          style={{ width: "30%", height: "auto" }}
           key={item.id}
           alt={item.name}
         />
@@ -25,3 +29,11 @@ function PetDetails() {
 }
 
 export default PetDetails
+
+/*const [data, setData] = useState([])
+
+  useEffect(() => {
+    fetch("your json api url")
+      .then((response) => response.json())
+      .then((jsonData) => setData(jsonData))
+  }, [])*/

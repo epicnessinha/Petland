@@ -2,7 +2,7 @@ import "./Search.css"
 import React, { useEffect, useState } from "react"
 
 const Search = () => {
-  const [movies, setPets] = useState([])
+  const [pets, setPets] = useState([])
   const [searchInput, setSearchInput] = useState("")
   const [selected, setSelected] = useState("")
 

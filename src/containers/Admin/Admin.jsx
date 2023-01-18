@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getAllForms, getAllUsers, getAllPets } from "../../services/apiCalls"
 import "./Admin.css"
-import { AuthContext } from "../../providers/userAuth"
+import { AuthContext } from "../../providers/LoginContext" //modificar nos providers e alterar aqui
 //Fazer alterações nos formulários de adopção e pensar como vou gerir isso
 
 const Admin = () => {

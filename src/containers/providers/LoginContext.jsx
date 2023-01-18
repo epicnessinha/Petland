@@ -1,4 +1,5 @@
 import { createContext, useState } from "react"
+//Modificar, somente draft!!!
 
 export const LoginContext = createContext()
 

@@ -1,4 +1,44 @@
-import "./Search.css"
+import React, { useState, useEffect } from "react"
+
+const Search = () => {
+  const [data, setData] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
+  const [filteredData, setFilteredData] = useState([])
+
+  useEffect(() => {
+    fetch("db.json")
+      .then((response) => response.json())
+      .then((data) => setData(data.pets))
+  }, [])
+
+  useEffect(() => {
+    setFilteredData(
+      data.filter((item) =>
+        item.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    )
+  }, [searchTerm, data])
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <ul>
+        {filteredData.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default Search
+
+/* import "./Search.css"
 import React, { useEffect, useState } from "react"
 
 const Search = () => {
@@ -62,4 +102,4 @@ const Search = () => {
   )
 }
 
-export default Search
+export default Search */

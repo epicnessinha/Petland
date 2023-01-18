@@ -1,37 +1,37 @@
 import axios from "axios"
 
-const API_BASE_URL = "http://localhost:5000/"
+const PET_API = "http://localhost:5000/"
 
 //PETS
 
 export const getAllPets = async () => {
-  return await axios.get(`${API_BASE_URL}pets`)
+  return await axios.get(`${PET_API}pets`)
 }
 
 export const registerNewPet = async (pet) => {
-  return await axios.post(`${API_BASE_URL}pets`, pet)
+  return await axios.post(`${PET_API}pets`, pet)
 }
 
 export const deletePet = async (pet) => {
   console.log("Adopted!", pet)
-  return await axios.delete(`${API_BASE_URL}pets/${pet.id}`)
+  return await axios.delete(`${PET_API}pets/${pet.id}`)
 }
 
 //USERS
 
 export const getAllUsers = async () => {
-  return await axios.get(`${API_BASE_URL}users`)
+  return await axios.get(`${PET_API}users`)
 }
 export const registerUser = async (user) => {
-  return await axios.post(`${API_BASE_URL}users`, user)
+  return await axios.post(`${PET_API}users`, user)
 }
 export const checkEmail = async (email) => {
-  let response = await axios.get(`${API_BASE_URL}users?email_like=${email}`)
+  let response = await axios.get(`${PET_API}users?email_like=${email}`)
   if (response.data.length === 0) return true
   else return false
 }
 export const loginUser = async (user) => {
-  let response = await axios.get(`${API_BASE_URL}users?email_like=${user.email}`)
+  let response = await axios.get(`${PET_API}users?email_like=${user.email}`)
   if (response.data.length === 0) return false
   else if (user.password === response.data[0].password) return response.data
   else return false
@@ -40,15 +40,15 @@ export const loginUser = async (user) => {
 //ADOPTION FORMS
 
 export const newAdoptionForm = async (form) => {
-  return await axios.post(`${API_BASE_URL}forms`, form)
+  return await axios.post(`${PET_API}forms`, form)
 }
 
 export const getAllForms = async () => {
-  return await axios.get(`${API_BASE_URL}forms`)
+  return await axios.get(`${PET_API}forms`)
 }
 
 export const deleteAdoptionForm = async (form) => {
-  return await axios.delete(`${API_BASE_URL}forms/${form.id}`)
+  return await axios.delete(`${PET_API}forms/${form.id}`)
 }
 
 /* var root = "http://localhost:5000/" 

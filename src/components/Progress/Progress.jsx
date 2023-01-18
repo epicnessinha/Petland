@@ -1,7 +1,7 @@
 import { Steps } from "antd"
 
 const description = "This is a description."
-const FormSteps = () => (
+const Progress = () => (
   <Steps
     direction="vertical"
     current={1}
@@ -21,4 +21,4 @@ const FormSteps = () => (
     ]}
   />
 )
-export default FormSteps
+export default Progress

@@ -1,20 +1,14 @@
 import "./Profile.css"
+import React from "react"
 
-const Home = () => {
+const Profile = (props) => {
   return (
-    <div className="welcomeDesign">
-      <div className="background"></div>
-      <div className="Text-Wrapper">
-        <div className="left-text">
-          <h1 className="profile">User Profile</h1>
-          <h4 className="description">Logic not done yet</h4>
-        </div>
-        <div className="right-text">
-          <h3></h3>
-        </div>
-      </div>
+    <div className="profile">
+      <img src={props.avatarUrl} alt="User avatar" />
+      <h1>{props.name}</h1>
+      <p>{props.bio}</p>
     </div>
   )
 }
 
-export default Home
+export default Profile

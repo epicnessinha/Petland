@@ -12,7 +12,7 @@
     {
       "name": "Priscilla Silva",
       "email": "pri@mail.com",
-      "password": "12345pri",
+      "password": "Pri12345",
       "address": "",
       "contact": "",
       "isAdmni": "false",
@@ -21,7 +21,7 @@
     {
       "name": "Mirela Mas",
       "email": "mirela@mail.com",
-      "password": "mirela123",
+      "password": "Mirela12345",
       "address": "",
       "contact": "",
       "isAdmni": "false",
@@ -30,7 +30,7 @@
     {
       "name": "Galileu Dantas",
       "email": "dantas@mail.com",
-      "password": "galileu1235",
+      "password": "Galileu1235",
       "address": "",
       "contact": "",
       "isAdmni": "false",
@@ -39,7 +39,7 @@
     {
       "name": "Américo Ribeiro",
       "email": "aribeiro@mail.com",
-      "password": "123americo",
+      "password": "Americo12345",
       "address": "",
       "contact": "",
       "isAdmni": "false",
@@ -48,7 +48,7 @@
     {
       "name": "Raquel Martins",
       "email": "raquel@mail.com",
-      "password": "raquelmartins1",
+      "password": "Raquel12345",
       "address": "",
       "contact": "",
       "isAdmni": "false",

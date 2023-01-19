@@ -5,6 +5,7 @@ import Login from "../../containers/Login/Login"
 import Register from "../../containers/Register/Register"
 import Profile from "../../containers/Profile/Profile"
 import PetDetails from "../../containers/PetDetails/PetDetails"
+import Admin from "../../containers/Admin/Admin"
 
 const Body = () => {
   return (
@@ -14,6 +15,7 @@ const Body = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/admin" element={<Admin />} />
     </Routes>
   )
 }

@@ -1,66 +1,26 @@
-import React, { useState, useEffect } from "react"
-
-const Search = () => {
-  const [data, setData] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [filteredData, setFilteredData] = useState([])
-
-  useEffect(() => {
-    fetch("db.json")
-      .then((response) => response.json())
-      .then((data) => setData(data.pets))
-  }, [])
-
-  useEffect(() => {
-    setFilteredData(
-      data.filter((item) =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-    )
-  }, [searchTerm, data])
-
-  return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <ul>
-        {filteredData.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-export default Search
-
-/* import "./Search.css"
+import "./Search.css"
 import React, { useEffect, useState } from "react"
+import PetDetails from "../PetDetails/PetDetails"
 
 const Search = () => {
   const [pets, setPets] = useState([])
   const [searchInput, setSearchInput] = useState("")
   const [selected, setSelected] = useState("")
 
-  const searchInputHandler = (e) => {
-    setSearchInput((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
   useEffect(() => {
-    const fecthData = async () => {
-      let response = await getSearchedPets(searchInput)
-      let results = response.data.results
-      setPets(results)
+    const fetchData = async () => {
+      const response = await fetch("./db.json")
+      const data = await response.json()
+      if (data.pets) {
+        setPets(data.pets)
+      }
     }
-    fecthData()
-  }, [searchInput])
+    fetchData()
+  }, [])
+
+  const searchInputHandler = (e) => {
+    setSearchInput(e.target.value)
+  }
 
   const selectPet = (pet) => {
     setSelected(pet)
@@ -87,19 +47,35 @@ const Search = () => {
             return (
               <div className="petCard" key={item.id}>
                 <div onClick={() => selectPet(item)}>
-                  <img className="petImage" src={``} alt={item.title} />
+                  <img className="petImage" src={item.url} alt={item.type} />
                 </div>
-                <div>{item.title}</div>
+                <div>{item.name}</div>
+                <div>{item.breed}</div>
+                <div>{item.age}</div>
+                <div>{item.type}</div>
               </div>
             )
           })}
         </div>
       </div>
       <div className="searchrightside">
-        {selected?.id !== undefined && <Details pet={selected} />}
+        {selected?.id !== undefined && <PetDetails pet={selected} />}
       </div>
     </div>
   )
 }
 
-export default Search */
+const Details = ({ pet }) => {
+  return (
+    <div className="selectedPetContainer">
+      <img src={pet.url} alt={pet.name} />
+      <div className="petName">{pet.name}</div>
+      <div className="petBreed">{pet.breed}</div>
+      <div className="petAge">{pet.age}</div>
+      <div className="petType">{pet.type}</div>
+      <div className="petDescription">{pet.description}</div>
+    </div>
+  )
+}
+
+export default Search

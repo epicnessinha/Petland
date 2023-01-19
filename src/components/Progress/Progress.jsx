@@ -22,3 +22,5 @@ const Progress = () => (
   />
 )
 export default Progress
+//O user irá ver isto no profile após submeter o formulário de adoção.
+//Quando o Admin aprovar a adoção, o profile do user tem de ser atualizado também.

@@ -12,3 +12,4 @@ const PaginationDesign = () => {
 }
 
 export default PaginationDesign
+//Quero que seja usada no PetDetails

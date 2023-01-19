@@ -4,6 +4,8 @@
       "name": "Vanessa Ferreira",
       "email": "vanessa@mail.com",
       "password": "43752nessa",
+      "address": "",
+      "contact": "",
       "isAdmni": "true",
       "id": 1
     },
@@ -11,37 +13,65 @@
       "name": "Priscilla Silva",
       "email": "pri@mail.com",
       "password": "12345pri",
+      "address": "",
+      "contact": "",
       "isAdmni": "false",
       "id": 2
     },
     {
-    "name": "Mirela Mas",
-    "email": "mirela@mail.com",
-    "password": "mirela123",
-    "isAdmni": "false",
-    "id": 3
-  },
-  {
-    "name": "Galileu Dantas",
-    "email": "dantas@mail.com",
-    "password": "galileu1235",
-    "isAdmni": "false",
-    "id": 4
-  },
-  {
-    "name": "Américo Ribeiro",
-    "email": "aribeiro@mail.com",
-    "password": "123americo",
-    "isAdmni": "false",
-    "id": 5
-  },
-  {
-    "name": "Raquel Martins",
-    "email": "raquel@mail.com",
-    "password": "raquelmartins1",
-    "isAdmni": "false",
-    "id": 6
-  }
+      "name": "Mirela Mas",
+      "email": "mirela@mail.com",
+      "password": "mirela123",
+      "address": "",
+      "contact": "",
+      "isAdmni": "false",
+      "id": 3
+    },
+    {
+      "name": "Galileu Dantas",
+      "email": "dantas@mail.com",
+      "password": "galileu1235",
+      "address": "",
+      "contact": "",
+      "isAdmni": "false",
+      "id": 4
+    },
+    {
+      "name": "Américo Ribeiro",
+      "email": "aribeiro@mail.com",
+      "password": "123americo",
+      "address": "",
+      "contact": "",
+      "isAdmni": "false",
+      "id": 5
+    },
+    {
+      "name": "Raquel Martins",
+      "email": "raquel@mail.com",
+      "password": "raquelmartins1",
+      "address": "",
+      "contact": "",
+      "isAdmni": "false",
+      "id": 6
+    },
+    {
+      "name": "Nuno Santos",
+      "email": "nunito@mail.com",
+      "password": "Nuno12345",
+      "address": "Rua dos Infernos",
+      "contact": "912234568",
+      "isAdmin": "false",
+      "id": 7
+    },
+    {
+      "name": "Ana Maria",
+      "email": "maria@mail.com",
+      "password": "Maria12345",
+      "address": "teste",
+      "contact": "910000000",
+      "isAdmin": "false",
+      "id": 8
+    }
   ],
   "pets": [
     {
@@ -74,16 +104,16 @@
   ],
   "forms": [
     {
-      "name":"",
-      "email":"",
-      "Contact":"",
-      "Do you live in an apartment or house?":"", 
-      "ID of the Pet that you pretend to adopt":"",
-      "Do you have another Pets?":"",
-      "What will you do if you have to travel or emigrate?":"",
-      "Do you compromise to implant a microchip in the animal, according to the law?":"",
-      "Do you compromise in sign a responsibility declaration of the animal?":"",
-      "Observations":""
+      "name": "",
+      "email": "",
+      "Contact": "",
+      "Do you live in an apartment or house?": "",
+      "ID of the Pet that you pretend to adopt": "",
+      "Do you have another Pets?": "",
+      "What will you do if you have to travel or emigrate?": "",
+      "Do you compromise to implant a microchip in the animal, according to the law?": "",
+      "Do you compromise in sign a responsibility declaration of the animal?": "",
+      "Observations": ""
     }
   ]
 }

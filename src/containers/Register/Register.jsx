@@ -1,15 +1,17 @@
 import React, { useState } from "react"
 import "./Register.css"
 import { checkEmail } from "../../services/apiCalls"
+import { registerUser } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
+import { validateForm } from "../../services/validate"
 
 const Register = () => {
   const [user, setUser] = useState({
     name: "",
     email: "",
-    phone: "",
-    adress: "",
     password: "",
+    address: "",
+    contact: "",
     isAdmin: "false",
   })
   const [error, setError] = useState("")
@@ -31,7 +33,7 @@ const Register = () => {
     }
     setError(validationError)
     if (error === "no error") {
-      registerNewUser(user)
+      registerUser(user)
       navigate("/login")
     }
   }
@@ -65,10 +67,10 @@ const Register = () => {
       />
       <input
         className="myInput"
-        type="phone"
-        name="phone"
-        id="phone"
-        title="phone"
+        type="contact"
+        name="contact"
+        id="contac"
+        title="contact"
         placeholder="Contact:"
         autoComplete="off"
         onChange={(e) => {
@@ -106,7 +108,7 @@ const Register = () => {
             register(user)
           }}
         >
-          Register
+          <button type="register">Register</button>
         </div>
       </div>
       <div>{error === "no error" ? null : error}</div>

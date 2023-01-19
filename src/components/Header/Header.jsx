@@ -46,6 +46,16 @@ const Header = () => {
       >
         Profile
       </div>
+      <div
+        className="linkDesign"
+        onClick={() =>
+          setTimeout(() => {
+            navigate("/admin")
+          }, 250)
+        }
+      >
+        Admin
+      </div>
 
       <div
         className="linkDesign"

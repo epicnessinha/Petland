@@ -3,6 +3,8 @@ import { loginUser } from "../../services/apiCalls"
 //para redireccionar para o profile
 import { Navigate } from "react-router-dom"
 
+//fazer componentes deste código se tiver tempo
+
 const Login = () => {
   // state for email and password
   const [email, setEmail] = useState("")

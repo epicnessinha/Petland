@@ -5,6 +5,8 @@ import { registerUser } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
 import { validateForm } from "../../services/validate"
 
+//fazer componentes deste código se tiver tempo
+
 const Register = () => {
   const [user, setUser] = useState({
     name: "",

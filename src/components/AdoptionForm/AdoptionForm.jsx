@@ -6,6 +6,10 @@ const AdoptionForm = () => {
     name: "",
     email: "",
     contact: "",
+    petId: "",
+    anotherPets: "",
+    travelSituation: "",
+    microchip: false,
     responsibilityDeclaration: false,
   })
   const [formError, setFormError] = useState({})
@@ -32,6 +36,24 @@ const AdoptionForm = () => {
     if (!formData.contact) {
       setFormError((prevState) => ({ ...prevState, contact: "Contact is required" }))
     }
+    if (!formData.anotherPets) {
+      setFormError((prevState) => ({
+        ...prevState,
+        anotherPets: "A valid responde is required",
+      }))
+    }
+    if (!formData.travelSituation) {
+      setFormError((prevState) => ({
+        ...prevState,
+        travelSituation: "A valid responde is required",
+      }))
+    }
+    if (!formData.microchip) {
+      setFormError((prevState) => ({
+        ...prevState,
+        microchip: "You need to sign the responsibility declaration",
+      }))
+    }
     if (!formData.responsibilityDeclaration) {
       setFormError((prevState) => ({
         ...prevState,
@@ -43,7 +65,7 @@ const AdoptionForm = () => {
     }
     try {
       // Send form data to the server
-      await axios.post("/api/forms", formData)
+      await axios.post("http://localhost:5000/forms", formData)
       alert("Form submitted successfully")
     } catch (error) {
       console.error(error)
@@ -86,17 +108,6 @@ const AdoptionForm = () => {
           required
         />
         {formError.contact && <span>{formError.contact}</span>}
-      </label>
-      <br />
-      <label>
-        Do you live in an apartment or house?":
-        <input
-          type="text"
-          name="responsibilityDeclaration"
-          checked={formData.responsibilityDeclaration}
-          onChange={handleChange}
-          required
-        />
       </label>
       <br />
       <label>

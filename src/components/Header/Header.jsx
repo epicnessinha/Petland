@@ -67,6 +67,16 @@ const Header = () => {
       >
         Register
       </div>
+      <div
+        className="linkDesign"
+        onClick={() =>
+          setTimeout(() => {
+            navigate("./adopt")
+          }, 250)
+        }
+      >
+        Adoption
+      </div>
     </div>
   )
 }

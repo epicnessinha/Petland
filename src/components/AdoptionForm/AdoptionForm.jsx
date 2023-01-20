@@ -1,63 +1,163 @@
 import React, { useState } from "react"
+import axios from "axios"
 
-function AdoptionForm() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [emailError, setEmailError] = useState("")
-  const [passwordError, setPasswordError] = useState("")
-  //inserir restantes campos e validações
+const AdoptionForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contact: "",
+    responsibilityDeclaration: false,
+  })
+  const [formError, setFormError] = useState({})
 
-  const validateEmail = (email) => {
-    if (!email.includes("@")) {
-      setEmailError("Invalid email address")
-      return false
-    }
-    setEmailError("")
-    return true
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]:
+        event.target.type === "checkbox" ? event.target.checked : event.target.value,
+    })
   }
 
-  const validatePassword = (password) => {
-    if (password.length < 8) {
-      setPasswordError("Password must be at least 8 characters")
-      return false
-    }
-    setPasswordError("")
-    return true
-  }
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    if (validateEmail(email) && validatePassword(password)) {
-      // submit the form
+    setFormError({})
+
+    // Validate form
+    if (!formData.name) {
+      setFormError((prevState) => ({ ...prevState, name: "Name is required" }))
+    }
+    if (!formData.email) {
+      setFormError((prevState) => ({ ...prevState, email: "Email is required" }))
+    }
+    if (!formData.contact) {
+      setFormError((prevState) => ({ ...prevState, contact: "Contact is required" }))
+    }
+    if (!formData.responsibilityDeclaration) {
+      setFormError((prevState) => ({
+        ...prevState,
+        responsibilityDeclaration: "You need to sign the responsibility declaration",
+      }))
+    }
+    if (Object.keys(formError).length) {
+      return
+    }
+    try {
+      // Send form data to the server
+      await axios.post("/api/forms", formData)
+      alert("Form submitted successfully")
+    } catch (error) {
+      console.error(error)
     }
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Email:
+        Name:
         <input
-          type="email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value)
-            validateEmail(e.target.value)
-          }}
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
         />
-        {emailError && <span style={{ color: "red" }}>{emailError}</span>}
+        {formError.name && <span>{formError.name}</span>}
       </label>
       <br />
       <label>
-        Password:
+        Email:
         <input
-          type="password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value)
-            validatePassword(e.target.value)
-          }}
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
         />
-        {passwordError && <span style={{ color: "red" }}>{passwordError}</span>}
+        {formError.email && <span>{formError.email}</span>}
+      </label>
+      <br />
+      <label>
+        Contact:
+        <input
+          type="text"
+          name="contact"
+          value={formData.contact}
+          onChange={handleChange}
+          required
+        />
+        {formError.contact && <span>{formError.contact}</span>}
+      </label>
+      <br />
+      <label>
+        Do you live in an apartment or house?":
+        <input
+          type="text"
+          name="responsibilityDeclaration"
+          checked={formData.responsibilityDeclaration}
+          onChange={handleChange}
+          required
+        />
+      </label>
+      <br />
+      <label>
+        ID of the Pet that you pretend to adopt
+        <input
+          type="number"
+          name="responsibilityDeclaration"
+          checked={formData.responsibilityDeclaration}
+          onChange={handleChange}
+          required
+        />
+      </label>
+      <br />
+      <label>
+        Do you have another Pets?
+        <input
+          type="text"
+          name="responsibilityDeclaration"
+          checked={formData.responsibilityDeclaration}
+          onChange={handleChange}
+          required
+        />
+      </label>
+      <br />
+      <label>
+        What will you do if you have to travel or emigrate?
+        <input
+          type="text"
+          name="responsibilityDeclaration"
+          checked={formData.responsibilityDeclaration}
+          onChange={handleChange}
+          required
+        />
+      </label>
+      <br />
+      <label>
+        Do you compromise to implant a microchip in the animal, according to the law?
+        <input
+          type="checkbox"
+          name="responsibilityDeclaration"
+          checked={formData.responsibilityDeclaration}
+          onChange={handleChange}
+          required
+        />
+        {formError.responsibilityDeclaration && (
+          <span>{formError.responsibilityDeclaration}</span>
+        )}
+      </label>
+      <br />
+      <label>
+        Do you compromise in sign a responsibility declaration of the animal?
+        <input
+          type="checkbox"
+          name="responsibilityDeclaration"
+          checked={formData.responsibilityDeclaration}
+          onChange={handleChange}
+          required
+        />
+        {formError.responsibilityDeclaration && (
+          <span>{formError.responsibilityDeclaration}</span>
+        )}
       </label>
       <br />
       <button type="submit">Submit</button>

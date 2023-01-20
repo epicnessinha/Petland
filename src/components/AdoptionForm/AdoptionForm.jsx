@@ -58,10 +58,7 @@ const AdoptionForm = () => {
       return
     }
     try {
-      // Send form data to the server
       newAdoptionForm(formData)
-      //await axios.post("http://localhost:5000/forms", formData)
-      //alert("Form submitted successfully")
     } catch (error) {
       console.error(error)
     }

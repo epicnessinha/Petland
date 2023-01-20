@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { UserOutlined } from "@ant-design/icons"
-import { Avatar } from "antd"
+import { Avatar, Image } from "antd"
 
 const EditProfile = (props) => {
   const [user, setUser] = useState({})
@@ -48,56 +48,51 @@ const EditProfile = (props) => {
   return (
     <>
       <></>
-      <div>
+      <Avatar
+        src={
+          <Image
+            src="https://media.licdn.com/dms/image/D4D03AQFIUSMwPf4-tQ/profile-displayphoto-shrink_800_800/0/1672305698326?e=1679529600&v=beta&t=V3RQK5ItDvpYcADjXm9OhhzSx-XvSkML3r1cz3Ts_cY"
+            style={{
+              width: 32,
+            }}
+          />
+        }
+      />
+      {!editing && (
         <div>
-          <Avatar size={64} icon={<UserOutlined />} />
-          <Avatar size="large" icon={<UserOutlined />} />
-          <Avatar icon={<UserOutlined />} />
-          <Avatar size="small" icon={<UserOutlined />} />
+          <h1>{user.name}</h1>
+          <p>Email: {user.email}</p>
+          <button onClick={handleEdit}>Edit Profile</button>
         </div>
-        <div>
-          <Avatar shape="square" size={64} icon={<UserOutlined />} />
-          <Avatar shape="square" size="large" icon={<UserOutlined />} />
-          <Avatar shape="square" icon={<UserOutlined />} />
-          <Avatar shape="square" size="small" icon={<UserOutlined />} />
-        </div>
-        {!editing && (
-          <div>
-            <h1>{user.name}</h1>
-            <p>Email: {user.email}</p>
-            <img src={user.profile_picture} alt={user.name} />
-            <button onClick={handleEdit}>Edit Profile</button>
-          </div>
-        )}
-        {editing && (
-          <form onSubmit={handleSave}>
-            <label>
-              Name:
-              <input
-                type="text"
-                name="name"
-                value={user.name}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Email:
-              <input
-                type="email"
-                name="email"
-                value={user.email}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Profile Picture:
-              <input type="file" name="profile_picture" onChange={handleChange} />
-            </label>
-            <input type="submit" value="Save Changes" />
-            <button onClick={handleCancel}>Cancel</button>
-          </form>
-        )}
-      </div>
+      )}
+      {editing && (
+        <form onSubmit={handleSave}>
+          <label>
+            Name:
+            <input
+              type="text"
+              name="name"
+              value={user.name}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Email:
+            <input
+              type="email"
+              name="email"
+              value={user.email}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Profile Picture:
+            <input type="file" name="profile_picture" onChange={handleChange} />
+          </label>
+          <input type="submit" value="Save Changes" />
+          <button onClick={handleCancel}>Cancel</button>
+        </form>
+      )}
     </>
   )
 }

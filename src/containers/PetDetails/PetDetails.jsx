@@ -3,6 +3,7 @@ import "./PetDetails.css"
 import { getAllPets } from "../../services/apiCalls"
 import Search from "../../components/Search/Search"
 import PaginationDesign from "../../components/PaginationDesign/PaginationDesign"
+import AdoptionForm from "../../components/AdoptionForm/AdoptionForm"
 
 function PetDetails() {
   const [pets, setPets] = useState([])

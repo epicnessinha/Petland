@@ -22,6 +22,6 @@
 }
 
 .linkDesign:hover {
-    color: red;
+    color: rgb(167, 66, 157);
     transition: 0.5s;
 }

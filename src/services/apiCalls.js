@@ -2,10 +2,20 @@ import axios from "axios"
 
 const PET_API = "http://localhost:5000/"
 
+const headers = {
+  "Content-Type": "text/json",
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+}
+
 //PETS
 
 export const getAllPets = async () => {
-  return await axios.get(`${PET_API}pets`)
+  return await axios.get(`${PET_API}pets`, { headers: { headers } }) //Onde coloco mais Headers? Estudar!
+}
+
+export const getPetById = async (pet) => {
+  return await axios.get(`${PET_API}pets/${pet.id}`)
 }
 
 export const registerNewPet = async (pet) => {
@@ -47,40 +57,10 @@ export const getAllForms = async () => {
   return await axios.get(`${PET_API}forms`)
 }
 
+export const getFormById = async (form) => {
+  return await axios.get(`${PET_API}forms/${form.id}`)
+}
+
 export const deleteAdoptionForm = async (form) => {
   return await axios.delete(`${PET_API}forms/${form.id}`)
 }
-
-/* var root = "http://localhost:5000/" 
-
-export const bringPets = async () => {  
-  let config = {
-    method: "get",
-    url: `${root}/`,
-  }
-
-  return await axios(config)
-}
-
-export const pushPets = async (pet) => {
-    title: pet.title,
-    description: pet.description,
-    categoryId: pet.categoryId,
-    images: pet.images,
-
-  let config = {
-    method: "post",
-    url: `${root}`,
-    body: JSON.stringify(jsonData),
-  }
-
-  return await axios(config)
-}
-
-export const getDetails = async (id) => {
-  return await axios.get(`link${id}`)
-}
-
-export const getImages = async ([images]) => {
-  return await axios.get(`link${images}`) 
-}*/

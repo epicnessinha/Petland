@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
+import { newAdoptionForm } from "../../services/apiCalls"
 
 const AdoptionForm = () => {
   const [formData, setFormData] = useState({
@@ -9,20 +10,19 @@ const AdoptionForm = () => {
     petId: "",
     anotherPets: "",
     travelSituation: "",
-    microchip: false,
-    responsibilityDeclaration: false,
+    microchip: "",
   })
   const [formError, setFormError] = useState({})
 
   const handleChange = (event) => {
     setFormData({
       ...formData,
-      [event.target.name]:
-        event.target.type === "checkbox" ? event.target.checked : event.target.value,
+      [event.target.name]: event.target.value,
     })
   }
 
   const handleSubmit = async (event) => {
+    console.log(formData)
     event.preventDefault()
     setFormError({})
 
@@ -54,19 +54,14 @@ const AdoptionForm = () => {
         microchip: "You need to sign the responsibility declaration",
       }))
     }
-    if (!formData.responsibilityDeclaration) {
-      setFormError((prevState) => ({
-        ...prevState,
-        responsibilityDeclaration: "You need to sign the responsibility declaration",
-      }))
-    }
     if (Object.keys(formError).length) {
       return
     }
     try {
       // Send form data to the server
-      await axios.post("http://localhost:5000/forms", formData)
-      alert("Form submitted successfully")
+      newAdoptionForm(formData)
+      //await axios.post("http://localhost:5000/forms", formData)
+      //alert("Form submitted successfully")
     } catch (error) {
       console.error(error)
     }
@@ -80,7 +75,9 @@ const AdoptionForm = () => {
           type="text"
           name="name"
           value={formData.name}
-          onChange={handleChange}
+          onChange={(e) => {
+            handleChange(e)
+          }}
           required
         />
         {formError.name && <span>{formError.name}</span>}
@@ -92,7 +89,9 @@ const AdoptionForm = () => {
           type="email"
           name="email"
           value={formData.email}
-          onChange={handleChange}
+          onChange={(e) => {
+            handleChange(e)
+          }}
           required
         />
         {formError.email && <span>{formError.email}</span>}
@@ -104,7 +103,9 @@ const AdoptionForm = () => {
           type="text"
           name="contact"
           value={formData.contact}
-          onChange={handleChange}
+          onChange={(e) => {
+            handleChange(e)
+          }}
           required
         />
         {formError.contact && <span>{formError.contact}</span>}
@@ -113,10 +114,11 @@ const AdoptionForm = () => {
       <label>
         ID of the Pet that you pretend to adopt
         <input
-          type="number"
-          name="responsibilityDeclaration"
-          checked={formData.responsibilityDeclaration}
-          onChange={handleChange}
+          type="text"
+          name="petId"
+          onChange={(e) => {
+            handleChange(e)
+          }}
           required
         />
       </label>
@@ -125,8 +127,8 @@ const AdoptionForm = () => {
         Do you have another Pets?
         <input
           type="text"
-          name="responsibilityDeclaration"
-          checked={formData.responsibilityDeclaration}
+          name="anotherPets"
+          value={formData.anotherPets}
           onChange={handleChange}
           required
         />
@@ -136,34 +138,24 @@ const AdoptionForm = () => {
         What will you do if you have to travel or emigrate?
         <input
           type="text"
-          name="responsibilityDeclaration"
-          checked={formData.responsibilityDeclaration}
-          onChange={handleChange}
+          name="travelSituation"
+          checked={formData.travelSituation}
+          onChange={(e) => {
+            handleChange(e)
+          }}
           required
         />
-      </label>
-      <br />
-      <label>
-        Do you compromise to implant a microchip in the animal, according to the law?
-        <input
-          type="checkbox"
-          name="responsibilityDeclaration"
-          checked={formData.responsibilityDeclaration}
-          onChange={handleChange}
-          required
-        />
-        {formError.responsibilityDeclaration && (
-          <span>{formError.responsibilityDeclaration}</span>
-        )}
       </label>
       <br />
       <label>
         Do you compromise in sign a responsibility declaration of the animal?
         <input
-          type="checkbox"
-          name="responsibilityDeclaration"
-          checked={formData.responsibilityDeclaration}
-          onChange={handleChange}
+          type="text"
+          name="microchip"
+          checked={formData.microchip}
+          onChange={(e) => {
+            handleChange(e)
+          }}
           required
         />
         {formError.responsibilityDeclaration && (

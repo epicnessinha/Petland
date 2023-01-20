@@ -52,7 +52,7 @@ const Register = () => {
           handleData(e)
         }}
       />
-
+      <br></br>
       <input
         className="myInput"
         type="email"
@@ -65,6 +65,7 @@ const Register = () => {
           handleData(e)
         }}
       />
+      <br></br>
       <input
         className="myInput"
         type="contact"
@@ -77,6 +78,7 @@ const Register = () => {
           handleData(e)
         }}
       />
+      <br></br>
       <input
         className="myInput"
         type="address"
@@ -89,6 +91,7 @@ const Register = () => {
           handleData(e)
         }}
       />
+      <br></br>
       <input
         className="myInput"
         type="password"

@@ -8,14 +8,17 @@
     z-index: 12px;
     display: flex;
     width: 100vw;
-    height: 10vh;
+    height: 7vh;
     background-color: pink;
 
 }
 
 .linkDesign {
     margin: auto;
-    cursor: pointer;
+    cursor:pointer;
+   font-family: fantasy;
+   font-weight: bold;
+   font-size: large;
 }
 
 .linkDesign:hover {

@@ -51,7 +51,7 @@ const EditProfile = (props) => {
       <Avatar
         src={
           <Image
-            src="https://media.licdn.com/dms/image/D4D03AQFIUSMwPf4-tQ/profile-displayphoto-shrink_800_800/0/1672305698326?e=1679529600&v=beta&t=V3RQK5ItDvpYcADjXm9OhhzSx-XvSkML3r1cz3Ts_cY"
+            src="https://avatars.githubusercontent.com/u/99542868?v=4"
             style={{
               width: 32,
             }}

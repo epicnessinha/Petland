@@ -77,3 +77,48 @@ const Details = ({ pet }) => {
 }
 
 export default Search
+
+/*
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function Search() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [pets, setPets] = useState([]);
+
+  async function handleSearch(e) {
+    e.preventDefault();
+    try {
+      const response = await axios.get('/db.json');
+      const data = response.data;
+      const filteredPets = data.pets.filter(pet =>
+        pet.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setPets(filteredPets);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  return (
+    <div>
+      <form onSubmit={handleSearch}>
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+      {pets.map(pet => (
+        <div key={pet.id}>
+          <h2>{pet.name}</h2>
+          <p>{pet.breed}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Search;
+*/

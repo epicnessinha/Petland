@@ -1,3 +1,4 @@
+import CarouselDesign from "../../components/CarouselDesign/CarouselDesign"
 import "./Home.css"
 
 const Home = () => {

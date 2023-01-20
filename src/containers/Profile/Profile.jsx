@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
+import { UserOutlined } from "@ant-design/icons"
+import { Avatar, Image } from "antd"
 
 const EditProfile = (props) => {
   const [user, setUser] = useState({})
@@ -44,12 +46,22 @@ const EditProfile = (props) => {
   }
 
   return (
-    <div>
+    <>
+      <></>
+      <Avatar
+        src={
+          <Image
+            src="https://media.licdn.com/dms/image/D4D03AQFIUSMwPf4-tQ/profile-displayphoto-shrink_800_800/0/1672305698326?e=1679529600&v=beta&t=V3RQK5ItDvpYcADjXm9OhhzSx-XvSkML3r1cz3Ts_cY"
+            style={{
+              width: 32,
+            }}
+          />
+        }
+      />
       {!editing && (
         <div>
           <h1>{user.name}</h1>
           <p>Email: {user.email}</p>
-          <img src={user.profile_picture} alt={user.name} />
           <button onClick={handleEdit}>Edit Profile</button>
         </div>
       )}
@@ -81,7 +93,7 @@ const EditProfile = (props) => {
           <button onClick={handleCancel}>Cancel</button>
         </form>
       )}
-    </div>
+    </>
   )
 }
 

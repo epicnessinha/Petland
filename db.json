@@ -55,22 +55,13 @@
       "id": 6
     },
     {
-      "name": "Nuno Santos",
-      "email": "nunito@mail.com",
-      "password": "Nuno12345",
-      "address": "Rua dos Infernos",
-      "contact": "912234568",
+      "name": "Andreia",
+      "email": "andreia@mail.com",
+      "password": "Andreia123",
+      "address": "Rua da Flores",
+      "contact": "910085402",
       "isAdmin": "false",
       "id": 7
-    },
-    {
-      "name": "Ana Maria",
-      "email": "maria@mail.com",
-      "password": "Maria12345",
-      "address": "teste",
-      "contact": "910000000",
-      "isAdmin": "false",
-      "id": 8
     }
   ],
   "pets": [

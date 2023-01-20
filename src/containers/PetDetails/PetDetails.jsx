@@ -18,6 +18,7 @@ function PetDetails() {
 
   return (
     <>
+      <Search search={Search} />
       <div className="image-container">
         {pets.map((item) => (
           <img
@@ -28,7 +29,6 @@ function PetDetails() {
           />
         ))}
       </div>
-      <Search search={Search} />
       <PaginationDesign />
     </>
   )

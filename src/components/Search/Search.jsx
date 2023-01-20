@@ -27,41 +27,39 @@ const Search = () => {
   }
 
   return (
-    <div className="searchPage">
-      <div className="searchleftside">
-        <div className="searchBar">
-          <input
-            className="searchInput"
-            type="text"
-            name="input"
-            id="input"
-            title="input"
-            placeholder="Search for your new best friend!"
-            onChange={(e) => {
-              searchInputHandler(e)
-            }}
-          ></input>
-        </div>
-        <div className="searchResults">
-          {pets.map((item) => {
-            return (
-              <div className="petCard" key={item.id}>
-                <div onClick={() => selectPet(item)}>
-                  <img className="petImage" src={item.url} alt={item.type} />
-                </div>
-                <div>{item.name}</div>
-                <div>{item.breed}</div>
-                <div>{item.age}</div>
-                <div>{item.type}</div>
+    <>
+      <div className="searchBar">
+        <input
+          className="searchInput"
+          type="text"
+          name="input"
+          id="input"
+          title="input"
+          placeholder="Search for your new best friend!"
+          onChange={(e) => {
+            searchInputHandler(e)
+          }}
+        ></input>
+      </div>
+      <div className="searchResults">
+        {pets.map((item) => {
+          return (
+            <div className="petCard" key={item.id}>
+              <div onClick={() => selectPet(item)}>
+                <img className="petImage" src={item.url} alt={item.type} />
               </div>
-            )
-          })}
-        </div>
+              <div>{item.name}</div>
+              <div>{item.breed}</div>
+              <div>{item.age}</div>
+              <div>{item.type}</div>
+            </div>
+          )
+        })}
       </div>
-      <div className="searchrightside">
+      {/* <div className="searchrightside">
         {selected?.id !== undefined && <PetDetails pet={selected} />}
-      </div>
-    </div>
+      </div> */}
+    </>
   )
 }
 

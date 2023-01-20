@@ -20,7 +20,7 @@ const Login = () => {
         setIsAuth(true)
         // if successful, save the token to localStorage and redirect to the protected page
         localStorage.setItem("user", JSON.stringify(response))
-        window.location.href = "/protected"
+        window.location.href = "/profile"
         setIsAuth(true)
       } else {
         setError("Invalid email or password.")

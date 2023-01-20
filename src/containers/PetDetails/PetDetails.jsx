@@ -35,11 +35,3 @@ function PetDetails() {
 }
 
 export default PetDetails
-
-/*const [data, setData] = useState([])
-
-  useEffect(() => {
-    fetch("your json api url")
-      .then((response) => response.json())
-      .then((jsonData) => setData(jsonData))
-  }, [])*/

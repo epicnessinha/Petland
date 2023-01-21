@@ -8,6 +8,7 @@ import PetDetails from "../../containers/PetDetails/PetDetails"
 import Admin from "../../containers/Admin/Admin"
 import "./Body.css"
 import AdoptionForm from "../AdoptionForm/AdoptionForm"
+import Search from "../Search/Search"
 
 const Body = () => {
   return (
@@ -20,6 +21,7 @@ const Body = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/adopt" element={<AdoptionForm />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </>
   )

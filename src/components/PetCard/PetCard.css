@@ -1,4 +1,4 @@
-.movieInfoDesign {
+.petInfoDesign {
 
     height: 36em;
     width: 30em;
@@ -17,7 +17,7 @@
 
 }
 
-.moviePoster {
+.petPoster {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -30,7 +30,7 @@
     
 }
 
-.ReleaseAndRating{
+.age{
     font-size:xx-large;
     font-weight: bold;
     display: flex;
@@ -40,7 +40,7 @@
     margin-bottom: 1em;
 }
 
-.synopsis{
+.description{
     font-size:medium;
     font-style: italic;
     margin-left: 10em;

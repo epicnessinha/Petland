@@ -30,16 +30,6 @@ const Header = () => {
         className="linkDesign"
         onClick={() =>
           setTimeout(() => {
-            navigate("/Login")
-          }, 250)
-        }
-      >
-        Login
-      </div>
-      <div
-        className="linkDesign"
-        onClick={() =>
-          setTimeout(() => {
             navigate("/profile")
           }, 250)
         }
@@ -65,7 +55,7 @@ const Header = () => {
           }, 250)
         }
       >
-        Register
+        Sign In / Register
       </div>
       <div
         className="linkDesign"

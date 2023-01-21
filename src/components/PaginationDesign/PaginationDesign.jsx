@@ -1,16 +1,82 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Pagination } from "antd"
-import { useState } from "react"
 import "./PaginationDesign.css"
+import axios from "axios"
+
+const petsPerPage = 1
 
 const PaginationDesign = () => {
-  const [current, setCurrent] = useState(3)
+  const [pets, setPets] = useState([])
+  const [current, setCurrent] = useState(1)
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios("http://localhost:5000/pets")
+      setPets(result.data)
+    }
+    fetchData()
+  }, [])
+
+  const totalPages = Math.ceil(pets.length / petsPerPage)
   const onChange = (page) => {
-    console.log(page)
     setCurrent(page)
   }
-  return <Pagination current={current} onChange={onChange} total={50} />
+  const petsToShow = pets.slice((current - 1) * petsPerPage, current * petsPerPage)
+  return (
+    <div>
+      {petsToShow.map((item) => (
+        <div key={item.id}>
+          <img src={item.url} alt={item.name} />
+          <h2>{item.name}</h2>
+          <p>{item.breed}</p>
+          <p>{item.age}</p>
+          <p>{item.description}</p>
+        </div>
+      ))}
+      <Pagination
+        current={current}
+        onChange={onChange}
+        total={totalPages}
+        pageSize={petsPerPage}
+      />
+    </div>
+  )
 }
 
 export default PaginationDesign
-//Quero que seja usada no PetDetails
+
+/*import React, { useState } from "react"
+import { Pagination } from "antd"
+import "./PaginationDesign.css"
+
+const pets = [10]
+const petsPerPage = 2
+const totalPages = Math.ceil(pets.length / 2)
+
+const PaginationDesign = () => {
+  const [current, setCurrent] = useState(1)
+  const onChange = (page) => {
+    setCurrent(page)
+  }
+  const petsToShow = pets.slice((current - 1) * petsPerPage, current * petsPerPage)
+  return (
+    <div>
+      {petsToShow.map((item) => (
+        <div key={item.id}>
+          <img src={item.url} alt={item.name} />
+          <h2>{item.name}</h2>
+          <p>{item.breed}</p>
+          <p>{item.age}</p>
+          <p>{item.description}</p>
+        </div>
+      ))}
+      <Pagination
+        current={current}
+        onChange={onChange}
+        total={totalPages}
+        pageSize={petsPerPage}
+      />
+    </div>
+  )
+}
+
+export default PaginationDesign*/

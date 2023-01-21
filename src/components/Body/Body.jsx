@@ -9,6 +9,7 @@ import Admin from "../../containers/Admin/Admin"
 import "./Body.css"
 import AdoptionForm from "../AdoptionForm/AdoptionForm"
 import Search from "../Search/Search"
+import AdoptionLogin from "../AdoptionLogin/AdoptionLogin"
 
 const Body = () => {
   return (
@@ -22,6 +23,7 @@ const Body = () => {
         <Route path="/admin" element={<Admin />} />
         <Route path="/adopt" element={<AdoptionForm />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/adoptlogin" element={<AdoptionLogin />} />
       </Routes>
     </>
   )

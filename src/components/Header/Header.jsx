@@ -61,7 +61,7 @@ const Header = () => {
         className="linkDesign"
         onClick={() =>
           setTimeout(() => {
-            navigate("./adopt")
+            navigate("./adoptlogin")
           }, 250)
         }
       >

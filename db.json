@@ -67,6 +67,15 @@
       "contact": "910085402",
       "isAdmin": "false",
       "id": 7
+    },
+    {
+      "name": "Joto",
+      "email": "joto@mail.com",
+      "password": "Joto12345",
+      "address": "Rua das antas",
+      "contact": "910005236",
+      "isAdmin": "false",
+      "id": 8
     }
   ],
   "pets": [
@@ -88,7 +97,6 @@
       "description": "male dog with 1 years, playful, sweet, full vacinated, but not castrated yet",
       "id": 2
     },
-    
     {
       "name": "pet3",
       "type": "cat",
@@ -98,7 +106,6 @@
       "description": "female cat with 2 years, playful, sweet, full vacinated, already castrated",
       "id": 3
     }
-
   ],
   "forms": [
     {

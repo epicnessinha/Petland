@@ -5,13 +5,12 @@ import { Navigate } from "react-router-dom"
 
 //fazer componentes deste código se tiver tempo
 
-const Login = () => {
+const AdoptionLogin = () => {
   // state for email and password
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [isAuth, setIsAuth] = useState(false)
-  const [userData, setUserData] = useState()
 
   // function to handle form submission
   const handleSubmit = async (e) => {
@@ -20,12 +19,11 @@ const Login = () => {
       const user = { email, password }
       const response = await loginUser(user)
       if (response) {
-        console.log("RESPONSE", response)
         setIsAuth(true)
         // if successful, save the token to localStorage and redirect to the protected page
         localStorage.setItem("user", JSON.stringify(response))
+        window.location.href = "/adopt"
         setIsAuth(true)
-        setUserData(response.data)
       } else {
         setError("Invalid email or password.")
       }
@@ -34,11 +32,10 @@ const Login = () => {
       setError("An error occurred. Please try again later.")
     }
   }
-  console.log("USERDATA", userData)
 
   return (
     <>
-      {isAuth ? <Navigate to="/profile" /> : null}
+      {isAuth ? <Navigate to="/adopt" /> : null}
       <form onSubmit={handleSubmit}>
         <label>
           Email:
@@ -61,8 +58,19 @@ const Login = () => {
         {error && <p>{error}</p>}
         <input type="submit" value="Login" />
       </form>
+      <div className="flex justify-center ">
+        <p className="text-gray-500">Don't have an acount? </p>
+        <a
+          href=""
+          className="text-sky-600 pl-2"
+          onClick={() => navigate("/register")}
+        >
+          {" "}
+          Register
+        </a>
+      </div>
     </>
   )
 }
 
-export default Login
+export default AdoptionLogin

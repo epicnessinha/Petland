@@ -1,4 +1,4 @@
-import CarouselDesign from "../../components/CarouselDesign/CarouselDesign"
+import Search from "../../components/Search/Search"
 import "./Home.css"
 
 const Home = () => {
@@ -7,6 +7,7 @@ const Home = () => {
       <div className="background-image"></div>
       <div className="Text-Wrapper">
         <div className="left-text">
+          <Search />
           <h1 className="welcome-title">Petland</h1>
           <h4>Where our furry friends can find their forever home</h4>
         </div>
@@ -19,14 +20,3 @@ const Home = () => {
 }
 
 export default Home
-
-/* const [pets, setPets] = useState([])
-
-  useEffect(() => {
-    async function fecthData() {
-      let response = await getAllPets()
-      console.log("responde", response)
-      setPets(response.data)
-    }
-    fecthData()
-  }, []) */

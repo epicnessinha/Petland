@@ -8,14 +8,14 @@ import AdoptionForm from "../../components/AdoptionForm/AdoptionForm"
 function PetDetails() {
   const [pets, setPets] = useState([])
 
-  useEffect(() => {
+  /* useEffect(() => {
     async function fecthData() {
       let response = await getAllPets()
       console.log("response", response)
       setPets(response.data)
     }
     fecthData()
-  }, [])
+  }, []) */
 
   return (
     <>

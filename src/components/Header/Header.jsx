@@ -20,16 +20,6 @@ const Header = () => {
         className="linkDesign"
         onClick={() =>
           setTimeout(() => {
-            navigate("/PetDetails")
-          }, 250)
-        }
-      >
-        Pets for Adoption
-      </div>
-      <div
-        className="linkDesign"
-        onClick={() =>
-          setTimeout(() => {
             navigate("/profile")
           }, 250)
         }

@@ -19,15 +19,19 @@ function PetDetails() {
 
   return (
     <>
-      <Search search={Search} />
       <div className="image-container">
         {pets.map((item) => (
-          <img
-            src={item.url}
-            style={{ width: "30%", height: "auto" }}
-            key={item.id}
-            alt={item.name}
-          />
+          <div key={item.id}>
+            <img
+              src={item.url}
+              style={{ width: "25%", height: "auto" }}
+              alt={item.name}
+            />
+            <h4>{item.name}</h4>
+            <p>Breed: {item.breed}</p>
+            <p>Age: {item.age}</p>
+            <p>{item.description}</p>
+          </div>
         ))}
       </div>
       <PaginationDesign />

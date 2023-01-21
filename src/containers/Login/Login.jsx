@@ -11,6 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [isAuth, setIsAuth] = useState(false)
+  const [userData, setUserData] = useState()
 
   // function to handle form submission
   const handleSubmit = async (e) => {
@@ -19,11 +20,12 @@ const Login = () => {
       const user = { email, password }
       const response = await loginUser(user)
       if (response) {
+        console.log("RESPONSE", response)
         setIsAuth(true)
         // if successful, save the token to localStorage and redirect to the protected page
         localStorage.setItem("user", JSON.stringify(response))
-        window.location.href = "/profile"
         setIsAuth(true)
+        setUserData(response.data)
       } else {
         setError("Invalid email or password.")
       }
@@ -32,6 +34,7 @@ const Login = () => {
       setError("An error occurred. Please try again later.")
     }
   }
+  console.log("USERDATA", userData)
 
   return (
     <>

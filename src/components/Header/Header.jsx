@@ -67,16 +67,6 @@ const Header = () => {
       >
         Adoption
       </div>
-      <div
-        className="linkDesign"
-        onClick={() =>
-          setTimeout(() => {
-            navigate("./search")
-          }, 250)
-        }
-      >
-        Search
-      </div>
     </div>
   )
 }

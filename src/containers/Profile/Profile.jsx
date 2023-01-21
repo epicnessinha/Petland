@@ -3,16 +3,19 @@ import axios from "axios"
 import { UserOutlined } from "@ant-design/icons"
 import { Avatar, Image } from "antd"
 
-const EditProfile = (props) => {
+const Profile = (props) => {
   const [user, setUser] = useState({})
   const [editing, setEditing] = useState(false)
+
+  console.log("teste", props)
 
   useEffect(() => {
     // Fetch the user data from the database
     axios
-      .get(`http://localhost:5000/users/${props.id}`)
+      .get(`http://localhost:5000/users/${props.id}`) //
       .then((response) => {
         setUser(response.data)
+        console.log(response.data)
       })
       .catch((error) => {
         console.log(error)
@@ -51,13 +54,17 @@ const EditProfile = (props) => {
       <Avatar
         src={
           <Image
-            src="https://avatars.githubusercontent.com/u/99542868?v=4"
+            src="https://avatars.githubusercontent.com/u/99542868?v=4" //tem de ir ao objeto users e ir buscar o campo imagem.
             style={{
               width: 32,
             }}
           />
         }
       />
+      <div>
+        <h1>{user.name}</h1>
+        <p>Name: {user.name}</p>
+      </div>
       {!editing && (
         <div>
           <h1>{user.name}</h1>
@@ -97,67 +104,4 @@ const EditProfile = (props) => {
   )
 }
 
-export default EditProfile
-
-/* import React, { useState, useEffect } from "react"
-import axios from "axios"
-import "./Profile.css"
-
-function Profile() {
-  const [user, setUser] = useState({})
-  const [name, setName] = useState("")
-  const [profilePicture, setProfilePicture] = useState("")
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await axios.get("http://localhost:5000/users", {
-        params: {
-          id: 1,
-        },
-      })
-      setUser(response.data)
-    }
-    fetchData()
-  }, [])
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    try {
-      await axios.put("http://localhost:5000/users", {
-        id: 1,
-        name,
-        profilePicture,
-      })
-      setUser({ ...user, name, profilePicture })
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
-  return (
-    <div className="profile">
-      <h2>My Profile</h2>
-      <img src={user.profilePicture} alt="Profile" />
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-        <label>
-          Profile Picture:
-          <input
-            type="file"
-            onChange={(e) => setProfilePicture(e.target.files[0])}
-          />
-        </label>
-        <button type="submit">Save Changes</button>
-      </form>
-    </div>
-  )
-}
-
-export default Profile */
+export default Profile

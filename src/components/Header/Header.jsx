@@ -1,4 +1,49 @@
-import React, { useContext } from "react"
+import React from "react"
+import { NavLink } from "react-router-dom"
+import "./Header.css"
+
+const NavBar = () => {
+  const renderButtons = () => {
+    if (localStorage.token) {
+      return (
+        <>
+          <NavLink className="nav-link" to="/">
+            Home
+          </NavLink>
+          {/* <NavLink className="nav-link" to="/Profile">Profile</NavLink>    */}
+        </>
+      )
+    } else {
+      return (
+        <>
+          <NavLink className="nav-link" to="/">
+            Home
+          </NavLink>
+          <NavLink className="nav-link" to="/register">
+            Sign Up
+          </NavLink>
+          <NavLink className="nav-link" to="/adoptlogin">
+            Adopt Me!
+          </NavLink>
+        </>
+      )
+    }
+  }
+  return (
+    <div className="App">
+      <header className="header">
+        <h1>Petland</h1>
+        <h4>Where our furry friends can find their forever home</h4>
+        <div className="clear"></div>
+        <div className="nav-bar">{renderButtons()}</div>
+      </header>
+    </div>
+  )
+}
+
+export default NavBar
+
+/*import React, { useContext } from "react"
 import "./Header.css"
 import { useNavigate } from "react-router"
 
@@ -61,4 +106,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header*/

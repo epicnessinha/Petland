@@ -20,7 +20,6 @@ const Login = () => {
       const user = { email, password }
       const response = await loginUser(user)
       if (response) {
-        console.log("RESPONSE", response)
         setIsAuth(true)
         // if successful, save the token to localStorage and redirect to the protected page
         localStorage.setItem("user", JSON.stringify(response))
@@ -34,8 +33,6 @@ const Login = () => {
       setError("An error occurred. Please try again later.")
     }
   }
-  console.log("USERDATA", userData)
-
   return (
     <>
       {isAuth ? <Navigate to="/profile" /> : null}

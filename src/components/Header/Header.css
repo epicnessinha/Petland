@@ -25,3 +25,36 @@
     color: rgb(167, 66, 157);
     transition: 0.5s;
 }
+
+.header{
+    width: 95%;
+    height: 48vh;
+    margin: 20px auto;
+    box-shadow: 3px 3px 5px 6px rgb(249, 170, 238);
+    border-radius: 15px;
+    background-image: url("../../assets/img/pets.jpg");
+    background-position-y: 61%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px) contrast(1.);
+}
+
+.nav-bar{
+    margin-right: 25px;
+    margin-top: -80px;
+    float:right;
+    
+   }
+   .nav-link{
+     width: 100px;
+     display:block;
+     box-shadow: 3px 3px 5px 6px rgb(236, 93, 196);
+     margin: 25px;
+     padding: 5px;
+     border-radius: 15px;
+     text-decoration:wavy;
+     display: flex; 
+     flex-direction: column;
+    
+     
+   }

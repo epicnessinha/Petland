@@ -1,18 +1,32 @@
-import React, { useState, useEffect } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import axios from "axios"
-import { UserOutlined } from "@ant-design/icons"
+import "./Profile.css"
+import { AuthContext } from "../../providers/AuthProvider"
+import { loginUser } from "../../services/apiCalls"
+import { useNavigate } from "react-router-dom"
 import { Avatar, Image } from "antd"
+import { UserOutlined } from "@ant-design/icons"
 
-const Profile = (props) => {
-  const [user, setUser] = useState({})
+const Profile = () => {
+  const [name, setName] = useState([])
   const [editing, setEditing] = useState(false)
+  const [editingName, setEditingName] = useState("")
+  const [error, setError] = useState(null)
+  const { user } = useContext(AuthContext)
+  const navigate = useNavigate()
 
-  console.log("teste", props)
+  useEffect(() => {
+    loginUser()
+  }, [])
+
+  useEffect(() => {
+    if (!user) navigate("/")
+  })
 
   useEffect(() => {
     // Fetch the user data from the database
     axios
-      .get(`http://localhost:5000/users/${props.id}`) //
+      .get(`http://localhost:5000/users/${props.id}`) //userDATA
       .then((response) => {
         setUser(response.data)
         console.log(response.data)

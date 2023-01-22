@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { Pagination } from "antd"
-import "./PaginationDesign.css"
 import axios from "axios"
 
 const petsPerPage = 1

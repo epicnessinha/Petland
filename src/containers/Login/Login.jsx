@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
 //para redireccionar para o profile
 import { Navigate } from "react-router-dom"
+import { useLogin } from "../../providers/LoginContext"
 
 //fazer componentes deste código se tiver tempo
 
@@ -11,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [isAuth, setIsAuth] = useState(false)
-  const [userData, setUserData] = useState()
+  const { setUserData } = useLogin()
 
   // function to handle form submission
   const handleSubmit = async (e) => {
@@ -21,10 +22,9 @@ const Login = () => {
       const response = await loginUser(user)
       if (response) {
         setIsAuth(true)
+        setUserData(response[0])
         // if successful, save the token to localStorage and redirect to the protected page
         localStorage.setItem("user", JSON.stringify(response))
-        setIsAuth(true)
-        setUserData(response.data)
       } else {
         setError("Invalid email or password.")
       }

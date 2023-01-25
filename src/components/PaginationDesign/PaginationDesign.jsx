@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Pagination } from "antd"
 import axios from "axios"
+import PetCard from "../PetCard/PetCard"
 
 const petsPerPage = 1
 

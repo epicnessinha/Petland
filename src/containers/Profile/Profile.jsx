@@ -1,35 +1,22 @@
 import React, { useContext, useState, useEffect } from "react"
 import axios from "axios"
 import "./Profile.css"
-import { AuthContext } from "../../providers/AuthProvider"
-import { loginUser } from "../../services/apiCalls"
-import { useNavigate } from "react-router-dom"
+import { useLogin } from "../../providers/LoginContext"
 import { Avatar, Image } from "antd"
-import { UserOutlined } from "@ant-design/icons"
 
-const Profile = () => {
-  const [name, setName] = useState([])
+const Profile = (props) => {
+  const [user, setUser] = useState([])
   const [editing, setEditing] = useState(false)
-  const [editingName, setEditingName] = useState("")
-  const [error, setError] = useState(null)
-  const { user } = useContext(AuthContext)
-  const navigate = useNavigate()
 
-  useEffect(() => {
-    loginUser()
-  }, [])
-
-  useEffect(() => {
-    if (!user) navigate("/")
-  })
+  const { userData } = useLogin()
+  console.log("USER DATA", userData)
 
   useEffect(() => {
     // Fetch the user data from the database
     axios
-      .get(`http://localhost:5000/users/${props.id}`) //userDATA
+      .get(`http://localhost:5000/users/${userData.id}`) //userDATA
       .then((response) => {
         setUser(response.data)
-        console.log(response.data)
       })
       .catch((error) => {
         console.log(error)
@@ -41,7 +28,7 @@ const Profile = () => {
   }
 
   const handleEdit = () => {
-    setEditing(true)
+    setEditing(false)
   }
 
   const handleCancel = () => {
@@ -53,7 +40,7 @@ const Profile = () => {
     setEditing(false)
     // Update the user data in the database
     axios
-      .put(`http://localhost:5000/users/${props.id}`, user)
+      .put(`http://localhost:5000/users/${userData.id}`, user)
       .then((response) => {
         console.log(response)
       })
@@ -68,7 +55,7 @@ const Profile = () => {
       <Avatar
         src={
           <Image
-            src="https://avatars.githubusercontent.com/u/99542868?v=4" //tem de ir ao objeto users e ir buscar o campo imagem.
+            src={userData.Image}
             style={{
               width: 32,
             }}

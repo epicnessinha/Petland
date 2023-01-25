@@ -23,24 +23,6 @@ body {
   cursor:pointer;
 }
 
-.searchPage{
-  /*display: flex;
-  flex-direction: row;
-  height: 30vh;
-  background-color: rgb(255, 187, 236);
-  border-radius: 50px;*/
-}
-
-.searchrightside{
-/*width: 35vw;
-background-color:rgb(228, 157, 251);
-overflow-y: scroll; 
-padding-bottom: 1em; 
-border-radius: 10%;
-margin-bottom: 50px;
-margin-top: 40px;
-margin-right: 40px;*/
-}
 
 .searchBar {
 width: 50%;

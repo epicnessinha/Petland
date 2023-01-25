@@ -1,26 +1,5 @@
 
 
-.headerPage {
-    top: 10px;
-    right: 25px;
-    bottom: 30px;
-    left: 12px;
-    z-index: 12px;
-    display: flex;
-    width: 100vw;
-    height: 7vh;
-    background-color: pink;
-
-}
-
-.linkDesign {
-    margin: auto;
-    cursor:pointer;
-   font-family: fantasy;
-   font-weight: bold;
-   font-size: large;
-}
-
 .linkDesign:hover {
     color: rgb(167, 66, 157);
     transition: 0.5s;

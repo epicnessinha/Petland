@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import "./PetDetails.css"
-import PaginationDesign from "../../components/PaginationDesign/PaginationDesign"
-import PetCard from "../../components/PetCard/PetCard"
+import "./PetList.css"
+import PaginationDesign from "../PaginationDesign/PaginationDesign"
+import PetCard from "../PetCard/PetCard"
 import { getAllPets } from "../../services/apiCalls"
 import { useEffect } from "react"
 
-function PetDetails() {
+function PetList() {
   const [pets, setPets] = useState([])
   // const {id, name, breed, age, description} = props.item posso fazer isto em outro sítios, verificar
 
@@ -24,4 +24,4 @@ function PetDetails() {
   )
 }
 
-export default PetDetails
+export default PetList

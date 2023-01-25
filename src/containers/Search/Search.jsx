@@ -1,7 +1,7 @@
 import "./Search.css"
 import React, { useEffect, useState } from "react"
-import PetDetails from "../../containers/PetDetails/PetDetails"
-import PetCard from "../PetCard/PetCard"
+import PetDetails from "../../components/PetList/PetList"
+import PetCard from "../../components/PetCard/PetCard"
 
 const Search = () => {
   const [pets, setPets] = useState([])

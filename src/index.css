@@ -12,6 +12,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-/* posso fazer imports (@import) de fonts etc, posso colocar aqui todo o css se o projeto fosse mais pequeno, mas tenho de apagar o App.css primeiro e o import dele no app.js tb */

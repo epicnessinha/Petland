@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Petland
 
+Geekshub Bootcamp Final project where we're challanged to create a  web-application capable of interacting with a backend through a JSON API.
+Petland is a web app where the users can adopt abandoned animals that are currently living in shelters (the pets data used is actually real and last updated in DATE).
+The user is able to visualize all the animals available for adoption in the moment, as well search for a specific one (dog, cat. breed, age...)
+In order to adopt an animal, the user must be register, once the login is done successfully, the user needs to fill a form with several questions that after submited will be review for approval by the administrator.
+The user can edit his/her profile as well, change the profile picture, email, address and other personal data.
+The admin is able to see all the users registered, to add and delete the adoption announcements and approve or refuse the adoption requests made by the users.
+In the footer of the page you can find the direct links to the real shelters where you can adopt an animal or support the institution.
+
+Requisites:
+xxxx
+xxx
+xx
+x.
+
+
+## [API USED](https://)
+
+Description of the API used.
+<br>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Instructions to use:
 
-### `npm start`
+Follow this steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Clone this repo:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`https://github.com/epicnessinha/Petland.git`
 
-### `npm test`
+### Install npm package:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install`
 
-### `npm run build`
+### Run the app:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Run the server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## About App:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Needs updates
+In order to develop this project, for the frontend part we used React with React-Router-Dom, Axios, functional components, debounced search, validated forms, useContext, and also, correct folder distribution with the use of services for external API calls.
+<br>
+Users are able to consult and filter data (all search inputs are debounced), submit adoption requests through a form, validated (error check).
+<br>
+I implemented pagination for displayed elements coming from the API and a light/dark theme selector with the use of React useContenxt as a global state manager.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### Endpoints:
+#### Needs updates
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- "/"
+- "/Details"
+- "/Profile"
+- "/Admin"
+- "/etc" - still needs updates
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Containers:
+#### Needs updates
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Home.jsx
+- Catalogue.jsx
+- PetDetails.jsx
+- Search.jsx
+- XXX.jsx
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Components:
+#### Needs updates
 
-### Making a Progressive Web App
+- Header.jsx
+- Body.jsx
+- Footer.jsx
+- Pagination.jsx
+- Carousel.jsx
+- PetCard.jsx
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Services:
+#### Needs updates
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- apiCalls.js
+- validate.js
 
-### Deployment
+### Providers:
+#### Needs updates
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- LoginContext.jsx
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author contact: 
+
+[Vanessa Ferreira](https://www.linkedin.com/in/vanessabio/)
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

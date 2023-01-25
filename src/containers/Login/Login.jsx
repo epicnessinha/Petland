@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <>
       {isAuth ? <Navigate to="/profile" /> : null}
-      <form onSubmit={handleSubmit}>
+      <form className="login" onSubmit={handleSubmit}>
         <label>
           Email:
           <input

@@ -1,6 +1,14 @@
 # Petland
 
-Geekshub Bootcamp Final project where we're challanged to create a  web-application capable of interacting with a backend through a JSON API with the requisites:
+Geekshub Bootcamp Final project where we're challanged to create a  web-application capable of interacting with a backend through a JSON API.
+Petland is a web app where the users can adopt abandoned animals that are currently living in shelters (the pets data used is actually real and last updated in DATE).
+The user is able to visualize all the animals available for adoption in the moment, as well search for a specific one (dog, cat. breed, age...)
+In order to adopt an animal, the user must be register, once the login is done successfully, the user needs to fill a form with several questions that after submited will be review for approval by the administrator.
+The user can edit his/her profile as well, change the profile picture, email, address and other personal data.
+The admin is able to see all the users registered, to add and delete the adoption announcements and approve or refuse the adoption requests made by the users.
+In the footer of the page you can find the direct links to the real shelters where you can adopt an animal or support the institution.
+
+Requisites:
 xxxx
 xxx
 xx
@@ -29,6 +37,10 @@ Follow this steps:
 ### Run the app:
 
 `npm start`
+
+### Run the server:
+
+
 
 ## About App:
 

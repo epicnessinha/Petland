@@ -32,6 +32,7 @@ const NavBar = () => {
   return (
     <div className="App">
       <header className="header">
+        <br></br>
         <h1>Petland</h1>
         <h4>Where our furry friends can find their forever home</h4>
         <div className="clear"></div>

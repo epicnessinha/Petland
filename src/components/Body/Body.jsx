@@ -8,6 +8,7 @@ import Admin from "../../containers/Admin/Admin"
 import "./Body.css"
 import AdoptionForm from "../AdoptionForm/AdoptionForm"
 import AdoptionLogin from "../AdoptionLogin/AdoptionLogin"
+import PetCard from "../PetCard/PetCard"
 
 const Body = () => {
   return (
@@ -20,6 +21,7 @@ const Body = () => {
         <Route path="/admin" element={<Admin />} />
         <Route path="/adopt" element={<AdoptionForm />} />
         <Route path="/adoptlogin" element={<AdoptionLogin />} />
+        <Route path="/petcard" element={<PetCard />} />
       </Routes>
     </>
   )

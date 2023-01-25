@@ -14,7 +14,7 @@ const Profile = (props) => {
   useEffect(() => {
     // Fetch the user data from the database
     axios
-      .get(`http://localhost:5000/users/${userData.id}`) //userDATA
+      .get(`http://localhost:5000/users/${userData.id}`)
       .then((response) => {
         setUser(response.data)
       })

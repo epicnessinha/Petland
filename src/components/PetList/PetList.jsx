@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import "./PetList.css"
 import PaginationDesign from "../PaginationDesign/PaginationDesign"
-import PetCard from "../PetCard/PetCard"
 import { getAllPets } from "../../services/apiCalls"
 import { useEffect } from "react"
 

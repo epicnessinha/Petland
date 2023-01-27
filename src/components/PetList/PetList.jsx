@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { Pagination } from "antd"
 import axios from "axios"
 import "./PetList.css"
 
@@ -48,28 +47,24 @@ const PetList = () => {
         onChange={handleSearch}
       />
       {filteredPets.length === 0 ? (
-        <p>No pets found.</p>
+        <p> No pets found. </p>
       ) : (
         filteredPets.map(
           (
             item //quero que quando clique na imagem, apareçam os detalhes
           ) => (
-            <div key={item.id}>
-              <img className="img" src={item.url} alt={item.name} />
-              <h2 className="name">{item.name}</h2>
-              <p>{item.breed}</p>
-              <p>{item.age}</p>
-              <p>{item.description}</p>
-            </div>
+            <>
+              <div key={item.id}>
+                <img className="img" src={item.url} alt={item.name} />
+                <h2 className="name">{item.name}</h2>
+                <p>{item.breed}</p>
+                <p>{item.age}</p>
+                <p>{item.description}</p>
+              </div>
+            </>
           )
         )
       )}
-      <Pagination
-        current={current}
-        onChange={onChange}
-        total={totalPages}
-        pageSize={petsPerPage}
-      />
     </div>
   )
 }

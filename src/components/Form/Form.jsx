@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import axios from "axios"
 import { newAdoptionForm } from "../../services/apiCalls"
 
-const AdoptionForm = () => {
+const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -165,4 +164,4 @@ const AdoptionForm = () => {
   )
 }
 
-export default AdoptionForm
+export default Form

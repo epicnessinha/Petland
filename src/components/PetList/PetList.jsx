@@ -1,26 +1,151 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { Pagination } from "antd"
+import axios from "axios"
 import "./PetList.css"
-import PaginationDesign from "../PaginationDesign/PaginationDesign"
-import { getAllPets } from "../../services/apiCalls"
-import { useEffect } from "react"
 
-function PetList() {
+const petsPerPage = 1
+
+const PetList = () => {
   const [pets, setPets] = useState([])
-  // const {id, name, breed, age, description} = props.item posso fazer isto em outro sítios, verificar
-
-  const getPetList = async () => {
-    let response = await getAllPets()
-    setPets(response.data)
-  }
+  const [current, setCurrent] = useState(1)
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
-    getPetList()
+    const fetchData = async () => {
+      const result = await axios("http://localhost:5000/pets")
+      setPets(result.data)
+    }
+    fetchData()
   }, [])
+
+  const handleSearch = (event) => {
+    setSearch(event.target.value)
+  }
+
+  const totalPages = Math.ceil(pets.length / petsPerPage)
+  const onChange = (page) => {
+    setCurrent(page)
+  }
+
+  const filteredPets = pets.filter(
+    (pet) =>
+      pet.name.toLowerCase().includes(search.toLowerCase()) ||
+      pet.type.toLowerCase().includes(search.toLowerCase()) ||
+      pet.breed.toLowerCase().includes(search.toLowerCase()) ||
+      pet.age.toString().includes(search)
+  )
+
+  const petsToShow = filteredPets.slice(
+    (current - 1) * petsPerPage,
+    current * petsPerPage
+  )
   return (
-    <>
-      <PaginationDesign />
-    </>
+    <div>
+      <input
+        className="search"
+        type="text"
+        placeholder="Search for your new best friend!"
+        onChange={handleSearch}
+      />
+      {filteredPets.length === 0 ? (
+        <p>No pets found.</p>
+      ) : (
+        filteredPets.map(
+          (
+            item //quero que quando clique na imagem, apareçam os detalhes
+          ) => (
+            <div key={item.id}>
+              <img className="img" src={item.url} alt={item.name} />
+              <h2 className="name">{item.name}</h2>
+              <p>{item.breed}</p>
+              <p>{item.age}</p>
+              <p>{item.description}</p>
+            </div>
+          )
+        )
+      )}
+      <Pagination
+        current={current}
+        onChange={onChange}
+        total={totalPages}
+        pageSize={petsPerPage}
+      />
+    </div>
   )
 }
 
 export default PetList
+
+/*import React, { useState, useEffect } from "react"
+import { Pagination } from "antd"
+import axios from "axios"
+import "./PetList.css"
+import Search from "../../containers/Search/Search"
+
+const petsPerPage = 2
+
+const PetList = () => {
+  const [pets, setPets] = useState([])
+  const [current, setCurrent] = useState(1)
+  const [search, setSearch] = useState("")
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios("http://localhost:5000/pets")
+      setPets(result.data)
+    }
+    fetchData()
+  }, [])
+
+  const handleSearch = (event) => {
+    setSearch(event.target.value)
+  }
+
+  const totalPages = Math.ceil(pets.length / petsPerPage)
+  const onChange = (page) => {
+    setCurrent(page)
+  }
+
+  const filteredPets = pets.filter((pet) =>
+    pet.name.toLowerCase().includes(search.toLowerCase())
+  )
+
+  const petsToShow = filteredPets.slice(
+    (current - 1) * petsPerPage,
+    current * petsPerPage
+  )
+  return (
+    <div className="">
+      <input
+        type="text"
+        placeholder="Search for your new best friend!"
+        onChange={handleSearch}
+      />
+      {filteredPets.length === 0 ? (
+        <p>No pets found.</p>
+      ) : (
+        filteredPets.map(
+          (
+            item //quero que quando clique na imagem, apareçam os detalhes
+          ) => (
+            <div key={item.id}>
+              <img className="img" src={item.url} alt={item.name} />
+              <h2 className="name">{item.name}</h2>
+              <p>{item.breed}</p>
+              <p>{item.age}</p>
+              <p>{item.description}</p>
+            </div>
+          )
+        )
+      )}
+      <Pagination
+        current={current}
+        onChange={onChange}
+        total={totalPages}
+        pageSize={petsPerPage}
+      />
+    </div>
+  )
+}
+
+export default PetList*/

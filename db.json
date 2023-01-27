@@ -81,7 +81,7 @@
   "pets": [
     {
       "name": "Pandinha",
-      "type": "dog",
+      "type": "cat",
       "breed": "European shorthair",
       "age": "2 years",
       "url": "https://www.animaisderua.org/uploads/adoption/Pandinha2_1672836731.jpeg",
@@ -89,23 +89,41 @@
       "id": 1
     },
     {
-      "name": "pet2",
+      "name": "Benny",
       "type": "dog",
       "breed": "bulldog",
-      "age": "1",
+      "age": "3 years",
       "url": "https://i.pinimg.com/originals/a2/d1/77/a2d177ba12e69f518532945c6dc966cd.jpg",
       "description": "male dog with 1 years, playful, sweet, full vacinated, but not castrated yet",
       "id": 2
     },
     {
-      "name": "pet3",
+      "name": "Amadeus",
       "type": "cat",
       "breed": "siames",
-      "age": "2",
+      "age": "2 years",
       "url": "https://www.petz.com.br/blog/wp-content/uploads/2021/02/nomes-para-gatos-siames-felino.jpg",
       "description": "female cat with 2 years, playful, sweet, full vacinated, already castrated",
       "id": 3
-    }
+    },
+    {
+    "name": "Zaza",
+    "type": "dog",
+    "breed": "bulldog",
+    "age": "1 year",
+    "url": "https://i.pinimg.com/originals/a2/d1/77/a2d177ba12e69f518532945c6dc966cd.jpg",
+    "description": "male dog with 1 years, playful, sweet, full vacinated, but not castrated yet",
+    "id": 4
+  },
+  {
+    "name": "Nacho",
+    "type": "cat",
+    "breed": "siames",
+    "age": "2 years",
+    "url": "https://www.petz.com.br/blog/wp-content/uploads/2021/02/nomes-para-gatos-siames-felino.jpg",
+    "description": "female cat with 2 years, playful, sweet, full vacinated, already castrated",
+    "id": 5
+  }
   ],
   "forms": [
     {

@@ -1,7 +1,7 @@
 import React from "react"
 import { Pagination } from "antd"
 
-const petsPerPage = 2
+const petsPerPage = 1
 
 const PaginationDesign = () => {
   return (

@@ -1,7 +1,6 @@
 import "./Search.css"
 import React, { useEffect, useState } from "react"
-import PetDetails from "../../components/PetList/PetList"
-import PetCard from "../../components/PetCard/PetCard"
+import PetList from "../../components/PetList/PetList"
 
 const Search = () => {
   const [pets, setPets] = useState([])
@@ -32,22 +31,22 @@ const Search = () => {
       <div className="searchBar">
         <input
           className="searchInput"
-          type="text"
+          type="input"
           name="input"
           id="input"
           title="input"
-          placeholder="Search for your new best friend!"
+          placeholder="NOT WORKING!"
           onChange={(e) => {
             searchInputHandler(e)
           }}
         ></input>
       </div>
       <div className="searchResults">
-        {pets.map((item) => {
+        {pets.map((pet) => {
           return (
-            <div className="petCard" key={item.id}>
-              <div onClick={() => selectPet(item)}>
-                <img className="petImage" src={item.url} alt={item.type} />
+            <div className="petCard" key={pet.id}>
+              <div onClick={() => selectPet(pet)}>
+                <img className="petImage" src={pet.url} alt={pet.type} />
               </div>
               <div>{item.name}</div>
               <div>{item.breed}</div>
@@ -59,23 +58,10 @@ const Search = () => {
       </div>
       {
         <div className="searchrightside">
-          {selected?.id !== undefined && <PetDetails pet={selected} />}
+          {selected?.id !== undefined && <PetList pet={selected} />}
         </div>
       }
     </>
-  )
-}
-
-const Details = ({ pet }) => {
-  return (
-    <div className="selectedPetContainer">
-      <img src={pet.url} alt={pet.name} />
-      <div className="petName">{pet.name}</div>
-      <div className="petBreed">{pet.breed}</div>
-      <div className="petAge">{pet.age}</div>
-      <div className="petType">{pet.type}</div>
-      <div className="petDescription">{pet.description}</div>
-    </div>
   )
 }
 

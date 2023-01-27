@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
-//para redireccionar para o profile
 import { Navigate } from "react-router-dom"
 
 //fazer componentes deste código se tiver tempo
@@ -20,7 +19,6 @@ const AdoptionLogin = () => {
       const response = await loginUser(user)
       if (response) {
         setIsAuth(true)
-        // if successful, save the token to localStorage and redirect to the protected page
         localStorage.setItem("user", JSON.stringify(response))
         window.location.href = "/adopt"
         setIsAuth(true)
@@ -63,7 +61,7 @@ const AdoptionLogin = () => {
         <a
           href=""
           className="text-sky-600 pl-2"
-          onClick={() => navigate("/register")}
+          onClick={() => <Navigate to="/register" />}
         >
           {" "}
           Register

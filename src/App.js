@@ -3,6 +3,7 @@ import Body from "./components/Body/Body"
 import Header from "./components/Header/Header"
 import { LoginProvider } from "./providers/LoginContext"
 import React from "react"
+import Footer from "./components/Footer/Footer"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className="App">
         <Header />
         <Body />
+        <Footer />
       </div>
       <LoginProvider />
     </>

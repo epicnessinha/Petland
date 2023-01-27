@@ -15,7 +15,11 @@ const NavBar = () => {
       )
     } else {
       return (
+        //alterar para butons com handle?
         <>
+          <NavLink className="nav-link" to="/">
+            Somente testes
+          </NavLink>
           <NavLink className="nav-link" to="/">
             Home
           </NavLink>
@@ -34,7 +38,9 @@ const NavBar = () => {
       <header className="header">
         <br></br>
         <h1>Petland</h1>
-        <h4>Where our furry friends can find their forever home</h4>
+        <h4 style={{ color: "white", fontWeight: "bold" }}>
+          Where our furry friends can find their forever home
+        </h4>
         <div className="clear"></div>
         <div className="nav-bar">{renderButtons()}</div>
       </header>

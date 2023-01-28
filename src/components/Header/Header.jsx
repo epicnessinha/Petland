@@ -1,5 +1,6 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import "./Header.css"
 
 const NavBar = () => {
@@ -20,6 +21,9 @@ const NavBar = () => {
           <NavLink className="nav-link" to="/">
             Somente testes
           </NavLink>
+          <button className="teste" onClick={() => Navigate("/register")}>
+            TESTE
+          </button>
           <NavLink className="nav-link" to="/">
             Home
           </NavLink>

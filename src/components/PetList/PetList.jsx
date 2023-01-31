@@ -3,9 +3,13 @@ import axios from "axios"
 import "./PetList.css"
 import { Pagination } from "antd"
 import { getAllPets } from "../../services/apiCalls"
+import PetCard from "../PetCard/PetCard"
+import Footer from "../Footer/Footer"
+import { useNavigate } from "react-router-dom"
 
 const PetList = () => {
-  const petsPerPage = 1
+  const navigate = useNavigate()
+  const petsPerPage = 2
   const [pets, setPets] = useState([])
   const [current, setCurrent] = useState(1)
   const [search, setSearch] = useState("")
@@ -22,7 +26,7 @@ const PetList = () => {
     setSearch(event.target.value)
   }
 
-  const totalPages = Math.ceil(pets.length / petsPerPage)
+  const totalPages = Math.ceil(pets.length)
   const onChange = (page) => {
     setCurrent(page)
   }
@@ -60,13 +64,19 @@ const PetList = () => {
       </div>
       <div>
         {petsToShow.map((item) => (
-          <div key={item.id}>
-            <img className="img" src={item.url} alt={item.name} />
-            <h2 className="name">{item.name}</h2>
-            <p>{item.breed}</p>
-            <p>{item.age}</p>
-            <p>{item.description}</p>
-          </div>
+          <>
+            <div key={item.id}>
+              <img className="img" src={item.url} alt={item.name} />
+              <h2 className="name">{item.name}</h2>
+              <p className="details">{item.breed}</p>
+              <p className="details">{item.age}</p>
+              <p>{item.description}</p>
+              <button className="teste" onClick={() => navigate("/adoptlogin")}>
+                Adopt Me!
+              </button>
+            </div>
+            <br />
+          </>
         ))}
         <Pagination
           current={current}
@@ -74,6 +84,8 @@ const PetList = () => {
           total={totalPages}
           pageSize={petsPerPage}
         />
+        <br />
+        <Footer />
       </div>
     </>
   )

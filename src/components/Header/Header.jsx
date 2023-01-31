@@ -39,6 +39,9 @@ const Header = () => {
           <NavLink className="nav-link" to="/adoptlogin">
             Adopt Me!
           </NavLink>
+          <NavLink className="nav-link" to="/petcard">
+            Pet Card teste
+          </NavLink>
         </>
       )
     }

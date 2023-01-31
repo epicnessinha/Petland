@@ -10,6 +10,7 @@ import AdoptionLogin from "../AdoptionLogin/AdoptionLogin"
 import PetCard from "../PetCard/PetCard"
 import PetList from "../PetList/PetList"
 import Login from "../../containers/Login/Login"
+import Footer from "../Footer/Footer"
 
 const Body = () => {
   return (
@@ -24,6 +25,7 @@ const Body = () => {
         <Route path="/adoptlogin" element={<AdoptionLogin />} />
         <Route path="/petcard" element={<PetCard />} />
         <Route path="/login" element={<Login />} />
+        <Route path="footer" element={<Footer />} />
       </Routes>
     </>
   )

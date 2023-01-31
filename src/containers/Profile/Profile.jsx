@@ -25,20 +25,6 @@ const Profile = (props) => {
     getUserInfo()
   }, [])
 
-  /*useEffect(() => {
-    // Fetch the user data from the database
-    axios
-      .get(`http://localhost:5000/users/${userData.id}`)
-      .then((response) => {
-        setUser(response.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }, [])*/ //isto fica sem efeito pq substitui pela const getUserInfo que já faz a chamada
-
-  //ver documentação do axios para tratar dos erros abaixo na apiCalls ou fazer aqui um try catch
-
   const handleChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value })
   }
@@ -54,7 +40,6 @@ const Profile = (props) => {
   const handleSave = (event) => {
     event.preventDefault()
     setEditing(false)
-    // Update the user data in the database
     updateUserInfo()
   }
 

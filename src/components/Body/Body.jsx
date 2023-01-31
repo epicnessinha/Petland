@@ -9,7 +9,7 @@ import Form from "../Form/Form"
 import AdoptionLogin from "../AdoptionLogin/AdoptionLogin"
 import PetCard from "../PetCard/PetCard"
 import PetList from "../PetList/PetList"
-import Search from "../Search/Search"
+import Login from "../../containers/Login/Login"
 
 const Body = () => {
   return (
@@ -23,7 +23,7 @@ const Body = () => {
         <Route path="/adopt" element={<Form />} />
         <Route path="/adoptlogin" element={<AdoptionLogin />} />
         <Route path="/petcard" element={<PetCard />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   )

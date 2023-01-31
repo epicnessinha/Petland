@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
-import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 //fazer componentes deste código se tiver tempo
 
@@ -10,6 +10,7 @@ const AdoptionLogin = () => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [isAuth, setIsAuth] = useState(false)
+  const navigate = useNavigate()
 
   // function to handle form submission
   const handleSubmit = async (e) => {
@@ -61,7 +62,7 @@ const AdoptionLogin = () => {
         <a
           href=""
           className="text-sky-600 pl-2"
-          onClick={() => <Navigate to="/register" />}
+          onClick={() => navigate("/register")}
         >
           {" "}
           Register

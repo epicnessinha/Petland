@@ -1,9 +1,11 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
-import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import "./Header.css"
 
 const Header = () => {
+  const navigate = useNavigate()
+
   const renderButtons = () => {
     if (localStorage.token) {
       return (
@@ -22,7 +24,7 @@ const Header = () => {
           <NavLink className="nav-link" to="/">
             Profile
           </NavLink>
-          <button className="teste" onClick={() => Navigate("/register")}>
+          <button className="teste" onClick={() => navigate("/register")}>
             TESTE
           </button>
           <NavLink className="nav-link" to="/">

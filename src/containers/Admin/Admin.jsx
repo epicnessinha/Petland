@@ -1,31 +1,36 @@
-import React, { useState, useEffect } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import axios from "axios"
+import { AuthContext } from "../../providers/AuthProvider"
+import { useNavigate } from "react-router-dom"
+import "./Admin.css"
+import { getAllForms, getAllUsers, getAllPets } from "../../services/apiCalls"
 
 const Admin = () => {
   const [pets, setPets] = useState([])
   const [users, setUsers] = useState([])
   const [forms, setForms] = useState([])
   const [newPet, setNewPet] = useState({ name: "", type: "" })
+  const { admin } = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const getUsersList = async () => {
+    let response = await getAllUsers()
+    setUsers(response.data)
+  }
+  const getPetsList = async () => {
+    let response = await getAllPets()
+    setPets(response.data)
+  }
+
+  const getFormsList = async () => {
+    let response = await getAllForms()
+    setForms(response.data)
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get("http://localhost:3000/pets")
-      setPets(result.data)
-    }
-
-    const fetchUsers = async () => {
-      const result = await axios.get("http://localhost:3000/users")
-      setUsers(result.data)
-    }
-
-    const fetchForms = async () => {
-      const result = await axios.get("http://localhost:3000/forms")
-      setForms(result.data)
-    }
-
-    fetchData()
-    fetchUsers()
-    fetchForms()
+    getUsersList()
+    getPetsList()
+    getFormsList()
   }, [])
 
   const handlePetDelete = async (id) => {
@@ -44,46 +49,80 @@ const Admin = () => {
   }
 
   return (
-    <div>
-      <h4>Pets</h4>
-      <ul>
-        {pets.map((pet) => (
-          <li key={pet.id}>
-            {pet.name} - {pet.type}
-            <button onClick={() => handlePetDelete(pet.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-      <form onSubmit={handlePetInsert}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Pet name"
-          value={newPet.name}
-          onChange={handlePetChange}
-        />
-        <input
-          type="text"
-          name="type"
-          placeholder="Pet type"
-          value={newPet.type}
-          onChange={handlePetChange}
-        />
-        <button type="submit">Add pet</button>
-      </form>
-      <h4>Users</h4>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.username}</li>
-        ))}
-      </ul>
-      <h4>Forms</h4>
-      <ul>
-        {forms.map((form) => (
-          <li key={form.id}>{form.name}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div>
+        <h4>Pets</h4>
+        <ul>
+          {pets.map((pet) => (
+            <div key={pet.id}>
+              {pet.name} - {pet.type}
+              <button onClick={() => handlePetDelete(pet.id)}>Delete</button>
+            </div>
+          ))}
+        </ul>
+        <br></br>
+        <br></br>
+        <form onSubmit={handlePetInsert}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Pet name"
+            value={newPet.name}
+            onChange={handlePetChange}
+          />
+          <input
+            type="text"
+            name="type"
+            placeholder="Pet type"
+            value={newPet.type}
+            onChange={handlePetChange}
+          />
+          <button type="submit">Add pet</button>
+        </form>
+      </div>
+      <div className="adminDesign">
+        <div>
+          <br></br>
+          <br></br>
+          <h4>List of Users</h4>
+        </div>
+        {users.map((user) => {
+          return (
+            <div>
+              <div>{user.name}</div>
+              <div>{user.email}</div>
+              <div>{user.isAdmin}</div>
+              <br></br>
+            </div>
+          )
+        })}
+        <div>
+          <h4>List of Pets</h4>
+        </div>
+        {pets.map((pet) => {
+          return (
+            <div>
+              <div>{pet.name}</div>
+              <br></br>
+            </div>
+          )
+        })}
+        <div>
+          <h4>List of Adoption Forms</h4>
+        </div>
+        {forms.map((form) => {
+          if (form.adoptionRequest === true)
+            return (
+              <div>
+                <div>{form.user}</div>
+                <div>{form.createdAt}</div>
+                <div>{form.body}</div>
+                <br></br>
+              </div>
+            )
+        })}
+      </div>
+    </>
   )
 }
 

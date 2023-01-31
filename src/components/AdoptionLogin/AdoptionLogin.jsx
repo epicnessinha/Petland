@@ -2,8 +2,6 @@ import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
 
-//fazer componentes deste código se tiver tempo
-
 const AdoptionLogin = () => {
   // state for email and password
   const [email, setEmail] = useState("")

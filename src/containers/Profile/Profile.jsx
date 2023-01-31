@@ -3,20 +3,20 @@ import "./Profile.css"
 import { useLogin } from "../../providers/LoginContext"
 import { getUsersProfile, updateUserProfile } from "../../services/apiCalls"
 
-const Profile = (props) => {
-  const [user, setUser] = useState([])
+const Profile = () => {
+  const [user, setUser] = useState({ name: "", email: "", profile_picture: "" })
   const [editing, setEditing] = useState(false)
 
   const { userData } = useLogin()
-  console.log("USER DATA", userData)
 
   const getUserInfo = async () => {
     let response = await getUsersProfile(userData.id)
+    console.log("response data", response.data)
     setUser(response.data)
   }
 
   const updateUserInfo = async () => {
-    let response = await updateUserProfile(userData.id)
+    let response = await updateUserProfile(userData.id, user)
     setUser(response.data)
   }
 
@@ -29,7 +29,7 @@ const Profile = (props) => {
   }
 
   const handleEdit = () => {
-    setEditing(false)
+    setEditing(true)
   }
 
   const handleCancel = () => {
@@ -47,12 +47,12 @@ const Profile = (props) => {
       <></>
       <div>
         <h1>{user.name}</h1>
-        <p>Name: {user.name}</p>
+        <p>Name:{user.name}</p>
       </div>
       {!editing && (
         <div>
           <h1>{user.name}</h1>
-          <p>Email: {user.email}</p>
+          <p>Email:{user.email}</p>
           <button onClick={handleEdit}>Edit Profile</button>
         </div>
       )}

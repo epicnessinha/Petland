@@ -35,3 +35,7 @@
   font-weight: bold;
   text-align: center;
 }
+body {
+  font-family:'montserrat', sans-serif;
+  background-color:rgb(238, 208, 223);
+}

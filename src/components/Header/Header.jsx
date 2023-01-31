@@ -21,17 +21,20 @@ const Header = () => {
         //alterar para butons com handle?
         //fazer os redirects
         <>
-          <NavLink className="nav-link" to="/">
-            Profile
-          </NavLink>
-          <button className="teste" onClick={() => navigate("/register")}>
-            TESTE
+          <button className="teste" onClick={() => navigate("/admin")}>
+            teste
           </button>
+          <NavLink className="nav-link" to="/login">
+            Login/ Profile
+          </NavLink>
+          <NavLink className="nav-link" to="/admin">
+            Admin
+          </NavLink>
           <NavLink className="nav-link" to="/">
             Home
           </NavLink>
           <NavLink className="nav-link" to="/register">
-            Sign Up
+            Register
           </NavLink>
           <NavLink className="nav-link" to="/adoptlogin">
             Adopt Me!
@@ -56,68 +59,3 @@ const Header = () => {
 }
 
 export default Header
-
-/*import React, { useContext } from "react"
-import "./Header.css"
-import { useNavigate } from "react-router"
-
-const Header = () => {
-  let navigate = useNavigate()
-  return (
-    <div className="headerPage">
-      <div
-        className="linkDesign"
-        onClick={() =>
-          setTimeout(() => {
-            navigate("/")
-          }, 250)
-        }
-      >
-        Home
-      </div>
-      <div
-        className="linkDesign"
-        onClick={() =>
-          setTimeout(() => {
-            navigate("/profile")
-          }, 250)
-        }
-      >
-        Profile
-      </div>
-      <div
-        className="linkDesign"
-        onClick={() =>
-          setTimeout(() => {
-            navigate("/admin")
-          }, 250)
-        }
-      >
-        Admin
-      </div>
-
-      <div
-        className="linkDesign"
-        onClick={() =>
-          setTimeout(() => {
-            navigate("./register")
-          }, 250)
-        }
-      >
-        Sign In / Register
-      </div>
-      <div
-        className="linkDesign"
-        onClick={() =>
-          setTimeout(() => {
-            navigate("./adoptlogin")
-          }, 250)
-        }
-      >
-        Adoption
-      </div>
-    </div>
-  )
-}
-
-export default Header*/

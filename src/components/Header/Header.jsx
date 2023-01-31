@@ -17,6 +17,7 @@ const NavBar = () => {
     } else {
       return (
         //alterar para butons com handle?
+        //fazer os redirects
         <>
           <NavLink className="nav-link" to="/">
             Somente testes

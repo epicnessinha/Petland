@@ -4,8 +4,6 @@ import { loginUser } from "../../services/apiCalls"
 import { Navigate } from "react-router-dom"
 import { useLogin } from "../../providers/LoginContext"
 
-//fazer componentes deste código se tiver tempo
-
 const Login = () => {
   // state for email and password
   const [email, setEmail] = useState("")

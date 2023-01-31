@@ -1,7 +1,6 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import "./Profile.css"
 import { useLogin } from "../../providers/LoginContext"
-import { Avatar, Image } from "antd"
 import { getUsersProfile, updateUserProfile } from "../../services/apiCalls"
 
 const Profile = (props) => {
@@ -46,16 +45,6 @@ const Profile = (props) => {
   return (
     <>
       <></>
-      <Avatar
-        src={
-          <Image
-            src={userData.Image}
-            style={{
-              width: 32,
-            }}
-          />
-        }
-      />
       <div>
         <h1>{user.name}</h1>
         <p>Name: {user.name}</p>
@@ -100,3 +89,13 @@ const Profile = (props) => {
 }
 
 export default Profile
+/*  <Avatar
+        src={
+          <Image
+            src={userData.photo}
+            style={{
+              width: 32,
+            }}
+          />
+        }
+      /> */

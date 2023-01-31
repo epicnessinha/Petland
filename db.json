@@ -6,7 +6,7 @@
       "password": "43752Nessa",
       "address": "",
       "contact": "",
-      "photo": "",
+      "photo": "http://www.cesam.ua.pt/images/img_0676.jpg",
       "isAdmni": "true",
       "id": 1
     },
@@ -76,6 +76,15 @@
       "contact": "910005236",
       "isAdmin": "false",
       "id": 8
+    },
+    {
+      "name": "Maria Fernanda Gonçalves Martins",
+      "email": "vanessa.ferreira@ua.pt",
+      "password": "1234Nanda",
+      "address": "Rua Capitão Lebre nº150",
+      "contact": "910085402",
+      "isAdmin": "false",
+      "id": 9
     }
   ],
   "pets": [

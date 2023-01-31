@@ -32,6 +32,12 @@ export const deletePet = async (pet) => {
 export const getAllUsers = async () => {
   return await axios.get(`${PET_API}users`)
 }
+export const getUsersProfile = async (userId) => {
+  return await axios.get(`${PET_API}users/${userId}`)
+}
+export const updateUserProfile = async (userId) => {
+  return await axios.put(`${PET_API}users/${userId}`)
+}
 export const registerUser = async (user) => {
   return await axios.post(`${PET_API}users`, user)
 }

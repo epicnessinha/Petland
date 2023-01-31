@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from "react"
-import axios from "axios"
 import "./Profile.css"
 import { useLogin } from "../../providers/LoginContext"
 import { Avatar, Image } from "antd"
+import { getUsersProfile, updateUserProfile } from "../../services/apiCalls"
 
 const Profile = (props) => {
   const [user, setUser] = useState([])
@@ -11,7 +11,21 @@ const Profile = (props) => {
   const { userData } = useLogin()
   console.log("USER DATA", userData)
 
+  const getUserInfo = async () => {
+    let response = await getUsersProfile(userData.id)
+    setUser(response.data)
+  }
+
+  const updateUserInfo = async () => {
+    let response = await updateUserProfile(userData.id)
+    setUser(response.data)
+  }
+
   useEffect(() => {
+    getUserInfo()
+  }, [])
+
+  /*useEffect(() => {
     // Fetch the user data from the database
     axios
       .get(`http://localhost:5000/users/${userData.id}`)
@@ -21,7 +35,9 @@ const Profile = (props) => {
       .catch((error) => {
         console.log(error)
       })
-  }, [])
+  }, [])*/ //isto fica sem efeito pq substitui pela const getUserInfo que já faz a chamada
+
+  //ver documentação do axios para tratar dos erros abaixo na apiCalls ou fazer aqui um try catch
 
   const handleChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value })
@@ -39,14 +55,7 @@ const Profile = (props) => {
     event.preventDefault()
     setEditing(false)
     // Update the user data in the database
-    axios
-      .put(`http://localhost:5000/users/${userData.id}`, user)
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    updateUserInfo()
   }
 
   return (

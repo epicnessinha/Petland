@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import { Navigate } from "react-router-dom"
 import "./Header.css"
 
-const NavBar = () => {
+const Header = () => {
   const renderButtons = () => {
     if (localStorage.token) {
       return (
@@ -20,7 +20,7 @@ const NavBar = () => {
         //fazer os redirects
         <>
           <NavLink className="nav-link" to="/">
-            Somente testes
+            Profile
           </NavLink>
           <button className="teste" onClick={() => Navigate("/register")}>
             TESTE
@@ -53,7 +53,7 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default Header
 
 /*import React, { useContext } from "react"
 import "./Header.css"

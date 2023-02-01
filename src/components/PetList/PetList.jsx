@@ -62,6 +62,7 @@ const PetList = () => {
           )
         )}
       </div>
+      <br />
       <div>
         {petsToShow.map((item) => (
           <>
@@ -70,7 +71,7 @@ const PetList = () => {
               <h2 className="name">{item.name}</h2>
               <p className="details">{item.breed}</p>
               <p className="details">{item.age}</p>
-              <p>{item.description}</p>
+              <p className="description">{item.description}</p>
               <button className="teste" onClick={() => navigate("/adoptlogin")}>
                 Adopt Me!
               </button>

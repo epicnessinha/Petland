@@ -12,7 +12,7 @@ const Profile = () => {
   const getUserInfo = async () => {
     let response = await getUsersProfile(userData.id)
     console.log("response data", response.data)
-    setUser(response.data)
+    setUser(response.data) //
   }
 
   const updateUserInfo = async () => {
@@ -22,7 +22,7 @@ const Profile = () => {
 
   useEffect(() => {
     getUserInfo()
-  }, [])
+  }, []) //user
 
   const handleChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value })

@@ -3,7 +3,12 @@ import axios from "axios"
 import { AuthContext } from "../../providers/AuthProvider"
 import { useNavigate } from "react-router-dom"
 import "./Admin.css"
-import { getAllForms, getAllUsers, getAllPets } from "../../services/apiCalls"
+import {
+  getAllForms,
+  getAllUsers,
+  getAllPets,
+  deletePet,
+} from "../../services/apiCalls"
 
 const Admin = () => {
   const [pets, setPets] = useState([])
@@ -33,9 +38,10 @@ const Admin = () => {
     getFormsList()
   }, [])
 
-  const handlePetDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/pets/${id}`)
-    setPets(pets.filter((pet) => pet.id !== id))
+  //alterar as chamadas
+  const handlePetDelete = async () => {
+    let response = await deletePet()
+    setPets(response.data)
   }
 
   const handlePetInsert = async (e) => {
@@ -56,7 +62,8 @@ const Admin = () => {
           {pets.map((pet) => (
             <div key={pet.id}>
               {pet.name} - {pet.type}
-              <button onClick={() => handlePetDelete(pet.id)}>Delete</button>
+              <br />
+              <button onClick={() => handlePetDelete()}>Delete</button>
             </div>
           ))}
         </ul>
@@ -111,15 +118,15 @@ const Admin = () => {
           <h4>List of Adoption Forms</h4>
         </div>
         {forms.map((form) => {
-          if (form.adoptionRequest === true)
-            return (
-              <div>
-                <div>{form.user}</div>
-                <div>{form.createdAt}</div>
-                <div>{form.body}</div>
-                <br></br>
-              </div>
-            )
+          return (
+            <div>
+              <div>Name: {form.name}</div>
+              <div>Pet ID: {form.petId}</div>
+              <br></br>
+              <br></br>
+              <br></br>
+            </div>
+          )
         })}
       </div>
     </>

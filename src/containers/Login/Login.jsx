@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
 //para redireccionar para o profile
-import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useLogin } from "../../providers/LoginContext"
 
 const Login = () => {
@@ -11,6 +11,7 @@ const Login = () => {
   const [error, setError] = useState("")
   const [isAuth, setIsAuth] = useState(false)
   const { setUserData } = useLogin()
+  const navigate = useNavigate()
 
   // function to handle form submission
   const handleSubmit = async (e) => {
@@ -33,29 +34,38 @@ const Login = () => {
   }
   return (
     <>
-      {isAuth ? <Navigate to="/profile" /> : null}
-      <form className="login" onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <br />
-        {error && <p>{error}</p>}
-        <input type="submit" value="Login" />
-      </form>
+      <>
+        {isAuth ? <Navigate to="/profile" /> : null}
+        <form className="login" onSubmit={handleSubmit}>
+          <label>
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
+          <br />
+          {error && <p>{error}</p>}
+          <input type="submit" value="Login" />
+        </form>
+        <div>
+          <p>Don't have an acount? </p>
+          <a href="" onClick={() => navigate("/register")}>
+            {" "}
+            Register
+          </a>
+        </div>
+      </>
     </>
   )
 }

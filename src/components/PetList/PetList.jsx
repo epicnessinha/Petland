@@ -8,11 +8,11 @@ import Footer from "../Footer/Footer"
 import { useNavigate } from "react-router-dom"
 
 const PetList = () => {
-  const navigate = useNavigate()
   const petsPerPage = 2
   const [pets, setPets] = useState([])
   const [current, setCurrent] = useState(1)
   const [search, setSearch] = useState("")
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchData = async () => {

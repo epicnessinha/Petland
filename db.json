@@ -85,6 +85,15 @@
       "contact": "910085402",
       "isAdmin": "false",
       "id": 9
+    },
+    {
+      "name": "Andreu",
+      "email": "dsf@mail.pt",
+      "password": "12345Nessa",
+      "address": "fdgdfgdfgdfgdfgd",
+      "contact": "910085402",
+      "isAdmin": "false",
+      "id": 10
     }
   ],
   "pets": [
@@ -164,6 +173,16 @@
       "travelSituation": "Hotel animal or bring with me",
       "microchip": "yes",
       "id": 3
+    },
+    {
+      "name": "Vanessa",
+      "email": "olavo.f@hotmail.com",
+      "contact": "910085402",
+      "petId": "1",
+      "anotherPets": "yes",
+      "travelSituation": "Hotel animal or bring with me",
+      "microchip": "yes",
+      "id": 4
     }
   ]
 }

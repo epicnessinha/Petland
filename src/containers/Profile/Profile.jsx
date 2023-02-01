@@ -16,7 +16,7 @@ const Profile = () => {
   }
 
   const updateUserInfo = async () => {
-    let response = await updateUserProfile(userData.id, user)
+    let response = await updateUserProfile(userData.id)
     setUser(response.data)
   }
 

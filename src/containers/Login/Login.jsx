@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
 //para redireccionar para o profile
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Navigate } from "react-router-dom"
 import { useLogin } from "../../providers/LoginContext"
 
 const Login = () => {

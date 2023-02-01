@@ -7,14 +7,12 @@ import Footer from "./components/Footer/Footer"
 
 function App() {
   return (
-    <>
-      <LoginProvider />
+    <LoginProvider>
       <div className="App">
         <Header />
         <Body />
       </div>
-      <LoginProvider />
-    </>
+    </LoginProvider>
   )
 }
 

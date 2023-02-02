@@ -1,0 +1,10 @@
+.teste{
+color: black;
+align-items: center;
+}
+
+.profile{
+    height: 135px;
+    width: 200px;
+    border-radius: 10%;
+}

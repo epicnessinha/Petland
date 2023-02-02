@@ -15,14 +15,14 @@ const Profile = () => {
     setUser(response.data) //
   }
 
-  const updateUserInfo = async () => {
+  const updateUserProfile = async () => {
     let response = await updateUserProfile(userData.id)
     setUser(response.data)
   }
 
   useEffect(() => {
     getUserInfo()
-  }, []) //user
+  }, [])
 
   const handleChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value })
@@ -39,20 +39,26 @@ const Profile = () => {
   const handleSave = (event) => {
     event.preventDefault()
     setEditing(false)
-    updateUserInfo()
+    updateUserProfile()
   }
 
   return (
     <>
       <></>
       <div>
-        <h1>{user.name}</h1>
-        <p>Name:{user.name}</p>
+        <h1>
+          <p className="teste">Profile</p>
+        </h1>
       </div>
       {!editing && (
         <div>
-          <h1>{user.name}</h1>
-          <p>Email:{user.email}</p>
+          <img className="profile" src={user.photo} alt="Profile picture" />
+          <p></p>
+          <h4 className="teste">{user.name}</h4>
+          <h4 className="teste">Email: {user.email}</h4>
+          <h4 className="teste">Address: {user.address}</h4>
+          <h4 className="teste">Contact: {user.contact}</h4>
+          <br />
           <button onClick={handleEdit}>Edit Profile</button>
         </div>
       )}
@@ -78,9 +84,9 @@ const Profile = () => {
           </label>
           <label>
             Profile Picture:
-            <input type="file" name="profile_picture" onChange={handleChange} />
+            <input type="url" name="profile_picture" onChange={handleChange} />
           </label>
-          <input type="submit" value="Save Changes" />
+          <button onClick={handleSave}>Save Changes</button>
           <button onClick={handleCancel}>Cancel</button>
         </form>
       )}
@@ -89,13 +95,3 @@ const Profile = () => {
 }
 
 export default Profile
-/*  <Avatar
-        src={
-          <Image
-            src={userData.photo}
-            style={{
-              width: 32,
-            }}
-          />
-        }
-      /> */

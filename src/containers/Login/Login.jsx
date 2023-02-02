@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
-//para redireccionar para o profile
 import { useNavigate, Navigate } from "react-router-dom"
 import { useLogin } from "../../providers/LoginContext"
 
@@ -11,6 +10,7 @@ const Login = () => {
   const [error, setError] = useState("")
   const [isAuth, setIsAuth] = useState(false)
   const { setUserData } = useLogin()
+  const [isAdmin, setIsAdmin] = useState(false)
   const navigate = useNavigate()
 
   // function to handle form submission
@@ -22,7 +22,11 @@ const Login = () => {
       if (response) {
         setIsAuth(true)
         setUserData(response[0])
-        // if successful, save the token to localStorage and redirect to the protected page
+        // Check the role of the user
+        if (response[0].isAdmni === "true") {
+          setIsAdmin(true)
+        }
+        // if successful, save the token to localStorage
         localStorage.setItem("user", JSON.stringify(response))
       } else {
         setError("Invalid email or password.")
@@ -35,7 +39,13 @@ const Login = () => {
   return (
     <>
       <>
-        {isAuth ? <Navigate to="/profile" /> : null}
+        {isAuth ? (
+          isAdmin ? (
+            <Navigate to="/admin" />
+          ) : (
+            <Navigate to="/profile" />
+          )
+        ) : null}
         <div
           style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
         >

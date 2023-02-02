@@ -23,7 +23,7 @@ const Login = () => {
         setIsAuth(true)
         setUserData(response[0])
         // Check the role of the user
-        if (response[0].isAdmni === "true") {
+        if (response[0].isAdmin === "true") {
           setIsAdmin(true)
         }
         // if successful, save the token to localStorage

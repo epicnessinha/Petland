@@ -32,13 +32,20 @@ Follow this steps:
 
 ### Install npm package:
 
-`npm install`
+### `npm install`
 
 ### Run the app:
 
-`npm start`
+### `npm run dev`
 
-### Run the server:
+Runs the app in the development mode.\
+Opens [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+Also opens a json server [http://localhost:5000](http://localhost:5000) to serve data to this application.
+
+### `npm run cy:open`
+
+Runs intregations tests with cypress.
 
 
 

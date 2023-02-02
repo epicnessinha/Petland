@@ -15,9 +15,9 @@ const Profile = () => {
     setUser(response.data) //
   }
 
-  const updateUserProfile = async () => {
+  const updateUserInfo = async () => {
     let response = await updateUserProfile(userData.id)
-    setUser(response.data)
+    setUser(response.data) //corrigir, porque não está a fazer update na db.json
   }
 
   useEffect(() => {

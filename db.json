@@ -7,94 +7,20 @@
       "address": "Rua Capitão Lebre nº150",
       "contact": "910085402",
       "photo": "http://www.cesam.ua.pt/images/img_0676.jpg",
-      "isAdmni": "true",
+      "isAdmin": "true",
       "id": 1
     },
     {
       "name": "Priscilla Silva",
       "email": "pri@mail.com",
       "password": "Pri12345",
-      "address": "",
-      "contact": "",
-      "photo": "",
-      "isAdmni": "false",
+      "address": "Rua dos Marnotos",
+      "contact": "912223344",
+      "photo": "https://ispup.up.pt/wp-content/uploads/2021/05/Priscilla-Gomes-da-Silva_525_639.jpg",
+      "isAdmin": "false",
       "id": 2
-    },
-    {
-      "name": "Mirela Mas",
-      "email": "mirela@mail.com",
-      "password": "Mirela12345",
-      "address": "",
-      "contact": "",
-      "photo": "",
-      "isAdmni": "false",
-      "id": 3
-    },
-    {
-      "name": "Galileu Dantas",
-      "email": "dantas@mail.com",
-      "password": "Galileu1235",
-      "address": "",
-      "contact": "",
-      "photo": "",
-      "isAdmni": "false",
-      "id": 4
-    },
-    {
-      "name": "Américo Ribeiro",
-      "email": "aribeiro@mail.com",
-      "password": "Americo12345",
-      "address": "",
-      "contact": "",
-      "isAdmni": "false",
-      "id": 5
-    },
-    {
-      "name": "Raquel Martins",
-      "email": "raquel@mail.com",
-      "password": "Raquel12345",
-      "address": "",
-      "contact": "",
-      "photo": "",
-      "isAdmni": "false",
-      "id": 6
-    },
-    {
-      "name": "Andreia",
-      "email": "andreia@mail.com",
-      "password": "Andreia123",
-      "address": "Rua da Flores",
-      "contact": "910085402",
-      "isAdmin": "false",
-      "id": 7
-    },
-    {
-      "name": "Joto",
-      "email": "joto@mail.com",
-      "password": "Joto12345",
-      "address": "Rua das antas",
-      "contact": "910005236",
-      "isAdmin": "false",
-      "id": 8
-    },
-    {
-      "name": "Maria Fernanda Gonçalves Martins",
-      "email": "vanessa.ferreira@ua.pt",
-      "password": "1234Nanda",
-      "address": "Rua Capitão Lebre nº150",
-      "contact": "910085402",
-      "isAdmin": "false",
-      "id": 9
-    },
-    {
-      "name": "Andreu",
-      "email": "dsf@mail.pt",
-      "password": "12345Nessa",
-      "address": "fdgdfgdfgdfgdfgd",
-      "contact": "910085402",
-      "isAdmin": "false",
-      "id": 10
     }
+
   ],
   "pets": [
     {
@@ -142,6 +68,7 @@
       "description": "female cat with 2 years, playful, sweet, full vacinated, already castrated",
       "id": 5
     }
+
   ],
   "forms": [
     {

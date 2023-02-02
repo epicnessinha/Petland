@@ -96,15 +96,8 @@ const Register = () => {
               value={user.password}
             />
           </div>
-          <div className="flex">
-            <input type="checkbox" className="border-sky-400 " value="" />
-            <div className="px-3 text-gray-500">I accept terms & conditions</div>
-          </div>
           <div className="flex justify-center my-6">
-            <button
-              className=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold "
-              onClick={() => register(user)}
-            >
+            <button className="register" onClick={() => register(user)}>
               Create Account
             </button>
           </div>

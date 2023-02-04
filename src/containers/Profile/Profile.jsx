@@ -12,13 +12,7 @@ const Profile = () => {
   const getUserInfo = async () => {
     let response = await getUsersProfile(userData.id)
     console.log("response data", response.data)
-    setUser(response.data) //
-  }
-
-  const updateUserInfo = async () => {
-    let response = await updateUserProfile(userData.id)
-    console.log("TESTE", userData)
-    setUser(response.data) //corrigir, porque não está a fazer update na db.json
+    setUser(response.data)
   }
 
   useEffect(() => {
@@ -40,12 +34,11 @@ const Profile = () => {
   const handleSave = (event) => {
     event.preventDefault()
     setEditing(false)
-    updateUserProfile()
+    updateUserProfile(userData.id, user) //pass the updated user information to the function
   }
 
   return (
     <>
-      <></>
       <div>
         <h1>
           <p className="teste">Profile</p>

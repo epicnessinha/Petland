@@ -36,9 +36,10 @@ export const getAllUsers = async () => {
 export const getUsersProfile = async (userId) => {
   return await axios.get(`${PET_API}users/${userId}`)
 }
-export const updateUserProfile = async (userId) => {
-  return await axios.patch(`${PET_API}users/${userId}`)
+export const updateUserProfile = async (userId, user) => {
+  return await axios.patch(`${PET_API}users/${userId}`, { data: user })
 }
+
 export const registerUser = async (user) => {
   return await axios.post(`${PET_API}users`, user)
 }

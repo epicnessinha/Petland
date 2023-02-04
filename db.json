@@ -18,7 +18,17 @@
       "contact": "912223344",
       "photo": "https://ispup.up.pt/wp-content/uploads/2021/05/Priscilla-Gomes-da-Silva_525_639.jpg",
       "isAdmin": "false",
-      "id": 2
+      "id": 2,
+      "data": {
+        "name": "Silva teste",
+        "email": "teste@mail.com",
+        "password": "Pri12345",
+        "address": "Rua dos Marnotos",
+        "contact": "912223344",
+        "photo": "https://ispup.up.pt/wp-content/uploads/2021/05/Priscilla-Gomes-da-Silva_525_639.jpg",
+        "isAdmin": "false",
+        "id": 2
+      }
     }
   ],
   "pets": [

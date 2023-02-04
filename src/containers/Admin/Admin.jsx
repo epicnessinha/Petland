@@ -48,9 +48,24 @@ const Admin = () => {
 
   const handlePetInsert = async (e) => {
     e.preventDefault()
-    const result = await axios.post("http://localhost:3000/pets", newPet)
-    setPets([...pets, result.data])
+    const formData = new FormData()
+    formData.append("name", newPet.name)
+    formData.append("type", newPet.type)
+    formData.append("type", newPet.breed)
+    formData.append("type", newPet.age)
+    try {
+      const response = await registerNewPet(formData)
+      setPets([...pets, response.data])
+    } catch (error) {
+      console.error(error)
+    }
   }
+  /*  const handlePetInsert = async (event) => {
+    event.preventDefault()
+    console.log(newPet)
+    const existingPets = await getAllPets()
+    console.log(existingPets)
+  }*/
 
   const handlePetChange = (e) => {
     setNewPet({ ...newPet, [e.target.name]: e.target.value })
@@ -99,9 +114,13 @@ const Admin = () => {
           //inserir key
           return (
             <div>
-              <div>{user.name}</div>
-              <div>{user.email}</div>
-              <div>{user.isAdmin}</div>
+              <div>
+                <img className="profile" src={user.photo} alt="Profile picture" />
+              </div>
+              <div>Name: {user.name}</div>
+              <div>Email: {user.email}</div>
+              <div>Address: {user.address}</div>
+              <div>Contact: {user.contact}</div>
               <br></br>
             </div>
           )
@@ -113,6 +132,9 @@ const Admin = () => {
           return (
             <div>
               <div>{pet.name}</div>
+              <div>
+                <img className="profile" src={pet.url} alt="" />
+              </div>
               <br></br>
             </div>
           )
@@ -123,8 +145,8 @@ const Admin = () => {
         {forms.map((form) => {
           return (
             <div>
-              <div>Name: {form.name}</div>
-              <div>Pet ID: {form.petId}</div>
+              <div>Adopter's Name: {form.name}</div>
+              <div>Pet Id: {form.petId}</div>
               <br></br>
               <br></br>
               <br></br>

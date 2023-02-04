@@ -11,7 +11,7 @@ const headers = {
 //PETS
 
 export const getAllPets = async () => {
-  return await axios.get(`${PET_API}pets`, { headers: { headers } }) //Onde coloco mais Headers? Estudar!
+  return await axios.get(`${PET_API}pets`, { headers: { headers } })
 }
 
 export const getPetById = async (pet) => {
@@ -36,7 +36,7 @@ export const getUsersProfile = async (userId) => {
   return await axios.get(`${PET_API}users/${userId}`)
 }
 export const updateUserProfile = async (userId) => {
-  return await axios.put(`${PET_API}users/${userId}`)
+  return await axios.patch(`${PET_API}users/${userId}`)
 }
 export const registerUser = async (user) => {
   return await axios.post(`${PET_API}users`, user)

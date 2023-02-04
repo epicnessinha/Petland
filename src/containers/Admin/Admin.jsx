@@ -8,6 +8,7 @@ import {
   getAllUsers,
   getAllPets,
   deletePet,
+  registerNewPet,
 } from "../../services/apiCalls"
 
 const Admin = () => {
@@ -15,7 +16,7 @@ const Admin = () => {
   const [users, setUsers] = useState([])
   const [forms, setForms] = useState([])
   const [newPet, setNewPet] = useState({ name: "", type: "" })
-  const { admin } = useContext(AuthContext)
+  const { admin } = useContext(AuthContext) //remover se não utilizar
   const navigate = useNavigate()
 
   const getUsersList = async () => {
@@ -39,9 +40,10 @@ const Admin = () => {
   }, [])
 
   //alterar as chamadas
-  const handlePetDelete = async () => {
-    let response = await deletePet()
-    setPets(response.data)
+  const handlePetDelete = async (petId) => {
+    console.log(petId)
+    const response = await deletePet({ id: petId })
+    setPets(pets.filter((pet) => pet.id !== petId))
   }
 
   const handlePetInsert = async (e) => {
@@ -63,7 +65,7 @@ const Admin = () => {
             <div key={pet.id}>
               {pet.name} - {pet.type}
               <br />
-              <button onClick={() => handlePetDelete()}>Delete</button>
+              <button onClick={() => handlePetDelete(pet.id)}>Delete</button>
             </div>
           ))}
         </ul>
@@ -94,6 +96,7 @@ const Admin = () => {
           <h4>List of Users</h4>
         </div>
         {users.map((user) => {
+          //inserir key
           return (
             <div>
               <div>{user.name}</div>

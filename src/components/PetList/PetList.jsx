@@ -3,7 +3,6 @@ import axios from "axios"
 import "./PetList.css"
 import { Pagination } from "antd"
 import { getAllPets } from "../../services/apiCalls"
-import PetCard from "../PetCard/PetCard"
 import Footer from "../Footer/Footer"
 import { useNavigate } from "react-router-dom"
 
@@ -40,6 +39,7 @@ const PetList = () => {
   )
 
   const petsToShow = filteredPets.slice(
+    //colocar console.log e checar
     (current - 1) * petsPerPage,
     current * petsPerPage
   )

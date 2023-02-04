@@ -17,6 +17,7 @@ const Profile = () => {
 
   const updateUserInfo = async () => {
     let response = await updateUserProfile(userData.id)
+    console.log("TESTE", userData)
     setUser(response.data) //corrigir, porque não está a fazer update na db.json
   }
 

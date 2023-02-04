@@ -20,7 +20,6 @@
       "isAdmin": "false",
       "id": 2
     }
-
   ],
   "pets": [
     {
@@ -68,7 +67,6 @@
       "description": "female cat with 2 years, playful, sweet, full vacinated, already castrated",
       "id": 5
     }
-
   ],
   "forms": [
     {

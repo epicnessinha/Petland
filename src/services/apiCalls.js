@@ -19,6 +19,7 @@ export const getPetById = async (pet) => {
 }
 
 export const registerNewPet = async (pet) => {
+  console.log("New Pet!", pet)
   return await axios.post(`${PET_API}pets`, { pet: pet })
 }
 

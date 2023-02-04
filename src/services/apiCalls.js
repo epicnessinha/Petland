@@ -19,7 +19,7 @@ export const getPetById = async (pet) => {
 }
 
 export const registerNewPet = async (pet) => {
-  return await axios.post(`${PET_API}pets`, pet)
+  return await axios.post(`${PET_API}pets`, { pet: pet })
 }
 
 export const deletePet = async (pet) => {

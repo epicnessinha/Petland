@@ -39,6 +39,10 @@ export const getUsersProfile = async (userId) => {
 export const updateUserProfile = async (userId, user) => {
   return await axios.patch(`${PET_API}users/${userId}`, { data: user })
 }
+export const deleteUser = async (user) => {
+  console.log("Bye", user)
+  return await axios.delete(`${PET_API}users/${user.id}`)
+}
 
 export const registerUser = async (user) => {
   return await axios.post(`${PET_API}users`, user)

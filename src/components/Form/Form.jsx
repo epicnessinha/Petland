@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { newAdoptionForm } from "../../services/apiCalls"
+import "./Form.css"
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -66,90 +67,93 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label>Name:</label>
+        <label htmlFor="name">Name:</label>
         <input
           type="text"
+          id="name"
           name="name"
           value={formData.name}
-          onChange={(e) => {
-            handleChange(e)
-          }}
+          onChange={handleChange}
           required
         />
         {formError.name && <span className="form-error">{formError.name}</span>}
       </div>
+
       <div className="form-group">
-        <label>Email:</label>
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
+          id="email"
           name="email"
           value={formData.email}
-          onChange={(e) => {
-            handleChange(e)
-          }}
+          onChange={handleChange}
           required
         />
         {formError.email && <span className="form-error">{formError.email}</span>}
       </div>
+
       <div className="form-group">
-        <label>Contact:</label>
+        <label htmlFor="contact">Contact:</label>
         <input
           type="text"
+          id="contact"
           name="contact"
           value={formData.contact}
-          onChange={(e) => {
-            handleChange(e)
-          }}
+          onChange={handleChange}
           required
         />
         {formError.contact && (
           <span className="form-error">{formError.contact}</span>
         )}
       </div>
+
       <div className="form-group">
-        <label>ID of the Pet that you pretend to adopt:</label>
+        <label htmlFor="petId">ID of the Pet you want to adopt:</label>
         <input
           type="text"
+          id="petId"
           name="petId"
-          onChange={(e) => {
-            handleChange(e)
-          }}
+          onChange={handleChange}
           required
         />
       </div>
+
       <div className="form-group">
-        <label>Do you have another Pets?:</label>
+        <label htmlFor="anotherPets">Do you have any other pets?</label>
         <input
           type="text"
+          id="anotherPets"
           name="anotherPets"
           value={formData.anotherPets}
           onChange={handleChange}
           required
         />
       </div>
+
       <div className="form-group">
-        <label>What will you do if you have to travel or emigrate?:</label>
-        <input
-          type="text"
-          name="travelSituation"
-          checked={formData.travelSituation}
-          onChange={(e) => {
-            handleChange(e)
-          }}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>
-          Do you compromise in sign a responsibility declaration of the animal?:
+        <label htmlFor="travelSituation">
+          What will you do if you need to travel or emigrate?
         </label>
         <input
           type="text"
+          id="travelSituation"
+          name="travelSituation"
+          value={formData.travelSituation}
+          onChange={handleChange}
+          required
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="microchip">
+          Do you agree to sign a responsibility declaration for the animal?
+        </label>
+        <input
+          type="text"
+          id="microchip"
           name="microchip"
-          checked={formData.microchip}
-          onChange={(e) => {
-            handleChange(e)
-          }}
+          value={formData.microchip}
+          onChange={handleChange}
           required
         />
         {formError.responsibilityDeclaration && (

@@ -41,82 +41,73 @@ const Register = () => {
 
   //alterar este design
   return (
-    <div className="w-full h-auto overflow-scroll block h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-4 flex items-center justify-center">
-      <div className="bg-white py-6 px-10 sm:max-w-md w-full ">
-        <div className="sm:text-3xl text-2xl font-semibold text-center text-sky-600  mb-12">
-          Registration Form
-        </div>
-        <div className="">
-          <div>
-            <input
-              type="text"
-              className="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500"
-              placeholder="Name"
-              name="name"
-              onChange={handleData}
-              value={user.name}
-            />
-          </div>
-          <div>
-            <input
-              type="email"
-              className="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 my-8"
-              placeholder="Email"
-              name="email"
-              onChange={handleData}
-              value={user.email}
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              className="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8"
-              placeholder="Address"
-              name="address"
-              onChange={handleData}
-              value={user.address}
-            />
-          </div>
-          <div>
-            <input
-              type="phone"
-              className="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8"
-              placeholder="Phone"
-              name="contact"
-              onChange={handleData}
-              value={user.contact}
-            />
-          </div>
-          <div className="">
-            <input
-              type="password"
-              className="focus:outline-none border-b w-full pb-2 border-sky-400 placeholder-gray-500 mb-8"
-              placeholder="Password"
-              name="password"
-              onChange={handleData}
-              value={user.password}
-            />
-          </div>
-          <div className="flex justify-center my-6">
-            <button className="register" onClick={() => register(user)}>
-              Create Account
-            </button>
-          </div>
-          <div className="flex justify-center ">
-            <p className="text-gray-500">Already have an acount? </p>
-            <a
-              href=""
-              className="text-sky-600 pl-2"
-              onClick={() => navigate("/login")}
-            >
-              {" "}
-              Sign In
-            </a>
-          </div>
-        </div>
+    <form>
+      <h4>Registration Form</h4>
+      <div>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          onChange={handleData}
+          value={user.name}
+        />
       </div>
-    </div>
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          onChange={handleData}
+          value={user.email}
+        />
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          placeholder="Enter your address"
+          onChange={handleData}
+          value={user.address}
+        />
+      </div>
+      <div>
+        <label for="contact">Phone:</label>
+        <input
+          type="phone"
+          id="contact"
+          name="contact"
+          placeholder="Enter your phone number"
+          onChange={handleData}
+          value={user.contact}
+        />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          onChange={handleData}
+          value={user.password}
+        />
+      </div>
+      <button type="button" onClick={() => register(user)}>
+        Create Account
+      </button>
+      <p>
+        Already have an account?{" "}
+        <a href="" onClick={() => navigate("/login")}>
+          Sign In
+        </a>
+      </p>
+    </form>
   )
 }
-
 export default Register

@@ -1,52 +1,65 @@
 .img {
   height: 250px;
   width: auto;
-  align-items: center;
-  margin-left: 2%;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 .name {
   font-size: xx-large;
   font-weight: bold;
   color: rgb(174, 85, 218);
-  margin-left: 4%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .details{
-  margin-left: 3%;
   font-weight: bold;
 }
 
 .search {
-  width: 50%;
-  height: 15%;
-  padding: 0px;
-  border: 0px;
+  width: 35em;
+  height: 2.5em;
+  padding: 0;
+  border: 0;
   outline: none;
   background: none;
   background-color: rgb(245, 213, 230);
   border-radius: 50px;
   color: rgb(14, 14, 15);
-  font-size: 25px;
-  font-weight: 300;
-  transition: 0.4s ease-out;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2.5em;
-  margin-bottom: 1.5em;
-  display: flex;
-  margin-left: 32%;
-  box-shadow: 0px 0px 8px 3px #eb8ae3;
-  width: 35em;
-  height: 2.5em;
   font-size: larger;
   font-weight: bold;
+  transition: 0.4s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5em auto 1.5em;
+  box-shadow: 0px 0px 8px 3px #eb8ae3;
   text-align: center;
 }
 
-.description{
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+@media (max-width: 767px) {
+  .search {
+    width: 100%;
+    height: 2.5em;
+    font-size: 1.2em;
+    margin-left: 0;
+  }
+}
 
+.description{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -54,4 +67,24 @@ body {
   background-image: url("../../assets/img/pink.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  flex-direction: column;
+}
+
+.button {
+  padding: 6px 15px;
+  background-color: rgb(245, 192, 235);
+  color: rgb(11, 10, 10);
+  border: 1rm;
+  border-radius: 10px;
+  font-size: 1.2em;
+  margin: 20px auto;
+  cursor: pointer;
+  text-align: center;
 }

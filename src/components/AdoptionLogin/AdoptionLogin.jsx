@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
+import "./AdoptionLogin.css"
 
 const AdoptionLogin = () => {
   // state for email and password

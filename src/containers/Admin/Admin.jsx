@@ -13,6 +13,7 @@ import {
   deleteAdoptionForm,
 } from "../../services/apiCalls"
 import Logout from "../../components/Logout/Logout"
+import PetCard from "../../components/PetCard/PetCard"
 
 const Admin = () => {
   const [pets, setPets] = useState([])

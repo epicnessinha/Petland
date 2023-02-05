@@ -29,6 +29,15 @@
         "isAdmin": "false",
         "id": 2
       }
+    },
+    {
+      "name": "teste",
+      "email": "teste@mail.com",
+      "password": "12345Nessa",
+      "address": "tete",
+      "contact": "910085402",
+      "isAdmin": "false",
+      "id": 3
     }
   ],
   "pets": [
@@ -79,16 +88,6 @@
       "travelSituation": "Hotel animal",
       "microchip": "yes",
       "id": 2
-    },
-    {
-      "name": "teste1",
-      "email": "teste1@mail.com",
-      "contact": "91234569",
-      "petId": "4",
-      "anotherPets": "yes",
-      "travelSituation": "Hotel animal or bring with me",
-      "microchip": "yes",
-      "id": 3
     }
   ]
 }

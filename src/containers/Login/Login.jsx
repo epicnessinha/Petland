@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
 import { useNavigate, Navigate } from "react-router-dom"
 import { useLogin } from "../../providers/LoginContext"
+import "./Login.css"
 
 const Login = () => {
   // state for email and password
@@ -46,44 +47,39 @@ const Login = () => {
             <Navigate to="/profile" />
           )
         ) : null}
-        <div
-          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-        >
-          <form
-            className="form"
-            onSubmit={handleSubmit}
-            style={{ width: "25%", padding: "10px", border: "1px solid gray" }}
-          >
-            <label style={{ display: "block" }}>
-              Email:
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                style={{ width: "100%", marginTop: "10px", padding: "5px" }}
-              />
-            </label>
-            <br />
-            <label style={{ display: "block" }}>
-              Password:
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                style={{ width: "100%", marginTop: "10px", padding: "5px" }}
-              />
-            </label>
-            <br />
-            {error && <p>{error}</p>}
+        <form className="form">
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
             <input
-              type="submit"
-              value="Login"
-              style={{ width: "90px", marginTop: "10px", padding: "5px" }}
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="form-control"
             />
-          </form>
-        </div>
-        <div style={{ marginTop: "20px" }}>
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="form-control"
+            />
+          </div>
+          {error && <p className="form-error">{error}</p>}
+          <input
+            type="submit"
+            value="Login"
+            onSubmit={handleSubmit}
+            className="btn btn-primary"
+          />
+        </form>
+        <div className="form-footer">
           <p>Don't have an account? </p>
+        </div>
+        <div>
           <a href="" onClick={() => navigate("/register")}>
             Register
           </a>

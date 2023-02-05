@@ -1,16 +1,17 @@
 import React from "react"
 import "./Body.css"
 import { Route, Routes } from "react-router-dom"
-import Home from "../../containers/Home/Home"
-import Register from "../../containers/Register/Register"
-import Profile from "../../containers/Profile/Profile"
-import Admin from "../../containers/Admin/Admin"
-import Form from "../Form/Form"
-import AdoptionLogin from "../AdoptionLogin/AdoptionLogin"
-import PetCard from "../PetCard/PetCard"
-import PetList from "../PetList/PetList"
-import Login from "../../containers/Login/Login"
-import Footer from "../Footer/Footer"
+import Home from "../Home/Home"
+import Register from "../Register/Register"
+import Profile from "../Profile/Profile"
+import Admin from "../Admin/Admin"
+import Form from "../../components/Form/Form"
+import AdoptionLogin from "../../components/AdoptionLogin/AdoptionLogin"
+import PetCard from "../../components/PetCard/PetCard"
+import PetList from "../../components/PetList/PetList"
+import Login from "../Login/Login"
+import Footer from "../../components/Footer/Footer"
+import Details from "../Details/Details"
 
 const Body = () => {
   return (
@@ -26,6 +27,7 @@ const Body = () => {
         <Route path="/petcard" element={<PetCard />} />
         <Route path="/login" element={<Login />} />
         <Route path="footer" element={<Footer />} />
+        <Route path="details" element={<Details />} />
       </Routes>
     </>
   )

@@ -1,5 +1,5 @@
 import "./App.css"
-import Body from "./components/Body/Body"
+import Body from "./containers/Body/Body"
 import Header from "./components/Header/Header"
 import { LoginProvider } from "./providers/LoginContext"
 import React from "react"
@@ -11,6 +11,7 @@ function App() {
       <div className="App">
         <Header />
         <Body />
+        <Footer />
       </div>
     </LoginProvider>
   )

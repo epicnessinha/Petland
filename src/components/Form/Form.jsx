@@ -65,8 +65,8 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Name:
+      <div className="form-group">
+        <label>Name:</label>
         <input
           type="text"
           name="name"
@@ -76,11 +76,10 @@ const Form = () => {
           }}
           required
         />
-        {formError.name && <span>{formError.name}</span>}
-      </label>
-      <br />
-      <label>
-        Email:
+        {formError.name && <span className="form-error">{formError.name}</span>}
+      </div>
+      <div className="form-group">
+        <label>Email:</label>
         <input
           type="email"
           name="email"
@@ -90,11 +89,10 @@ const Form = () => {
           }}
           required
         />
-        {formError.email && <span>{formError.email}</span>}
-      </label>
-      <br />
-      <label>
-        Contact:
+        {formError.email && <span className="form-error">{formError.email}</span>}
+      </div>
+      <div className="form-group">
+        <label>Contact:</label>
         <input
           type="text"
           name="contact"
@@ -104,11 +102,12 @@ const Form = () => {
           }}
           required
         />
-        {formError.contact && <span>{formError.contact}</span>}
-      </label>
-      <br />
-      <label>
-        ID of the Pet that you pretend to adopt
+        {formError.contact && (
+          <span className="form-error">{formError.contact}</span>
+        )}
+      </div>
+      <div className="form-group">
+        <label>ID of the Pet that you pretend to adopt:</label>
         <input
           type="text"
           name="petId"
@@ -117,10 +116,9 @@ const Form = () => {
           }}
           required
         />
-      </label>
-      <br />
-      <label>
-        Do you have another Pets?
+      </div>
+      <div className="form-group">
+        <label>Do you have another Pets?:</label>
         <input
           type="text"
           name="anotherPets"
@@ -128,10 +126,9 @@ const Form = () => {
           onChange={handleChange}
           required
         />
-      </label>
-      <br />
-      <label>
-        What will you do if you have to travel or emigrate?
+      </div>
+      <div className="form-group">
+        <label>What will you do if you have to travel or emigrate?:</label>
         <input
           type="text"
           name="travelSituation"
@@ -141,10 +138,11 @@ const Form = () => {
           }}
           required
         />
-      </label>
-      <br />
-      <label>
-        Do you compromise in sign a responsibility declaration of the animal?
+      </div>
+      <div className="form-group">
+        <label>
+          Do you compromise in sign a responsibility declaration of the animal?:
+        </label>
         <input
           type="text"
           name="microchip"
@@ -155,11 +153,12 @@ const Form = () => {
           required
         />
         {formError.responsibilityDeclaration && (
-          <span>{formError.responsibilityDeclaration}</span>
+          <span className="form-error">{formError.responsibilityDeclaration}</span>
         )}
-      </label>
-      <br />
-      <button type="submit">Submit</button>
+      </div>
+      <button type="submit" className="form-submit">
+        Submit
+      </button>
     </form>
   )
 }

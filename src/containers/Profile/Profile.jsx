@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import "./Profile.css"
 import { useLogin } from "../../providers/LoginContext"
 import { getUsersProfile, updateUserProfile } from "../../services/apiCalls"
+import Logout from "../../components/Logout/Logout"
 
 const Profile = () => {
   const [user, setUser] = useState({ name: "", email: "", profile_picture: "" })
@@ -54,35 +55,38 @@ const Profile = () => {
           <h4 className="teste">Contact: {user.contact}</h4>
           <br />
           <button onClick={handleEdit}>Edit Profile</button>
+          <Logout />
         </div>
       )}
       {editing && (
-        <form onSubmit={handleSave}>
-          <label>
-            Name:
-            <input
-              type="text"
-              name="name"
-              value={user.name}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Email:
-            <input
-              type="email"
-              name="email"
-              value={user.email}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Profile Picture:
-            <input type="url" name="profile_picture" onChange={handleChange} />
-          </label>
-          <button onClick={handleSave}>Save Changes</button>
-          <button onClick={handleCancel}>Cancel</button>
-        </form>
+        <>
+          <form onSubmit={handleSave}>
+            <label>
+              Name:
+              <input
+                type="text"
+                name="name"
+                value={user.name}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Email:
+              <input
+                type="email"
+                name="email"
+                value={user.email}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Profile Picture:
+              <input type="url" name="profile_picture" onChange={handleChange} />
+            </label>
+            <button onClick={handleSave}>Save Changes</button>
+            <button onClick={handleCancel}>Cancel</button>
+          </form>
+        </>
       )}
     </>
   )

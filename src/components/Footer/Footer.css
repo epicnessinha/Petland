@@ -1,7 +1,6 @@
 .footer {
     color: rgb(255, 0, 187);
     font-weight: bold;
-    font-family: fantasy;
     display: flex;
     justify-content: flex-end;
     margin-right: 2%;

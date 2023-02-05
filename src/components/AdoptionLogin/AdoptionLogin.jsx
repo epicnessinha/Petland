@@ -33,36 +33,45 @@ const AdoptionLogin = () => {
   return (
     <>
       {isAuth ? <Navigate to="/adopt" /> : null}
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <br />
-        {error && <p>{error}</p>}
-        <input type="submit" value="Login" />
-      </form>
-      <div className="flex justify-center ">
-        <p className="text-gray-500">Don't have an acount? </p>
-        <a
-          href=""
-          className="text-sky-600 pl-2"
-          onClick={() => navigate("/register")}
+      <div
+        style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      >
+        <form
+          className="form"
+          onSubmit={handleSubmit}
+          style={{ width: "25%", padding: "10px", border: "1px solid gray" }}
         >
-          {" "}
+          <label style={{ display: "block" }}>
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{ width: "100%", marginTop: "10px", padding: "5px" }}
+            />
+          </label>
+          <br />
+          <label style={{ display: "block" }}>
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ width: "100%", marginTop: "10px", padding: "5px" }}
+            />
+          </label>
+          <br />
+          {error && <p>{error}</p>}
+          <input
+            type="submit"
+            value="Login"
+            style={{ width: "90px", marginTop: "10px", padding: "5px" }}
+          />
+        </form>
+      </div>
+      <div style={{ marginTop: "20px" }}>
+        <p>Don't have an account? </p>
+        <a href="" onClick={() => navigate("/register")}>
           Register
         </a>
       </div>

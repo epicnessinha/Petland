@@ -2,15 +2,12 @@ import "./PetCard.css"
 import React from "react"
 import { Card } from "antd"
 
-const PetCard = (props) => {
-  console.log("POPS", props.pets)
-  const { id, url, name, breed, age, description } = props.pets
-
+const PetCard = ({ id, url, name, breed, age, description }) => {
   return (
     <div className="wrapper">
       <Card hoverable cover={<img alt={name} src={url} className="test" />}>
         <div>
-          <div key={id}>
+          <div>
             <h4>{name}</h4>
             <p>Breed: {breed}</p>
             <p>Age: {age}</p>

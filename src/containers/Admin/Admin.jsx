@@ -9,7 +9,10 @@ import {
   getAllPets,
   deletePet,
   registerNewPet,
+  deleteUser,
+  deleteAdoptionForm,
 } from "../../services/apiCalls"
+import Logout from "../../components/Logout/Logout"
 
 const Admin = () => {
   const [pets, setPets] = useState([])
@@ -46,6 +49,17 @@ const Admin = () => {
     setPets(pets.filter((pet) => pet.id !== petId))
   }
 
+  const handleUserDelete = async (userId) => {
+    console.log(userId)
+    await deleteUser({ id: userId })
+    setUsers(users.filter((user) => user.id !== userId))
+  }
+  const handleFormDelete = async (formId) => {
+    console.log(formId)
+    await deleteAdoptionForm({ id: formId })
+    setUsers(forms.filter((form) => form.id !== formId))
+  }
+
   const handlePetInsert = async (e) => {
     e.preventDefault()
     const response = await registerNewPet({ pet: newPet })
@@ -58,13 +72,20 @@ const Admin = () => {
   return (
     <>
       <div>
-        <h4>Pets</h4>
+        <h2>Hello Admin</h2>
+        <Logout />
+        <br />
+        <h4>Pets for Adoption</h4>
         <ul>
           {pets.map((pet) => (
             <div key={pet.id}>
-              {pet.name} - {pet.type}
               <br />
-              <button onClick={() => handlePetDelete(pet.id)}>Delete</button>
+              <img className="profile" src={pet.url} alt="" />
+              <br />
+              <br />
+              <p>{pet.name}</p>
+              <p>{pet.type}</p>
+              <button onClick={() => handlePetDelete(pet.id)}>Adopted</button>
             </div>
           ))}
         </ul>
@@ -81,8 +102,29 @@ const Admin = () => {
           <input
             type="text"
             name="type"
-            placeholder="Pet type"
+            placeholder="type"
             value={newPet.type}
+            onChange={handlePetChange}
+          />
+          <input
+            type="text"
+            name="breed"
+            placeholder="Breed"
+            value={newPet.breed}
+            onChange={handlePetChange}
+          />
+          <input
+            type="text"
+            name="age"
+            placeholder="Age"
+            value={newPet.age}
+            onChange={handlePetChange}
+          />
+          <input
+            type="text"
+            name="description"
+            placeholder="Description"
+            value={newPet.description}
             onChange={handlePetChange}
           />
           <button type="submit">Add pet</button>
@@ -94,35 +136,19 @@ const Admin = () => {
           <br></br>
           <h4>List of Users</h4>
         </div>
-        {users.map((user) => {
-          //inserir key
-          return (
-            <div>
-              <div>
-                <img className="profile" src={user.photo} alt="Profile picture" />
-              </div>
-              <div>Name: {user.name}</div>
-              <div>Email: {user.email}</div>
-              <div>Address: {user.address}</div>
-              <div>Contact: {user.contact}</div>
-              <br></br>
-            </div>
-          )
-        })}
-        <div>
-          <h4>List of Pets</h4>
-        </div>
-        {pets.map((pet) => {
-          return (
-            <div>
-              <div>{pet.name}</div>
-              <div>
-                <img className="profile" src={pet.url} alt="" />
-              </div>
-              <br></br>
-            </div>
-          )
-        })}
+        {users.map((user) => (
+          <div key={user.id}>
+            <br />
+            <img className="profile" src={user.photo} alt="Profile picture" />
+            <br />
+            <br />
+            <p>{user.name}</p>
+            <p>{user.email}</p>
+            <button onClick={() => handleUserDelete(user.id)}>Delete</button>
+          </div>
+        ))}
+        <br />
+        <br />
         <div>
           <h4>List of Adoption Forms</h4>
         </div>
@@ -131,6 +157,9 @@ const Admin = () => {
             <div>
               <div>Adopter's Name: {form.name}</div>
               <div>Pet Id: {form.petId}</div>
+              <button onClick={() => handleFormDelete(form.id)}>
+                Adoption Approved
+              </button>
               <br></br>
               <br></br>
               <br></br>

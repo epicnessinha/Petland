@@ -33,15 +33,6 @@
   ],
   "pets": [
     {
-      "name": "Pandinha",
-      "type": "cat",
-      "breed": "European shorthair",
-      "age": "2 years",
-      "url": "https://www.animaisderua.org/uploads/adoption/Pandinha2_1672836731.jpeg",
-      "description": "Sterilized, dewormed, vaccinated and has a microchip. She is very affectionate, both with people and with other cats, looking for the company of both to make the most of her day. After all, what fun is life if we don't surround ourselves with what brings us happiness?",
-      "id": 1
-    },
-    {
       "name": "Benny",
       "type": "dog",
       "breed": "bulldog",
@@ -80,16 +71,6 @@
   ],
   "forms": [
     {
-      "id": 1,
-      "name": "teste",
-      "email": "teste@mail.com",
-      "Contact": "123456789",
-      "petId": "1",
-      "anotherPets": "yes",
-      "travelSituation": "bring with me",
-      "microchip": "yes"
-    },
-    {
       "name": "Vanessa",
       "email": "vanessa@ua.pt",
       "contact": "910085402",
@@ -108,16 +89,6 @@
       "travelSituation": "Hotel animal or bring with me",
       "microchip": "yes",
       "id": 3
-    },
-    {
-      "name": "Vanessa",
-      "email": "olavo.f@hotmail.com",
-      "contact": "910085402",
-      "petId": "1",
-      "anotherPets": "yes",
-      "travelSituation": "Hotel animal or bring with me",
-      "microchip": "yes",
-      "id": 4
     }
   ]
 }

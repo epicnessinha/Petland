@@ -77,7 +77,7 @@ const Login = () => {
               />
             </Form.Group>
             {error && <p className="text-danger">{error}</p>}
-            <Button variant="primary" type="submit">
+            <Button variant="info" type="submit">
               Login
             </Button>
           </Form>

@@ -1,8 +1,14 @@
 
 .footer {
-    color: rgb(255, 0, 187);
     font-weight: bold;
     display: flex;
     justify-content: flex-end;
-    margin-right: 2%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    margin-top: 10%;
+}
+
+.footer a {
+    color: rgb(255, 0, 187);
+    font-weight: bold;
 }

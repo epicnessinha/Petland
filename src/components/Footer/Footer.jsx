@@ -4,7 +4,11 @@ import "./Footer.css"
 const Footer = () => {
   return (
     <div className="footer">
-      <h5>Made by Vanessa Ferreira</h5>
+      <h4>
+        <a href="https://www.adopta-me.org/index.php?&row=0" target="_blank">
+          "Adopta-me" Shelter
+        </a>
+      </h4>
     </div>
   )
 }

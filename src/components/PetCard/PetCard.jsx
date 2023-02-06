@@ -1,21 +1,24 @@
-import "./PetCard.css"
+import Button from "react-bootstrap/Button"
+import Card from "react-bootstrap/Card"
 import React from "react"
-import { Card } from "antd"
+import { useNavigate } from "react-router-dom"
 
-const PetCard = ({ id, url, name, breed, age, description }) => {
+function PetCard() {
+  const navigate = useNavigate()
   return (
-    <div className="wrapper">
-      <Card hoverable cover={<img alt={name} src={url} className="test" />}>
-        <div>
-          <div>
-            <h4>{name}</h4>
-            <p>Breed: {breed}</p>
-            <p>Age: {age}</p>
-            <p className="description">{description}</p>
-          </div>
-        </div>
-      </Card>
-    </div>
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>description</Card.Text>
+        <Button variant="info" onClick={() => navigate("/adoptlogin")}>
+          Adopt me!
+        </Button>
+      </Card.Body>
+      <Card.Link href="https://www.adopta-me.org/animal.php?sid=44306642216a49">
+        Shelter
+      </Card.Link>
+    </Card>
   )
 }
 

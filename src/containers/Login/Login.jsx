@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
 import { useNavigate, Navigate } from "react-router-dom"
 import { useLogin } from "../../providers/LoginContext"
+import { Button } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 import "./Login.css"
 
 const Login = () => {
@@ -50,39 +52,35 @@ const Login = () => {
         <div
           style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
         >
-          <form
+          <Form
             className="form"
             onSubmit={handleSubmit}
-            style={{ width: "25%", padding: "10px", border: "1px solid gray" }}
+            style={{ width: "25%", padding: "10px" }}
           >
-            <label style={{ display: "block" }}>
-              Email:
-              <input
+            <Form.Group className="mb-3">
+              <Form.Label>Email:</Form.Label>
+              <Form.Control
                 className="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                style={{ width: "100%", marginTop: "10px", padding: "5px" }}
+                placeholder="Enter email"
               />
-            </label>
-            <br />
-            <label style={{ display: "block" }}>
-              Password:
-              <input
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                style={{ width: "100%", marginTop: "10px", padding: "5px" }}
+                placeholder="Password"
               />
-            </label>
-            <br />
-            {error && <p>{error}</p>}
-            <input
-              type="submit"
-              value="Login"
-              style={{ width: "90px", marginTop: "10px", padding: "5px" }}
-            />
-          </form>
+            </Form.Group>
+            {error && <p className="text-danger">{error}</p>}
+            <Button variant="primary" type="submit">
+              Login
+            </Button>
+          </Form>
         </div>
         <div style={{ marginTop: "20px" }}>
           <p>Don't have an account? </p>

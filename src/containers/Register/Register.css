@@ -1,4 +1,4 @@
-form {
+.form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,7 +8,7 @@ form {
     padding: 30px;
   }
   
-  label, input {
+  .label, input {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -16,15 +16,14 @@ form {
     text-align: left;
   }
   
-
   
-  label {
+  .label {
     font-weight: 600;
     margin-bottom: 8px;
     text-align: left;
   }
   
-  button {
+  .buttonRegister {
     width: 30%;
     padding: 12px;
     background-color: #ff69b4;
@@ -36,11 +35,11 @@ form {
   }
   
   @media (min-width: 768px) {
-    form {
+    .form {
       padding: 50px;
     }
   
-    input {
+    .input {
       width: 100%;
     }
   }

@@ -47,39 +47,45 @@ const Login = () => {
             <Navigate to="/profile" />
           )
         ) : null}
-        <form className="form">
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="form-control"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="form-control"
-            />
-          </div>
-          {error && <p className="form-error">{error}</p>}
-          <input
-            type="submit"
-            value="Login"
+        <div
+          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        >
+          <form
+            className="form"
             onSubmit={handleSubmit}
-            className="btn btn-primary"
-          />
-        </form>
-        <div className="form-footer">
-          <p>Don't have an account? </p>
+            style={{ width: "25%", padding: "10px", border: "1px solid gray" }}
+          >
+            <label style={{ display: "block" }}>
+              Email:
+              <input
+                className="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                style={{ width: "100%", marginTop: "10px", padding: "5px" }}
+              />
+            </label>
+            <br />
+            <label style={{ display: "block" }}>
+              Password:
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                style={{ width: "100%", marginTop: "10px", padding: "5px" }}
+              />
+            </label>
+            <br />
+            {error && <p>{error}</p>}
+            <input
+              type="submit"
+              value="Login"
+              style={{ width: "90px", marginTop: "10px", padding: "5px" }}
+            />
+          </form>
         </div>
-        <div>
+        <div style={{ marginTop: "20px" }}>
+          <p>Don't have an account? </p>
           <a href="" onClick={() => navigate("/register")}>
             Register
           </a>

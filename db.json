@@ -29,15 +29,6 @@
         "isAdmin": "false",
         "id": 2
       }
-    },
-    {
-      "name": "teste",
-      "email": "teste@mail.com",
-      "password": "12345Nessa",
-      "address": "tete",
-      "contact": "910085402",
-      "isAdmin": "false",
-      "id": 3
     }
   ],
   "pets": [

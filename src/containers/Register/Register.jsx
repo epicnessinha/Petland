@@ -4,7 +4,6 @@ import { checkEmail } from "../../services/apiCalls"
 import { registerUser } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
 import { validateForm } from "../../services/validate"
-import { Button, Form, Input } from "antd"
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -98,7 +97,11 @@ const Register = () => {
           value={user.password}
         />
       </div>
-      <button type="button" onClick={() => register(user)}>
+      <button
+        className="buttonRegister"
+        type="button"
+        onClick={() => register(user)}
+      >
         Create Account
       </button>
       <p>

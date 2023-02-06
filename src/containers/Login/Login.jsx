@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
 import { useNavigate, Navigate } from "react-router-dom"
 import { useLogin } from "../../providers/LoginContext"
+import { Button } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 import "./Login.css"
 
 const Login = () => {
@@ -47,39 +49,41 @@ const Login = () => {
             <Navigate to="/profile" />
           )
         ) : null}
-        <form className="form">
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="form-control"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="form-control"
-            />
-          </div>
-          {error && <p className="form-error">{error}</p>}
-          <input
-            type="submit"
-            value="Login"
+        <div
+          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        >
+          <Form
+            className="form"
             onSubmit={handleSubmit}
-            className="btn btn-primary"
-          />
-        </form>
-        <div className="form-footer">
-          <p>Don't have an account? </p>
+            style={{ width: "25%", padding: "10px" }}
+          >
+            <Form.Group className="mb-3">
+              <Form.Label>Email:</Form.Label>
+              <Form.Control
+                className="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter email"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+              />
+            </Form.Group>
+            {error && <p className="text-danger">{error}</p>}
+            <Button variant="info" type="submit">
+              Login
+            </Button>
+          </Form>
         </div>
-        <div>
+        <div style={{ marginTop: "20px" }}>
+          <p>Don't have an account? </p>
           <a href="" onClick={() => navigate("/register")}>
             Register
           </a>

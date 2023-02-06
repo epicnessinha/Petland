@@ -44,7 +44,7 @@ const PetList = () => {
     <>
       <div>
         <input
-          className="search"
+          className="searchBar"
           type="text"
           placeholder="Search for your new best friend!"
           onChange={handleSearch}
@@ -63,11 +63,14 @@ const PetList = () => {
                   alt={pet.name}
                   onClick={() => navigate("/details")}
                 />
-                <div class="container">
+                <div class="damnit">
                   <h2 className="name">{pet.name}</h2>
                 </div>
-                <div class="container">
-                  <button className="button" onClick={() => navigate("/adoptlogin")}>
+                <div class="damnit">
+                  <button
+                    className="buttonList"
+                    onClick={() => navigate("/adoptlogin")}
+                  >
                     Adopt Me!
                   </button>
                 </div>

@@ -4,88 +4,108 @@
       "name": "Vanessa Ferreira",
       "email": "vanessa@mail.com",
       "password": "43752Nessa",
-      "address": "Rua Capitão Lebre nº150",
+      "address": "Rua Capitão Lebre 150, Aveiro",
       "contact": "910085402",
-      "photo": "http://www.cesam.ua.pt/images/img_0676.jpg",
+      "photo": "https://avatars.githubusercontent.com/u/99542868?v=4",
       "isAdmin": "true",
       "id": 1
+    },
+    {
+      "name": "André Costa",
+      "email": "andre@mail.com",
+      "password": "Andre123",
+      "address": "Vila Nova de Gaia",
+      "contact": "914444444",
+      "photo": "https://avatars.githubusercontent.com/u/116548379?v=4",
+      "isAdmin": "false",
+      "id": 2
     },
     {
       "name": "Priscilla Silva",
       "email": "pri@mail.com",
       "password": "Pri12345",
-      "address": "Rua dos Marnotos",
+      "address": "Rua dos Marnotos 8, Aveiro",
       "contact": "912223344",
       "photo": "https://ispup.up.pt/wp-content/uploads/2021/05/Priscilla-Gomes-da-Silva_525_639.jpg",
       "isAdmin": "false",
-      "id": 2,
-      "data": {
-        "name": "Silva teste",
-        "email": "teste@mail.com",
-        "password": "Pri12345",
-        "address": "Rua dos Marnotos",
-        "contact": "912223344",
-        "photo": "https://ispup.up.pt/wp-content/uploads/2021/05/Priscilla-Gomes-da-Silva_525_639.jpg",
-        "isAdmin": "false",
-        "id": 2
-      }
+      "id": 3
     },
     {
-      "name": "teste",
-      "email": "teste@mail.com",
-      "password": "12345Nessa",
-      "address": "tete",
-      "contact": "910085402",
+      "name": "Diogo Merelles",
+      "email": "diogo@mail.com",
+      "password": "Diogo123",
+      "address": "Avenida dos Aliados, Porto",
+      "contact": "912333344",
+      "photo": "",
       "isAdmin": "false",
-      "id": 3
+      "id": 4
     }
   ],
   "pets": [
     {
-      "name": "Benny",
-      "type": "dog",
-      "breed": "bulldog",
-      "age": "3 years",
-      "url": "https://i.pinimg.com/originals/a2/d1/77/a2d177ba12e69f518532945c6dc966cd.jpg",
-      "description": "male dog with 1 years, playful, sweet, full vacinated, but not castrated yet",
+      "name": "Zecarias",
+      "type": "Dog",
+      "breed": "Mongrel",
+      "gender": "male",
+      "url": "https://www.adopta-me.org/media/image/thumb/78049544-zacarias.JPG",
+      "description": "Zacarias is a small, medium-sized puppy, very friendly, sweet and playful. The true companion for life. Sterilized, Vaccines up to date, Dewormed",
+      "id": 1
+    },
+    {
+      "name": "Pepita",
+      "type": "Cat",
+      "breed": "Common European",
+      "gender":"Female",
+      "url": "https://www.adopta-me.org/media/image/thumb/37789929-Pepita.jpg",
+      "description": "Pepita is a 10 months small cat,negative for Fiv and Felv and very cute and sweet. Sterilized, Vaccines up to date, Dewormed.",
       "id": 2
     },
     {
-      "name": "Amadeus",
-      "type": "cat",
-      "breed": "siames",
-      "age": "2 years",
-      "url": "https://www.petz.com.br/blog/wp-content/uploads/2021/02/nomes-para-gatos-siames-felino.jpg",
-      "description": "female cat with 2 years, playful, sweet, full vacinated, already castrated",
+      "name": "Mia",
+      "type": "Dog",
+      "breed": "Sharpei",
+      "gender":"Female",
+      "url": "https://www.adopta-me.org/media/image/thumb/43233048-IMG_20211104_WA0001.jpg",
+      "description": "Mia is an adult calm, sweet dog who is used to being indoors if necessary (very hygienic). Sterilized, Vaccines up to date, Dewormed",
       "id": 3
     },
     {
-      "name": "Zaza",
-      "type": "dog",
-      "breed": "bulldog",
-      "age": "1 year",
-      "url": "https://i.pinimg.com/originals/a2/d1/77/a2d177ba12e69f518532945c6dc966cd.jpg",
-      "description": "male dog with 1 years, playful, sweet, full vacinated, but not castrated yet",
+      "name": "Baunilha & Coffee",
+      "type": "cat",
+      "breed": "Common European",
+      "gender":"Male & Female",
+      "url": "https://www.adopta-me.org/media/image/thumb/823255-72936CCB_2767_49E1_9040_0D906856904B.jpeg",
+      "description": "Baunilha (male) and Coffee (female) are two brothers very attached to each other, with joint adoption preference. Sterilized, Vaccines up to date, Dewormed",
       "id": 4
     },
     {
-      "name": "Nacho",
-      "type": "cat",
-      "breed": "siames",
-      "age": "2 years",
-      "url": "https://www.petz.com.br/blog/wp-content/uploads/2021/02/nomes-para-gatos-siames-felino.jpg",
-      "description": "female cat with 2 years, playful, sweet, full vacinated, already castrated",
+      "name": "Stacey",
+      "type": "Dog",
+      "breed": "Mongrel",
+      "gender":"Female",
+      "url": "https://www.adopta-me.org/media/image/thumb/50398399-IMG_5950.JPG",
+      "description": "Stacey is a beautiful adult dog, medium-sized, sweet and needy. Sterilized, Vaccines up to date, Dewormed",
       "id": 5
+    },
+    {
+      "name": "Matias",
+      "type": "Cat",
+      "breed": "Common European",
+      "gender":"Male",
+      "url": "https://www.adopta-me.org/media/image/thumb/26594367-D36841E3_56A5_4C7B_86A4_788EEE4302CF.jpeg",
+      "description": "Matias is a 2.5 month old kitten, sweet, he likes to be petted and gets along very well with children and other cats. Not Sterilized, Not Vaccineted, Dewormed",
+      "id": 6
     }
+    
   ],
   "forms": [
     {
-      "name": "Vanessa",
-      "email": "vanessa@ua.pt",
+      "name": "Vanessa Ferreira",
+      "email": "vanessa@mail.com",
       "contact": "910085402",
       "petId": "2",
-      "anotherPets": "yes",
-      "travelSituation": "Hotel animal",
+      "anotherPets": "yes, two more cats",
+      "travelSituation": "Hotel animal, friends or bring with me in case of long travel.",
       "microchip": "yes",
       "id": 2
     }

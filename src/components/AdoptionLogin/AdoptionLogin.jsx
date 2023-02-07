@@ -21,8 +21,6 @@ const AdoptionLogin = () => {
       if (response) {
         setIsAuth(true)
         localStorage.setItem("user", JSON.stringify(response))
-        window.location.href = "/adopt"
-        setIsAuth(true)
       } else {
         setError("Invalid email or password.")
       }
@@ -34,7 +32,7 @@ const AdoptionLogin = () => {
 
   return (
     <>
-      {isAuth ? <navigate to="/adopt" /> : null}
+      {isAuth ? navigate("/adopt") : null}
       <div
         style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >

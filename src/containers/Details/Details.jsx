@@ -4,7 +4,12 @@ import PetCard from "../../components/PetCard/PetCard"
 const Details = () => {
   return (
     <div>
-      <PetCard />
+      <PetCard
+        cardTitle="Title"
+        description={"description"}
+        buttonText={"Adopt Me!"}
+        linkText={"Shelter"}
+      />
     </div>
   )
 }

@@ -12,6 +12,7 @@ import PetList from "../../components/PetList/PetList"
 import Login from "../Login/Login"
 import Footer from "../../components/Footer/Footer"
 import Details from "../Details/Details"
+import List from "../../components/List/List"
 
 const Body = () => {
   return (
@@ -28,6 +29,7 @@ const Body = () => {
         <Route path="/login" element={<Login />} />
         <Route path="footer" element={<Footer />} />
         <Route path="details" element={<Details />} />
+        <Route path="list" element={<List />} />
       </Routes>
     </>
   )

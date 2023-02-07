@@ -28,7 +28,17 @@
       "contact": "912223344",
       "photo": "https://ispup.up.pt/wp-content/uploads/2021/05/Priscilla-Gomes-da-Silva_525_639.jpg",
       "isAdmin": "false",
-      "id": 3
+      "id": 3,
+      "data": {
+        "name": "Ana",
+        "email": "pri@mail.com",
+        "password": "Pri12345",
+        "address": "Rua dos Marnotos 8, Aveiro",
+        "contact": "912223344",
+        "photo": "https://ispup.up.pt/wp-content/uploads/2021/05/Priscilla-Gomes-da-Silva_525_639.jpg",
+        "isAdmin": "false",
+        "id": 3
+      }
     },
     {
       "name": "Diogo Merelles",

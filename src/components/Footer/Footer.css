@@ -11,4 +11,5 @@
 .footer a {
     color: rgb(255, 0, 187);
     font-weight: bold;
+    text-decoration:wavy;
 }

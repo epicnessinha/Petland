@@ -36,7 +36,7 @@
       "password": "Diogo123",
       "address": "Avenida dos Aliados, Porto",
       "contact": "912333344",
-      "photo": "",
+      "photo": "https://avatars.githubusercontent.com/u/108991649?v=4",
       "isAdmin": "false",
       "id": 4
     }
@@ -55,7 +55,7 @@
       "name": "Pepita",
       "type": "Cat",
       "breed": "Common European",
-      "gender":"Female",
+      "gender": "Female",
       "url": "https://www.adopta-me.org/media/image/thumb/37789929-Pepita.jpg",
       "description": "Pepita is a 10 months small cat,negative for Fiv and Felv and very cute and sweet. Sterilized, Vaccines up to date, Dewormed.",
       "id": 2
@@ -64,7 +64,7 @@
       "name": "Mia",
       "type": "Dog",
       "breed": "Sharpei",
-      "gender":"Female",
+      "gender": "Female",
       "url": "https://www.adopta-me.org/media/image/thumb/43233048-IMG_20211104_WA0001.jpg",
       "description": "Mia is an adult calm, sweet dog who is used to being indoors if necessary (very hygienic). Sterilized, Vaccines up to date, Dewormed",
       "id": 3
@@ -73,7 +73,7 @@
       "name": "Baunilha & Coffee",
       "type": "cat",
       "breed": "Common European",
-      "gender":"Male & Female",
+      "gender": "Male & Female",
       "url": "https://www.adopta-me.org/media/image/thumb/823255-72936CCB_2767_49E1_9040_0D906856904B.jpeg",
       "description": "Baunilha (male) and Coffee (female) are two brothers very attached to each other, with joint adoption preference. Sterilized, Vaccines up to date, Dewormed",
       "id": 4
@@ -82,7 +82,7 @@
       "name": "Stacey",
       "type": "Dog",
       "breed": "Mongrel",
-      "gender":"Female",
+      "gender": "Female",
       "url": "https://www.adopta-me.org/media/image/thumb/50398399-IMG_5950.JPG",
       "description": "Stacey is a beautiful adult dog, medium-sized, sweet and needy. Sterilized, Vaccines up to date, Dewormed",
       "id": 5
@@ -91,12 +91,11 @@
       "name": "Matias",
       "type": "Cat",
       "breed": "Common European",
-      "gender":"Male",
+      "gender": "Male",
       "url": "https://www.adopta-me.org/media/image/thumb/26594367-D36841E3_56A5_4C7B_86A4_788EEE4302CF.jpeg",
       "description": "Matias is a 2.5 month old kitten, sweet, he likes to be petted and gets along very well with children and other cats. Not Sterilized, Not Vaccineted, Dewormed",
       "id": 6
     }
-    
   ],
   "forms": [
     {
@@ -105,9 +104,7 @@
       "contact": "910085402",
       "petId": "2",
       "anotherPets": "yes, two more cats",
-      "travelSituation": "Hotel animal, friends or bring with me in case of long travel.",
-      "microchip": "yes",
-      "id": 2
+      "id": 1
     }
   ]
 }

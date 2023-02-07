@@ -4,7 +4,6 @@ import { useNavigate, Navigate } from "react-router-dom"
 import { useLogin } from "../../providers/LoginContext"
 import { Button } from "react-bootstrap"
 import { Form } from "react-bootstrap"
-import "./Login.css"
 
 const Login = () => {
   // state for email and password
@@ -42,52 +41,60 @@ const Login = () => {
   return (
     <>
       <>
-        {isAuth ? (
-          isAdmin ? (
-            <Navigate to="/admin" />
-          ) : (
-            <Navigate to="/profile" />
-          )
-        ) : null}
-        <div
-          style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-        >
-          <Form
-            className="form"
-            onSubmit={handleSubmit}
-            style={{ width: "25%", padding: "10px" }}
+        <>
+          {isAuth ? (
+            isAdmin ? (
+              <Navigate to="/admin" />
+            ) : (
+              <Navigate to="/profile" />
+            )
+          ) : null}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <Form.Group className="mb-3">
-              <Form.Label>Email:</Form.Label>
-              <Form.Control
-                className="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter email"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Password:</Form.Label>
-              <Form.Control
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-              />
-            </Form.Group>
-            {error && <p className="text-danger">{error}</p>}
-            <Button variant="info" type="submit">
-              Login
-            </Button>
-          </Form>
-        </div>
-        <div style={{ marginTop: "20px" }}>
-          <p>Don't have an account? </p>
-          <a href="" onClick={() => navigate("/register")}>
-            Register
-          </a>
-        </div>
+            <Form
+              className="form"
+              onSubmit={handleSubmit}
+              style={{ width: "25%", padding: "10px" }}
+            >
+              <Form.Group className="mb-3">
+                <Form.Label>Email:</Form.Label>
+                <Form.Control
+                  className="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter email"
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Password:</Form.Label>
+                <Form.Control
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                />
+              </Form.Group>
+              {error && <p className="text-danger">{error}</p>}
+              <div className="d-flex justify-content-center">
+                <Button variant="danger" style={{ width: "85px" }} type="submit">
+                  Login
+                </Button>
+              </div>
+            </Form>
+          </div>
+          <div style={{ marginTop: "20px" }}>
+            <p>Don't have an account? </p>
+            <a href="" onClick={() => navigate("/register")}>
+              Register
+            </a>
+          </div>
+        </>
       </>
     </>
   )

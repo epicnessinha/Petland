@@ -27,8 +27,7 @@ const PetList = () => {
     (pet) =>
       pet.name.toLowerCase().includes(search.toLowerCase()) ||
       pet.type.toLowerCase().includes(search.toLowerCase()) ||
-      pet.breed.toLowerCase().includes(search.toLowerCase()) ||
-      pet.age.toString().includes(search)
+      pet.breed.toLowerCase().includes(search.toLowerCase())
   )
 
   const totalPages = Math.ceil(filteredPets.length)
@@ -44,7 +43,7 @@ const PetList = () => {
     <>
       <div>
         <input
-          className="searchBar"
+          className="search"
           type="text"
           placeholder="Search for your new best friend!"
           onChange={handleSearch}
@@ -63,7 +62,7 @@ const PetList = () => {
                   alt={pet.name}
                   onClick={() => navigate("/details")}
                 />
-                <div class="damnit">
+                <div class="teste">
                   <h2 className="name">{pet.name}</h2>
                 </div>
                 <div class="damnit">

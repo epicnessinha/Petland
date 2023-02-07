@@ -1,5 +1,4 @@
 
-
 .linkDesign:hover {
     color: rgb(167, 66, 157);
     transition: 0.5s;
@@ -27,14 +26,18 @@
    }
    .nav-link{
      width: 100px;
-     display:block;
+     height: 30px;
      box-shadow: 3px 3px 5px 6px rgb(228, 108, 194);
-     margin: 25px;
-     padding: 5px;
-     border-radius: 15px;
-     text-decoration:wavy;
-     display: flex; 
-     flex-direction: column;
-    
-     
+     margin: 20px;
+  border-radius: 15px;
+  text-decoration: wavy;
+  flex-direction: column;
+  margin-top: -30px ;
+  margin-bottom: 60px;
+   }
+
+   .petland{
+    font-size: 5rem;
+    font-weight: bolder;
+    color: white
    }

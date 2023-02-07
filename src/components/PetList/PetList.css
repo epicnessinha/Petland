@@ -1,5 +1,5 @@
 .img {
-  height: 250px;
+  height: auto;
   width: auto;
   display: inline-block;
   text-align: center;
@@ -28,7 +28,7 @@
   font-weight: bold;
 }
 
-.searchBar {
+.search {
   width: 35em;
   height: 2.5em;
   padding: 0;
@@ -69,7 +69,7 @@ body {
   background-size: cover;
 }
 
-.damnit {
+.teste {
   display: flex;
   justify-content: center;
   align-items: center;

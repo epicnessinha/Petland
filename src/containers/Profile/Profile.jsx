@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react"
-import "./Profile.css"
 import { useLogin } from "../../providers/LoginContext"
 import { getUsersProfile, updateUserProfile } from "../../services/apiCalls"
 import Logout from "../../components/Logout/Logout"
+import Card from "react-bootstrap/Card"
+import ListGroup from "react-bootstrap/ListGroup"
+import { Button } from "react-bootstrap"
+import { Container } from "react-bootstrap"
+import Footer from "../../components/Footer/Footer"
 
 const Profile = () => {
-  const [user, setUser] = useState({ name: "", email: "", profile_picture: "" })
+  const [user, setUser] = useState({ name: "", email: "" })
   const [editing, setEditing] = useState(false)
 
   const { userData } = useLogin()
 
   const getUserInfo = async () => {
     let response = await getUsersProfile(userData.id)
-    console.log("response data", response.data)
     setUser(response.data)
   }
 
@@ -35,59 +38,76 @@ const Profile = () => {
   const handleSave = (event) => {
     event.preventDefault()
     setEditing(false)
-    updateUserProfile(userData.id, user) //pass the updated user information to the function
+    updateUserProfile(userData.id, user)
   }
 
   return (
     <>
-      <div>
-        <h1>
-          <p className="teste">Profile</p>
-        </h1>
-      </div>
-      {!editing && (
-        <div>
-          <img className="profile" src={user.photo} alt="Profile picture" />
-          <p></p>
-          <h4 className="teste">{user.name}</h4>
-          <h4 className="teste">Email: {user.email}</h4>
-          <h4 className="teste">Address: {user.address}</h4>
-          <h4 className="teste">Contact: {user.contact}</h4>
-          <br />
-          <button onClick={handleEdit}>Edit Profile</button>
-          <Logout />
-        </div>
-      )}
-      {editing && (
+      <>
         <>
-          <form onSubmit={handleSave}>
-            <label>
-              Name:
-              <input
-                type="text"
-                name="name"
-                value={user.name}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Email:
-              <input
-                type="email"
-                name="email"
-                value={user.email}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Profile Picture:
-              <input type="url" name="profile_picture" onChange={handleChange} />
-            </label>
-            <button onClick={handleSave}>Save Changes</button>
-            <button onClick={handleCancel}>Cancel</button>
-          </form>
+          <Container className="d-flex justify-content-center align-items-center">
+            <Card
+              style={{
+                width: "20rem",
+              }}
+            >
+              <Card.Img variant="top" src={user.photo} />
+              <Card.Body>
+                <Card.Title>{user.name}</Card.Title>
+                <ListGroup className="list-group-flush">
+                  <ListGroup.Item>Email: {user.email}</ListGroup.Item>
+                  <ListGroup.Item>Address: {user.address}</ListGroup.Item>
+                  <ListGroup.Item>Contact: {user.contact}</ListGroup.Item>
+                </ListGroup>
+              </Card.Body>
+              {!editing && (
+                <>
+                  <Card.Footer>
+                    <Button variant="danger" onClick={handleEdit}>
+                      Edit Profile
+                    </Button>
+                  </Card.Footer>
+                  <Logout />
+                </>
+              )}
+              {editing && (
+                <Card.Body>
+                  <form onSubmit={handleSave}>
+                    <label>
+                      Name:
+                      <input
+                        type="text"
+                        name="name"
+                        value={user.name}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <label>
+                      Email:
+                      <input
+                        type="email"
+                        name="email"
+                        value={user.email}
+                        onChange={handleChange}
+                      />
+                    </label>
+                    <Button
+                      variant="danger"
+                      style={{ marginRight: "10px" }}
+                      onClick={handleSave}
+                    >
+                      Save Changes
+                    </Button>
+                    <Button variant="secondary" onClick={handleCancel}>
+                      Cancel
+                    </Button>
+                  </form>
+                </Card.Body>
+              )}
+            </Card>
+          </Container>
         </>
-      )}
+      </>
     </>
   )
 }

@@ -21,9 +21,6 @@ const Header = () => {
           <NavLink className="nav-link" to="/login">
             Login
           </NavLink>
-          <NavLink className="nav-link" to="/admin">
-            Admin
-          </NavLink>
           <NavLink className="nav-link" to="/register">
             Register
           </NavLink>
@@ -38,7 +35,9 @@ const Header = () => {
     <div className="App">
       <header className="header">
         <br></br>
-        <h1>Petland</h1>
+        <div className="petland">
+          <p>Petland</p>
+        </div>
         <h4 style={{ color: "white", fontWeight: "bold" }}>
           Where our furry friends can find their forever home
         </h4>

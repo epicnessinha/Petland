@@ -3,7 +3,6 @@ import { loginUser } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
 import { Button } from "react-bootstrap"
 import { Form } from "react-bootstrap"
-import "./AdoptionLogin.css"
 
 const AdoptionLogin = () => {
   // state for email and password
@@ -35,7 +34,7 @@ const AdoptionLogin = () => {
 
   return (
     <>
-      {isAuth ? <Navigate to="/adopt" /> : null}
+      {isAuth ? <navigate to="/adopt" /> : null}
       <div
         style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
@@ -64,9 +63,11 @@ const AdoptionLogin = () => {
             />
           </Form.Group>
           {error && <p className="text-danger">{error}</p>}
-          <Button variant="info" type="submit">
-            Login
-          </Button>
+          <div className="d-flex justify-content-center">
+            <Button variant="danger" style={{ width: "85px" }} type="submit">
+              Login
+            </Button>
+          </div>
         </Form>
       </div>
       <div style={{ marginTop: "20px" }}>

@@ -6,7 +6,6 @@ import Card from "react-bootstrap/Card"
 import ListGroup from "react-bootstrap/ListGroup"
 import { Button } from "react-bootstrap"
 import { Container } from "react-bootstrap"
-import Footer from "../../components/Footer/Footer"
 
 const Profile = () => {
   const [user, setUser] = useState({ name: "", email: "" })
@@ -38,7 +37,7 @@ const Profile = () => {
   const handleSave = (event) => {
     event.preventDefault()
     setEditing(false)
-    updateUserProfile(userData.id, user)
+    updateUserProfile(user)
   }
 
   return (

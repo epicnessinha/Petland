@@ -1,11 +1,8 @@
-const { defineConfig } = require("cypress")
+const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  component: {
-    devServer: {
-      framework: "create-react-app",
-      bundler: "webpack",
-    },
+  e3e: {
+    baseUrl: "http://localhost:3001",
   },
 
   e2e: {
@@ -13,4 +10,4 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
-})
+});

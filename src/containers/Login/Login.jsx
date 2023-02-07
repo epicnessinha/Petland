@@ -69,6 +69,7 @@ const Login = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter email"
+                  data-testeid="email-input"
                 />
               </Form.Group>
               <Form.Group className="mb-3">
@@ -78,11 +79,17 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
+                  data-testeid="password-input"
                 />
               </Form.Group>
               {error && <p className="text-danger">{error}</p>}
               <div className="d-flex justify-content-center">
-                <Button variant="danger" style={{ width: "85px" }} type="submit">
+                <Button
+                  data-testeid="login-submit-btn"
+                  variant="danger"
+                  style={{ width: "85px" }}
+                  type="submit"
+                >
                   Login
                 </Button>
               </div>

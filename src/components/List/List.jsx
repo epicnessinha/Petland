@@ -1,8 +1,5 @@
 import React from "react"
-
 import { useNavigate } from "react-router-dom"
-
-import "./PetList.css"
 
 const List = (props) => {
   const navigate = useNavigate()

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Pagination } from "antd"
 import { getAllPets } from "../../services/apiCalls"
 import "./PetList.css"
-import List from "./List"
+import List from "../List/List"
 
 const NotFound = () => <p> No Pets Found. </p>
 

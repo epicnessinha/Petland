@@ -72,7 +72,7 @@ const Admin = () => {
   return (
     <>
       <div>
-        <h2>Hello Admin</h2>
+        <h data-testid="logged-in-title">Hello Admin</h>
         <Logout />
         <br />
         <h4>Pets for Adoption</h4>

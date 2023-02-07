@@ -36,8 +36,10 @@ export const getAllUsers = async () => {
 export const getUsersProfile = async (userId) => {
   return await axios.get(`${PET_API}users/${userId}`)
 }
-export const updateUserProfile = async (userId, user) => {
-  return await axios.patch(`${PET_API}users/${userId}`, { data: user })
+export const updateUserProfile = async (user) => {
+  console.log("USER_FROM_UPDATE", user)
+  const { name, email } = user
+  return await axios.patch(`${PET_API}users/${user.id}`, { name, email })
 }
 export const deleteUser = async (user) => {
   console.log("Bye", user)

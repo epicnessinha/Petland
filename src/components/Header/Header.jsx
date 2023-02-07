@@ -35,7 +35,7 @@ const Header = () => {
     <div className="App">
       <header className="header">
         <br></br>
-        <div data-testid="title" className="petland">
+        <div className="petland">
           <p>Petland</p>
         </div>
         <h4 data-testid="description" style={{ color: "white", fontWeight: "bold" }}>

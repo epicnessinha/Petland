@@ -13,7 +13,6 @@ import {
   deleteAdoptionForm,
 } from "../../services/apiCalls"
 import Logout from "../../components/Logout/Logout"
-import PetCard from "../../components/PetCard/PetCard"
 
 const Admin = () => {
   const [pets, setPets] = useState([])
@@ -58,7 +57,7 @@ const Admin = () => {
   const handleFormDelete = async (formId) => {
     console.log(formId)
     await deleteAdoptionForm({ id: formId })
-    setUsers(forms.filter((form) => form.id !== formId))
+    setForms(forms.filter((form) => form.id !== formId))
   }
 
   const handlePetInsert = async (e) => {

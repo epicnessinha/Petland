@@ -40,7 +40,7 @@ Runs intregations tests with cypress.
 
 ### Firefox
 
-(Currently is still not available in the other browser due to CORS issues)
+Currently is still not available in the other browsers due to CORS issues.
 
 
 ### Developing

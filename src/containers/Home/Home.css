@@ -1,17 +1,32 @@
+body {
+ 
+  background-image: url("../../assets/img/purple.jpg");
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
+.pet-list {
+  text-align: center;
+  width: 45%;
+  margin-left: 500px;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 50px;
+}
 
+.search {
+  width: 50em;
+  height: 3em;
+  background-color: rgb(245, 213, 230);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 8px 3px #eb8ae3;
+  text-align: center;
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  

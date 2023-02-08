@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { loginUser } from "../../services/apiCalls"
-import { useNavigate, Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { Button } from "react-bootstrap"
 import { Form } from "react-bootstrap"
 
@@ -62,7 +62,7 @@ const AdoptionLogin = () => {
           </Form.Group>
           {error && <p className="text-danger">{error}</p>}
           <div className="d-flex justify-content-center">
-            <Button variant="info" style={{ width: "85px" }} type="submit">
+            <Button variant="danger" style={{ width: "85px" }} type="submit">
               Login
             </Button>
           </div>

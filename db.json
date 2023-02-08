@@ -39,6 +39,15 @@
       "photo": "https://avatars.githubusercontent.com/u/108991649?v=4",
       "isAdmin": "false",
       "id": 4
+    },
+    {
+      "name": "hfghf",
+      "email": "vanessa.ferreira.bio@gmail.com",
+      "password": "hfghfg45A",
+      "address": "hfghfghfgh",
+      "contact": "hfghfghfg",
+      "isAdmin": "false",
+      "id": 5
     }
   ],
   "pets": [

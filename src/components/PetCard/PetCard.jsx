@@ -2,11 +2,11 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
-import "./List.css"
+import "./PetCard.css"
 
-const List = (props) => {
+const PetCard = (props) => {
   const navigate = useNavigate()
-  const { url, name, gender, breed, description } = props.pet
+  const { url, id, name, gender, breed, description } = props.pet
 
   return (
     <div className="list-container">
@@ -23,6 +23,7 @@ const List = (props) => {
           <Card.Title style={{ fontFamily: "impact", fontSize: "30px" }}>
             {name}
           </Card.Title>
+          <Card.Title style={{ fontSize: "13px" }}>Pet ID: {id}</Card.Title>
           <Card.Title style={{ fontSize: "15px" }}>{gender}</Card.Title>
           <Card.Title style={{ fontStyle: "italic" }}>{breed}</Card.Title>
           <Card.Title style={{ fontSize: "18px", textAlign: "justify" }}>
@@ -37,4 +38,4 @@ const List = (props) => {
   )
 }
 
-export default List
+export default PetCard

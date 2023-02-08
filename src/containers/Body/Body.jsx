@@ -6,10 +6,10 @@ import Profile from "../Profile/Profile"
 import Admin from "../Admin/Admin"
 import Form from "../../components/Form/Form"
 import AdoptionLogin from "../../components/AdoptionLogin/AdoptionLogin"
-import PetList from "../../components/PetList/PetList"
+import PetList from "../Home/Home"
 import Login from "../Login/Login"
 import Footer from "../../components/Footer/Footer"
-import List from "../../components/List/List"
+import PetCard from "../../components/PetCard/PetCard"
 import "./Body.css"
 
 const Body = () => {
@@ -25,7 +25,7 @@ const Body = () => {
         <Route path="/adoptlogin" element={<AdoptionLogin />} />
         <Route path="/login" element={<Login />} />
         <Route path="footer" element={<Footer />} />
-        <Route path="list" element={<List />} />
+        <Route path="/petcard" element={<PetCard />} />
       </Routes>
     </>
   )

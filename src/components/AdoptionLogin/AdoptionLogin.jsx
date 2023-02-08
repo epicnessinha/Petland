@@ -5,7 +5,6 @@ import { Button } from "react-bootstrap"
 import { Form } from "react-bootstrap"
 
 const AdoptionLogin = () => {
-  // state for email and password
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")

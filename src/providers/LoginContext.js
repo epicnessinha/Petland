@@ -16,12 +16,3 @@ export const LoginProvider = ({ children }) => {
     </LoginContext.Provider>
   )
 }
-
-//criar semelhante para os PETS, sempre que carrego a aplicação, faço uma chamada e comunico com este contexto
-//e digo que estes são todos os animais e envio para aqui e dps spr que preciso deles venho aqui buscar ao context (posso usar um hook tb para  vir buscar os animais que preciso, ou a lista de animais)
-/* return (
-  <LoginContext.Provider value={{ allPets, setAllPets }}>
-  {children}
-</LoginContext.Provider>
-)
-} */

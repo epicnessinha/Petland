@@ -30,23 +30,21 @@
   flex-direction: column;
   margin-top: -30px;
   margin-bottom: 60px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .petland {
   font-size: 8rem;
-  font-weight:bold;
+  font-weight: bold;
   color: white;
   text-align: left;
   margin-left: 70px;
   margin-top: 20px;
-  font-family:cursive;
-  
-  
+  font-family: cursive;
 }
 
-.description{
+.description {
   color: white;
   font-weight: ;
   text-align: left;

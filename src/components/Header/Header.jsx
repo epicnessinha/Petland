@@ -24,9 +24,6 @@ const Header = () => {
           <NavLink className="nav-link" to="/register">
             Register
           </NavLink>
-          <NavLink className="nav-link" to="/adoptlogin">
-            Adoption
-          </NavLink>
         </>
       )
     }
@@ -36,9 +33,9 @@ const Header = () => {
       <header className="header">
         <br></br>
         <div className="petland">
-          <p>Petland</p>
+          <p data-testid="title">Petland</p>
         </div>
-        <h4 data-testid="description" style={{ color: "white", fontWeight: "bold" }}>
+        <h4 data-testid="description" className="description">
           Where our furry friends can find their forever home
         </h4>
         <div className="clear"></div>

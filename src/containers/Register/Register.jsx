@@ -97,7 +97,7 @@ const Register = () => {
       <Form.Group className="mt-3">
         <Button
           className="buttonRegister"
-          variant="primary"
+          variant="info"
           onClick={() => register(user)}
         >
           Create Account

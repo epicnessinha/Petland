@@ -1,5 +1,4 @@
 import React from "react"
-import "./Body.css"
 import { Route, Routes } from "react-router-dom"
 import Home from "../Home/Home"
 import Register from "../Register/Register"
@@ -7,12 +6,11 @@ import Profile from "../Profile/Profile"
 import Admin from "../Admin/Admin"
 import Form from "../../components/Form/Form"
 import AdoptionLogin from "../../components/AdoptionLogin/AdoptionLogin"
-import PetCard from "../../components/PetCard/PetCard"
-import PetList from "../../components/PetList/PetList"
+import PetList from "../Home/Home"
 import Login from "../Login/Login"
 import Footer from "../../components/Footer/Footer"
-import Details from "../Details/Details"
-import List from "../../components/List/List"
+import PetCard from "../../components/PetCard/PetCard"
+import "./Body.css"
 
 const Body = () => {
   return (
@@ -25,11 +23,9 @@ const Body = () => {
         <Route path="/admin" element={<Admin />} />
         <Route path="/adopt" element={<Form />} />
         <Route path="/adoptlogin" element={<AdoptionLogin />} />
-        <Route path="/petcard" element={<PetCard />} />
         <Route path="/login" element={<Login />} />
         <Route path="footer" element={<Footer />} />
-        <Route path="details" element={<Details />} />
-        <Route path="list" element={<List />} />
+        <Route path="/petcard" element={<PetCard />} />
       </Routes>
     </>
   )

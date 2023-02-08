@@ -1,9 +1,11 @@
 describe("home page", () => {
-  beforeEach(() => {})
+  beforeEach(() => {
+    cy.visit("http://localhost:3000/")
+  })
   it("submit a login form", () => {
-    cy.get("[data-testeid=login-tab]").click()
-    cy.get("[data-testeid=login-username-input]").type("vanessa@mail.com")
-    cy.get("[data-testeid=login-password-input]").type("43752Nessa")
-    cy.get("[data-testeid=login-submit-btn]").click()
+    cy.get("[data-testid=login-tab]").click()
+    cy.get("[data-testid=email-input]").type("vanessa@mail.com")
+    cy.get("[data-testid=password-input]").type("43752Nessa")
+    cy.get("[data-testid=login-submit-btn]").click()
   })
 })

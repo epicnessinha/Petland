@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Pagination } from "antd"
 import { getAllPets } from "../../services/apiCalls"
 import "./PetList.css"
-import List from "../List/List"
+import PetCard from "../../components/PetCard/PetCard"
 
 const NotFound = () => <p> No Pets Found. </p>
 
@@ -43,9 +43,15 @@ const PetList = () => {
   )
   return (
     <>
-      <div>
+      <div className="pet-list">
         <input
           className="search"
+          style={{
+            borderRadius: "50px",
+            fontSize: "larger",
+            transition: "0.4s ease-out",
+            margin: "2.5em auto 1.5em",
+          }}
           type="text"
           placeholder="Search for your new best friend!"
           onChange={handleSearch}
@@ -55,12 +61,11 @@ const PetList = () => {
         ) : (
           petsToShow.map((pet) => (
             <div key={pet.id}>
-              <List pet={pet} />
+              <PetCard pet={pet} />
             </div>
           ))
         )}
       </div>
-      <br />
       <Pagination
         current={current}
         onChange={onChange}

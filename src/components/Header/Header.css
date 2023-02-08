@@ -1,43 +1,57 @@
-
 .linkDesign:hover {
-    color: rgb(167, 66, 157);
-    transition: 0.5s;
+  color: rgb(167, 66, 157);
+  transition: 0.5s;
 }
 
-.header{
-    width: 95%;
-    height: 48vh;
-    margin: 20px auto;
-    box-shadow: 3px 3px 5px 6px rgb(249, 170, 238);
-    border-radius: 15px;
-    background-image: url("../../assets/img/pets.jpg");
-    background-position-y: 61%;
-    background-repeat: no-repeat;
-    background-size: cover;
-   
-  
+.header {
+  width: 95%;
+  height: 48vh;
+  margin: 20px auto;
+  box-shadow: 3px 3px 5px 6px rgb(249, 170, 238);
+  border-radius: 15px;
+  background-image: url("../../assets/img/pets.jpg");
+  background-position-y: 61%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.nav-bar{
-    margin-right: 25px;
-    margin-top: -80px;
-    float:right;
-    
-   }
-   .nav-link{
-     width: 100px;
-     height: 30px;
-     box-shadow: 3px 3px 5px 6px rgb(228, 108, 194);
-     margin: 20px;
+.nav-bar {
+  margin-right: 25px;
+  margin-top: -120px;
+  float: right;
+}
+.nav-link {
+  width: 100px;
+  height: 33px;
+  box-shadow: 3px 3px 5px 6px rgb(124, 64, 107);
+  margin: 20px;
   border-radius: 15px;
   text-decoration: wavy;
   flex-direction: column;
-  margin-top: -30px ;
+  margin-top: -30px;
   margin-bottom: 60px;
-   }
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-   .petland{
-    font-size: 5rem;
-    font-weight: bolder;
-    color: white
-   }
+}
+
+.petland {
+  font-size: 8rem;
+  font-weight:bold;
+  color: white;
+  text-align: left;
+  margin-left: 70px;
+  margin-top: 20px;
+  font-family:cursive;
+  
+  
+}
+
+.description{
+  color: white;
+  font-weight: ;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-style: italic;
+}

@@ -7,6 +7,7 @@ import "./PetCard.css"
 const PetCard = (props) => {
   const navigate = useNavigate()
   const { url, id, name, gender, breed, description } = props.pet
+  //destructures the pet information from the props object and assigns each piece of information to a separate variable
 
   return (
     <div className="list-container">

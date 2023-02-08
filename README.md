@@ -32,7 +32,7 @@ Runs the app in the development mode.\
 Opens [http://localhost:3000](http://localhost:3000) to view it in your browser Firefox.
 Also opens a json server [http://localhost:5000](http://localhost:5000) to serve data to this application.
 
-### `npm run cy:open`
+### `npx cypress open`
 
 Runs intregations tests with cypress.
 

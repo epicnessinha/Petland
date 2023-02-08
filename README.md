@@ -38,7 +38,7 @@ Runs intregations tests with cypress.
 
 ## Browser Compatibility:
 
-Firefox
+###Firefox
 
 (Currently is still not available in the other browser due to CORS issues)
 
@@ -48,7 +48,7 @@ In order to develop this project, for the frontend part we used React with React
 <br>
 Users are able to consult and filter data (all search inputs are debounced), submit adoption requests through a form, validated (error check) and edit the name and email in their profiles.
 <br>
-Pagination was implemented in the Homepage for displayed elements coming from the API.
+Pagination was implemented in the Homepage for displayed elements coming from the API. A few Cypress tests were implemented as well.
 The project was also deployed in [Netfly](https://petlandshelter.netlify.app/)
 
 

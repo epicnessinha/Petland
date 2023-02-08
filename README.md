@@ -10,7 +10,7 @@ In the footer of the page you can find the direct link to the real shelters wher
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8cf5e631-0a68-4286-b4d5-c3e021ab4cff/deploy-status)](https://app.netlify.com/sites/petlandshelter/deploys)
 
-<img src="https://github.com/epicnessinha/Petland/blob/2b4910df5c55fd4476fa73413d5fa399133167d4/src/assets/img/2.png" alt="Homepage" width="33%"/> <img src="https://github.com/epicnessinha/Petland/blob/f6ee17f676e7607ae3c0d7f104270be6e763d799/src/assets/img/3.png" alt="Admin" width="35%"/> <img src="https://github.com/epicnessinha/Petland/blob/f6ee17f676e7607ae3c0d7f104270be6e763d799/src/assets/img/4.png" alt="User Profile" width="33%"/>
+<img src="https://github.com/epicnessinha/Petland/blob/2b4910df5c55fd4476fa73413d5fa399133167d4/src/assets/img/2.png" alt="Homepage" width="32%"/> <img src="https://github.com/epicnessinha/Petland/blob/f6ee17f676e7607ae3c0d7f104270be6e763d799/src/assets/img/3.png" alt="Admin" width="35%"/> <img src="https://github.com/epicnessinha/Petland/blob/f6ee17f676e7607ae3c0d7f104270be6e763d799/src/assets/img/4.png" alt="User Profile" width="32%"/>
 
 ## API
 

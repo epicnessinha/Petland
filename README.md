@@ -48,7 +48,7 @@ Currently is still not available in the other browsers due to CORS issues.
 ### Developing
 In order to develop this project, for the frontend part we used React with React-Router-Dom, Axios, functional components, debounced search, validated forms, useContext, and also, correct folder distribution with the use of services for external API calls.
 <br>
-Users are able to consult and filter data (all search inputs are debounced), submit adoption requests through a form, validated (error check) and edit the name and email in their profiles.
+Users are able to consult and filter data, submit adoption requests through a form, validated (error check) and edit the name and email in their profiles.
 <br>
 Pagination was implemented in the Homepage for displayed elements coming from the API. A few Cypress tests were implemented as well.
 The project was also deployed in [Netfly](https://petlandshelter.netlify.app/)

@@ -21,16 +21,6 @@
       "id": 2
     },
     {
-      "name": "Priscilla Silva",
-      "email": "pri@mail.com",
-      "password": "Pri12345",
-      "address": "Rua dos Marnotos 8, Aveiro",
-      "contact": "912223344",
-      "photo": "https://ispup.up.pt/wp-content/uploads/2021/05/Priscilla-Gomes-da-Silva_525_639.jpg",
-      "isAdmin": "false",
-      "id": 3
-    },
-    {
       "name": "Diogo Merelles",
       "email": "diogo@mail.com",
       "password": "Diogo123",
@@ -39,15 +29,6 @@
       "photo": "https://avatars.githubusercontent.com/u/108991649?v=4",
       "isAdmin": "false",
       "id": 4
-    },
-    {
-      "name": "hfghf",
-      "email": "vanessa.ferreira.bio@gmail.com",
-      "password": "hfghfg45A",
-      "address": "hfghfghfgh",
-      "contact": "hfghfghfg",
-      "isAdmin": "false",
-      "id": 5
     }
   ],
   "pets": [

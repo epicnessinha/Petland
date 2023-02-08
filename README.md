@@ -38,7 +38,7 @@ Runs intregations tests with cypress.
 
 ## Browser Compatibility:
 
-###Firefox
+### Firefox
 
 (Currently is still not available in the other browser due to CORS issues)
 

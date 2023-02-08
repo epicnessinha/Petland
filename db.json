@@ -21,7 +21,7 @@
       "id": 2
     },
     {
-      "name": "Priscilla",
+      "name": "Priscilla Silva",
       "email": "pri@mail.com",
       "password": "Pri12345",
       "address": "Rua dos Marnotos 8, Aveiro",
@@ -46,7 +46,7 @@
       "name": "Zecarias",
       "type": "Dog",
       "breed": "Mongrel",
-      "gender": "male",
+      "gender": "Male",
       "url": "https://www.adopta-me.org/media/image/thumb/78049544-zacarias.JPG",
       "description": "Zacarias is a small, medium-sized puppy, very friendly, sweet and playful. The true companion for life. Sterilized, Vaccines up to date, Dewormed",
       "id": 1

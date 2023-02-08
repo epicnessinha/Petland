@@ -43,9 +43,26 @@ const PetList = () => {
   )
   return (
     <>
-      <div>
+      <div className="pet-list">
         <input
           className="search"
+          style={{
+            width: "50em",
+            height: "3em",
+            margin: "30px",
+            backgroundColor: "rgb(245, 213, 230)",
+            borderRadius: "50px",
+            color: "rgb(14, 14, 15)",
+            fontSize: "larger",
+            fontWeight: "bold",
+            transition: "0.4s ease-out",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "2.5em auto 1.5em",
+            boxShadow: "0px 0px 8px 3px #eb8ae3",
+            textAlign: "center",
+          }}
           type="text"
           placeholder="Search for your new best friend!"
           onChange={handleSearch}
@@ -60,7 +77,6 @@ const PetList = () => {
           ))
         )}
       </div>
-      <br />
       <Pagination
         current={current}
         onChange={onChange}

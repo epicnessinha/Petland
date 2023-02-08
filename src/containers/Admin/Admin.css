@@ -1,6 +1,106 @@
-.profile{
+h4.custom-title {
+    padding-top: 15px;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(207, 36, 193);
+    text-align: center;
+  }
+  .logout-container {
+    display: flex;
+    justify-content:center;
+    padding-bottom: 50px;
+  }
+  h4.pet-header {
+    text-align: left;
+    padding-left: 60px;
+    font-size: 33px;
+    color: rgb(147, 25, 180);
+    font-weight: bold;
+    text-decoration: underline;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 30px;
+  }
+  
+  h4.new-header {
+    text-align: left;
+    padding-left: 60px;
+    font-size: 33px;
+    color: rgb(147, 25, 180);
+    font-weight: bold;
+    text-decoration: underline;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 30px;
+    padding-top: 35px;
+  }
+  h4.users-header {
+    text-align: left;
+    padding-left: 60px;
+    font-size: 33px;
+    color: rgb(147, 25, 180);
+    font-weight: bold;
+    text-decoration: underline;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: -40px;
+    padding-top: 35px;
+  }
+  h4.forms-header {
+    text-align: left;
+    padding-left: 60px;
+    font-size: 33px;
+    color: rgb(147, 25, 180);
+    font-weight: bold;
+    text-decoration: underline;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 30px;
+    padding-top: 100px;
+  }
+  .pet-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .pet-card {
+    width: calc(30%);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .pet-image {
+    width: 80%;
     height: auto;
-    width: auto;
-    max-width: 10%;
-    max-height: 100%;
-}
+  }
+  
+  .pet-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .left-aligned-form {
+    margin-left: 50px;
+    
+  }  
+
+  .user-list {
+    display: flex;
+    padding-left: 50px;
+    justify-content: space-between;
+  }
+  
+  .user-item {
+    width: calc(33.33% - 10px);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .user-photo {
+    width: 50%;
+    height: auto;
+  }
+  
+  .user-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  

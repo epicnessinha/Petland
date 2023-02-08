@@ -1,0 +1,15 @@
+.pet-list {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card {
+    display: inline-block;
+    margin: 0 auto;
+    width: 18rem;
+    margin-top: 150px;
+    background-color: rgb(237, 251, 255);
+
+    }
+
+  

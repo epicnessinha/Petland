@@ -62,7 +62,7 @@ const AdoptionLogin = () => {
           </Form.Group>
           {error && <p className="text-danger">{error}</p>}
           <div className="d-flex justify-content-center">
-            <Button variant="danger" style={{ width: "85px" }} type="submit">
+            <Button variant="info" style={{ width: "85px" }} type="submit">
               Login
             </Button>
           </div>

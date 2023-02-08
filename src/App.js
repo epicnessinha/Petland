@@ -11,10 +11,7 @@ function App() {
       <div className="App">
         <Header />
         <Body />
-        <Footer
-          footerCopy={"Adota-me Shelter"}
-          footerlink={"https://www.adopta-me.org/index.php?&row=0"}
-        />
+        <Footer />
       </div>
     </LoginProvider>
   )

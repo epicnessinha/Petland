@@ -1,7 +1,4 @@
 import React, { useContext, useState, useEffect } from "react"
-import axios from "axios"
-import { AuthContext } from "../../providers/AuthProvider"
-import { useNavigate } from "react-router-dom"
 import "./Admin.css"
 import {
   getAllForms,
@@ -13,14 +10,15 @@ import {
   deleteAdoptionForm,
 } from "../../services/apiCalls"
 import Logout from "../../components/Logout/Logout"
+import { Form } from "react-bootstrap"
+import { Button } from "react-bootstrap"
+import { Card } from "react-bootstrap"
 
 const Admin = () => {
   const [pets, setPets] = useState([])
   const [users, setUsers] = useState([])
   const [forms, setForms] = useState([])
   const [newPet, setNewPet] = useState({ name: "", type: "" })
-  const { admin } = useContext(AuthContext) //remover se não utilizar
-  const navigate = useNavigate()
 
   const getUsersList = async () => {
     let response = await getAllUsers()
@@ -71,108 +69,132 @@ const Admin = () => {
 
   return (
     <>
-      <div>
-        <h data-testid="logged-in-title">Hello Admin</h>
-        <Logout />
-        <br />
-        <h4>Pets for Adoption</h4>
-        <ul>
-          {pets.map((pet) => (
-            <div key={pet.id}>
-              <br />
-              <img className="profile" src={pet.url} alt="" />
-              <br />
-              <br />
-              <p>{pet.name}</p>
-              <p>{pet.type}</p>
-              <button onClick={() => handlePetDelete(pet.id)}>Adopted</button>
-            </div>
-          ))}
-        </ul>
-        <br></br>
-        <br></br>
-        <form onSubmit={handlePetInsert}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Pet name"
-            value={newPet.name}
-            onChange={handlePetChange}
-          />
-          <input
-            type="text"
-            name="type"
-            placeholder="type"
-            value={newPet.type}
-            onChange={handlePetChange}
-          />
-          <input
-            type="text"
-            name="breed"
-            placeholder="Breed"
-            value={newPet.breed}
-            onChange={handlePetChange}
-          />
-          <input
-            type="text"
-            name="Gender"
-            placeholder="Gender"
-            value={newPet.gender}
-            onChange={handlePetChange}
-          />
-          <input
-            type="text"
-            name="description"
-            placeholder="Description"
-            value={newPet.description}
-            onChange={handlePetChange}
-          />
-          <button type="submit">Add pet</button>
-        </form>
-      </div>
+      <>
+        <div>
+          <h4 class="custom-title" data-testid="logged-in-title">
+            Hello Admin
+          </h4>
+          <div class="logout-container">
+            <Logout />
+          </div>
+          <h4 class="pet-header">Pets for Adoption</h4>
+          <div class="pet-list">
+            {pets.map((pet) => (
+              <div class="pet-card" key={pet.id}>
+                <img className="pet-image" src={pet.url} alt="" />
+                <p>{pet.name}</p>
+                <p>{pet.type}</p>
+                <div class="pet-buttons">
+                  <button onClick={() => handlePetDelete(pet.id)}>Adopted</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h4 class="new-header">Add New Pets</h4>
+          <Form className="left-aligned-form" onSubmit={handlePetInsert}>
+            <Form.Group controlId="formPetName">
+              <Form.Label>Pet name</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                placeholder="Pet name"
+                value={newPet.name}
+                onChange={handlePetChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formPetType">
+              <Form.Label>Pet type</Form.Label>
+              <Form.Control
+                type="text"
+                name="type"
+                placeholder="Type"
+                value={newPet.type}
+                onChange={handlePetChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formPetBreed">
+              <Form.Label>Breed</Form.Label>
+              <Form.Control
+                type="text"
+                name="breed"
+                placeholder="Breed"
+                value={newPet.breed}
+                onChange={handlePetChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formPetGender">
+              <Form.Label>Gender</Form.Label>
+              <Form.Control
+                type="text"
+                name="gender"
+                placeholder="Gender"
+                value={newPet.gender}
+                onChange={handlePetChange}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formPetDescription">
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                type="text"
+                name="description"
+                placeholder="Description"
+                value={newPet.description}
+                onChange={handlePetChange}
+              />
+            </Form.Group>
+
+            <Button variant="primary" type="submit">
+              Add pet
+            </Button>
+          </Form>
+        </div>
+      </>
       <div className="adminDesign">
         <div>
-          <br></br>
-          <br></br>
-          <h4>List of Users</h4>
-        </div>
-        {users.map((user) => (
-          <div key={user.id}>
-            <br />
-            <img className="profile" src={user.photo} alt="Profile picture" />
-            <br />
-            <br />
-            <p>{user.name}</p>
-            <p>{user.email}</p>
-            <button onClick={() => handleUserDelete(user.id)}>Delete</button>
+          <h4 className="users-header">List of Users</h4>
+          <div className="user-list">
+            {users.map((user) => (
+              <Card key={user.id} style={{ width: "18rem" }}>
+                <Card.Img variant="top" src={user.photo} />
+                <Card.Body>
+                  <Card.Title>{user.name}</Card.Title>
+                  <Card.Text>{user.email}</Card.Text>
+                  <Button onClick={() => handleUserDelete(user.id)} variant="info">
+                    Delete
+                  </Button>
+                </Card.Body>
+              </Card>
+            ))}
           </div>
-        ))}
-        <br />
-        <br />
-        <div>
-          <h4>List of Adoption Forms</h4>
-        </div>
-        {forms.map((form) => {
-          return (
-            <div>
-              <div>Pet Id: {form.petId}</div>
-              <div>Adopter's Name: {form.name}</div>
-              <div>Email: {form.email}</div>
-              <div>Contact: {form.contact}</div>
-              <div>The Adopter have another pets?: {form.anotherPets}</div>
+          <div>
+            <h4 className="forms-header">List of Adoption Forms</h4>
+          </div>
+          {forms.map((form) => {
+            return (
               <div>
-                Adopter's plan in case he/she needs to travel: {form.travelSituation}
+                <div>Pet Id: {form.petId}</div>
+                <div>Adopter's Name: {form.name}</div>
+                <div>Email: {form.email}</div>
+                <div>Contact: {form.contact}</div>
+                <div>The Adopter have another pets?: {form.anotherPets}</div>
+                <div>
+                  Adopter's plan in case he/she needs to travel:{" "}
+                  {form.travelSituation}
+                </div>
+                <div>Commits to put a microchip: {form.microchip}</div>
+                <button onClick={() => handleFormDelete(form.id)}>
+                  Adoption Approved
+                </button>
               </div>
-              <div>Commits to put a microchip: {form.microchip}</div>
-              <button onClick={() => handleFormDelete(form.id)}>
-                Adoption Approved
-              </button>
-              <br></br>
-              <br></br>
-              <br></br>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
     </>
   )

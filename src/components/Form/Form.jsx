@@ -56,7 +56,7 @@ const Form = () => {
       setShowSuccessMessage(true)
       setTimeout(() => {
         window.location.href = "/"
-      }, 2000)
+      }, 1800)
     } catch (error) {
       console.error(error)
     }
@@ -65,9 +65,6 @@ const Form = () => {
   return (
     <>
       <h4>Adoption Form</h4>
-      {showSuccessMessage && (
-        <div className="form-success">Submitted with success</div>
-      )}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -160,6 +157,12 @@ const Form = () => {
         <button type="submit" className="form-submit">
           Submit
         </button>
+        {showSuccessMessage && (
+          <div className="form-success">
+            <br />
+            <h4>Submitted with success</h4>
+          </div>
+        )}
       </form>
     </>
   )

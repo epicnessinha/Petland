@@ -28,8 +28,9 @@ const Home = () => {
   const filteredPets = pets.filter(
     (pet) =>
       pet.name.toLowerCase().includes(search.toLowerCase()) ||
-      pet.type.toLowerCase().includes(search.toLowerCase()) ||
-      pet.breed.toLowerCase().includes(search.toLowerCase())
+      pet.gender.toLowerCase().includes(search.toLowerCase()) ||
+      pet.breed.toLowerCase().includes(search.toLowerCase()) ||
+      pet.type.toLowerCase().includes(search.toLowerCase())
   )
 
   const totalPages = Math.ceil(filteredPets.length)

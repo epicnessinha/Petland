@@ -16,3 +16,7 @@ export const LoginProvider = ({ children }) => {
     </LoginContext.Provider>
   )
 }
+
+//"LoginContext" is a global state that can be shared across multiple components in a React application.
+//The data stored in the context is mutable,
+//which means it can be updated at any time by the component that uses the context.

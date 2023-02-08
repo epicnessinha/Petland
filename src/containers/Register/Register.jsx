@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import "./Register.css"
 import { checkEmail } from "../../services/apiCalls"
 import { registerUser } from "../../services/apiCalls"
 import { useNavigate } from "react-router-dom"
 import { validateForm } from "../../services/validate"
 import { Form } from "react-bootstrap"
 import { Button } from "react-bootstrap"
+import "./Register.css"
 
 const Register = () => {
   const [user, setUser] = useState({

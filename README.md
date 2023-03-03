@@ -30,7 +30,7 @@ Follow this steps:
 
 ### Run the app:
 
-### `npm run dev`
+### `npm run dev` or open [Netfly](https://petlandshelter.netlify.app/)
 
 Runs the app in the development mode.\
 Opens [http://localhost:3000](http://localhost:3000) to view it in your browser Firefox.

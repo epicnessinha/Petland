@@ -9,7 +9,7 @@ The administrator is able to see all the users registered, to add and delete the
 In the footer of the page you can find the direct link to the real shelters where you can adopt an animal or support the institution.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8cf5e631-0a68-4286-b4d5-c3e021ab4cff/deploy-status)](https://app.netlify.com/sites/petlandshelter/deploys)
-
+ 
 ## Visuals
 <img src="https://github.com/epicnessinha/Petland/blob/master/src/assets/img/homepage.png?raw=true" alt="Homepage" width="30%"/> <img src="https://github.com/epicnessinha/Petland/blob/master/src/assets/img/Register.png?raw=true" alt="Register" width="30%"/> <img src="https://github.com/epicnessinha/Petland/blob/master/src/assets/img/Login.png?raw=true" alt="Login" width="30%"/> <img src="https://github.com/epicnessinha/Petland/blob/master/src/assets/img/Profile.png?raw=true" alt="User Profile" width="30%"/> <img src="https://github.com/epicnessinha/Petland/blob/master/src/assets/img/AdoptionForm.png?raw=true" alt="AdoptionForm" width="30%"/> <img src="https://github.com/epicnessinha/Petland/blob/f6ee17f676e7607ae3c0d7f104270be6e763d799/src/assets/img/3.png" alt="Admin" width="30%"/>
 

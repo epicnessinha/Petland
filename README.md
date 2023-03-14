@@ -10,10 +10,6 @@ In the footer of the page you can find the direct link to the real shelters wher
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8cf5e631-0a68-4286-b4d5-c3e021ab4cff/deploy-status)](https://app.netlify.com/sites/petlandshelter/deploys)
  
-## Visuals
-<img src="https://github.com/epicnessinha/Petland/blob/master/src/assets/img/homepage.png?raw=true" alt="Homepage" width="25%"/> <img src="https://github.com/epicnessinha/Petland/blob/master/src/assets/img/Register.png?raw=true" alt="Register" width="25%"/> <img src="https://github.com/epicnessinha/Petland/blob/master/src/assets/img/Login.png?raw=true" alt="Login" width="25%"/> <img src="https://github.com/epicnessinha/Petland/blob/master/src/assets/img/Profile.png?raw=true" alt="User Profile" width="20%"/> 
-
-
 ## API
 
 [JSON SERVER](https://github.com/typicode/json-server)

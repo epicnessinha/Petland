@@ -3,7 +3,7 @@
 Geekshub Bootcamp Final project where we're challanged to create a web-application capable of interacting with a backend through a JSON API.
 Petland is a web app where the users can adopt abandoned animals that are currently living in the ["Adopta-me" shelter](https://www.adopta-me.org/index.php?&row=0).
 The user is able to visualize some of the animals available for adoption, as well search for a specific one (dog, cat, breed, gender)
-In order to adopt an animal, the user must be register, once the login is done successfully, the user needs to fill a form with several questions that after submited will be review for approval by the administrator.
+In order to adopt an animal, the user must be register, once the login is done successfully, the user needs to fill a form with several questions that after submited will be review for approval by the administrator. 
 The user can edit his/her profile as well (name and email).
 The administrator is able to see all the users registered, to add and delete the adoption announcements (Pets) and approve the adoption requests made by the users.
 In the footer of the page you can find the direct link to the real shelters where you can adopt an animal or support the institution.

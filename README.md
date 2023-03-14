@@ -8,7 +8,7 @@ The user can edit his/her profile as well (name and email).
 The administrator is able to see all the users registered, to add and delete the adoption announcements (Pets) and approve the adoption requests made by the users.
 In the footer of the page you can find the direct link to the real shelters where you can adopt an animal or support the institution.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8cf5e631-0a68-4286-b4d5-c3e021ab4cff/deploy-status)](https://app.netlify.com/sites/petlandshelter/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8cf5e631-0a68-4286-b4d5-c3e021ab4cff/deploy-status)](https://app.netlify.com/sites/petlandshelter/deploys) 
  
 ## API
 

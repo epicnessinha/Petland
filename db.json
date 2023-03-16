@@ -29,6 +29,15 @@
       "photo": "https://avatars.githubusercontent.com/u/108991649?v=4",
       "isAdmin": "false",
       "id": 4
+    },
+    {
+      "name": "Ana",
+      "email": "ana@mail.com",
+      "password": "ana12345A",
+      "address": "Aveiroi",
+      "contact": "910000000",
+      "isAdmin": "false",
+      "id": 5
     }
   ],
   "pets": [

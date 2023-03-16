@@ -1,6 +1,8 @@
-# Petland
 
-###  ⚠️ Currently doing some fixings! ⚠️
+#  ⚠️ Currently doing some fixings! ⚠️
+
+
+# Petland
 
 Geekshub Bootcamp Final project where we're challanged to create a web-application capable of interacting with a backend through a JSON API.
 Petland is a web app where the users can adopt abandoned animals that are currently living in the ["Adopta-me" shelter](https://www.adopta-me.org/index.php?&row=0).

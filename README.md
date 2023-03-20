@@ -1,5 +1,9 @@
 
-#  ⚠️ Currently doing some fixings! ⚠️
+#  ⚠️ Currently fixing some issues! ⚠️
+
+- CORS problem;
+- Homepage design (PetCard and Header);
+- Administrator page design;
 
 
 # Petland
